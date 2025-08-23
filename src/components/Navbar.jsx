@@ -34,10 +34,10 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed w-full h-16 left-0 top-[66px] z-50 px-10">
-      <div className="h-full w-full max-w-[1440px] mx-auto flex items-center">
+    <nav className="fixed w-full h-20 left-0 top-0 z-50 px-4 sm:px-6 md:px-10  backdrop-blur-md md:bg-transparent md:backdrop-blur-none md:top-16 md:h-16">
+      <div className="h-full w-full max-w-[1440px] mx-auto flex items-center md:bg-transparent ">
         {/* Logo - Left aligned */}
-        <div className="flex-shrink-0 h-[46px] flex items-center absolute left-20">
+        <div className="flex-shrink-0 h-[46px] flex items-center absolute left-4 sm:left-6 md:left-10 top-1/2 -translate-y-1/2">
           <img src={Logo} alt="Comez Logo" className="h-6 w-auto" />
         </div>
         
@@ -98,17 +98,17 @@ const Navbar = () => {
       
       {/* Mobile Menu */}
       <div 
-        className={`md:hidden fixed inset-0 bg-black/95 backdrop-blur-md transition-transform duration-300 ease-in-out transform ${
+        className={`md:hidden fixed inset-0 bg-[#020C14] transition-all duration-300 ease-in-out transform ${
           isOpen ? 'translate-y-0' : '-translate-y-full'
         }`}
         style={{
-          paddingTop: '2rem',
-          height: 'calc(100vh - 46px)',
+          paddingTop: '5rem',
+          height: '100vh',
           width: '100vw',
           overflow: 'auto',
           boxSizing: 'border-box',
           WebkitOverflowScrolling: 'touch',
-          top: '46px'
+          top: '0'
         }}
       >
         <div className="flex flex-col items-center justify-start h-full w-full overflow-y-auto py-6 px-6 space-y-4">

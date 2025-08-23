@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="relative min-h-screen w-screen bg-[#020C14] overflow-x-hidden font-outfit">
       <div className="w-full">
-        <div className="pt-10 md:pt-24 w-full">
+        <div className=" w-full">
           <Navbar />
           <main className="w-full">
             <div className="w-full ">

@@ -7,7 +7,7 @@ const Hero = () => {
     <div className="w-full min-h-screen flex flex-col items-center justify-between text-white relative overflow-hidden bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${Herobg})` }}>
       {/* Text Content */}
       <div className="text-center max-w-3xl mt-20 px-4 sm:px-0 font-outfit">
-        <p className="text-gray-300 text-sm mb-2 font-outfit pt-2">
+        <p className="text-gray-300 text-sm mb-2 font-outfit pt-20">
           A whole E-Commerce as a piece of <span className="text-blue-400">cake.</span> Easily personalize the layout of your store.
         </p>
         <h1 className="text-4xl md:text-5xl font-bold leading-tight">
