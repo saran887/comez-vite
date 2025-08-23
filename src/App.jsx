@@ -15,11 +15,11 @@ function App() {
         <div className="pt-10 md:pt-24 w-full">
           <Navbar />
           <main className="w-full">
-            <div className="w-full pr-4">
+            <div className="w-full ">
               <Hero />
             </div>
             <div id="about" className="w-full">
-              <div className="w-full pr-4">
+              <div className="w-full">
                 <Download />
                 <About />
               </div>

@@ -71,7 +71,7 @@ const About = () => {
             />
           </div>
           <div className="space-y-6 pl-0 md:pl-0">
-            <h2 className="text-[48px] leading-[45px] font-normal bg-[linear-gradient(88.72deg,#FFFFFF_0.7%,#B4B2B2_95.77%)] bg-clip-text text-transparent text-left">
+            <h2 className="text-[36px] md:text-[48px] leading-[1.1] font-normal bg-[linear-gradient(88.72deg,#FFFFFF_0.7%,#B4B2B2_95.77%)] bg-clip-text text-transparent text-center md:text-left">
               User Friendly Interface
             </h2>
             <p className="text-[#C1C1C6] text-lg leading-relaxed text-center md:text-left text-justify">
