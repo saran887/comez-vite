@@ -5,9 +5,15 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      sans: ['Outfit', 'sans-serif'],
+    },
     extend: {
       fontFamily: {
         outfit: ['Outfit', 'sans-serif'],
+      },
+      scale: {
+        '102': '1.02',
       },
     },
   },

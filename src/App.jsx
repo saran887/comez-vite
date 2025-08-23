@@ -6,31 +6,37 @@ import FAQs from './components/FAQs';
 import Download from './components/Download';
 import About from './components/About';
 import NewFooter from './components/NewFooter';
-import Features from './components/Features';
+import FeatureSection from './components/Features';
 
 function App() {
   return (
-    <div className="relative min-h-screen w-full bg-[#020C14] overflow-hidden">
-      <div className="w-full max-w-[100vw] overflow-x-hidden">
-        <div className="pt-24 w-full">
-           <Navbar /> 
-          <div className="w-full overflow-x-hidden">
-            <Hero />
-            {/* <Download /> */}
-            <div id="about" className="w-full overflow-hidden">
-              <About />
-              <div id="features">
-                <Features />
+    <div className="relative min-h-screen w-screen bg-[#020C14] overflow-x-hidden font-outfit">
+      <div className="w-full">
+        <div className="pt-10 md:pt-24 w-full">
+          <Navbar />
+          <main className="w-full">
+            <div className="w-full pr-4">
+              <Hero />
+            </div>
+            <div id="about" className="w-full">
+              <div className="w-full pr-4">
+                <Download />
+                <About />
+              </div>
+              <div id="features" className="w-full">
+                <FeatureSection />
               </div>
             </div>
-            <div id="pricing" className="w-full overflow-hidden">
+            <div id="pricing" className="w-full">
               <Pricing />
             </div>
-            <div id="faqs" className="w-full overflow-hidden">
+            <div id="faqs" className="w-full">
               <FAQs />
             </div>
-            <NewFooter />
-          </div>
+            <div className="w-full">
+              <NewFooter />
+            </div>
+          </main>
         </div>
       </div>
     </div>

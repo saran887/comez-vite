@@ -18,6 +18,8 @@ import Audit from "../assets/Audit.svg"
 import Android from "../assets/Android.svg"
 import Apple from "../assets/Apple.svg"
 import Cloud from "../assets/Cloud.svg"
+import Fcard1 from "../assets/fcard1.svg"
+import Fcard2 from "../assets/fcard2.svg"
 
 // List of features
 const features = [
@@ -138,115 +140,120 @@ const features = [
 
 const FeatureSection = () => {
   return (
-    <div className="py-12 md:py-20" style={{
-      background: 'linear-gradient(180deg, #000000 0%, #030E22 50%, #000000 100%)'
-    }}>
-      <div className="w-full py-16 px-4">
+    <div className="w-full">
+      {/* Header Section */}
+      <div className="w-full pt-20 pb-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 
-            className="font-outfit text-4xl md:text-5xl font-normal text-center"
-            style={{
-              background: 'linear-gradient(88.72deg, #FFFFFF 0.7%, #B4B2B2 95.77%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              lineHeight: '1.2',
-              margin: '0 auto',
-              maxWidth: '100%',
-              wordWrap: 'break-word'
-            }}
+            className="text-4xl md:text-5xl font-normal text-center 
+                     bg-gradient-to-r from-white via-[#B4B2B2] to-[#B4B2B2] 
+                     bg-clip-text text-transparent leading-tight mx-auto max-w-full break-words font-outfit"
           >
             Comez Feature Highlights
           </h2>
         </div>
       </div>
-    <div className="from-gray-900 to-gray-800 text-white py-5 px-4 md:px-16">
-      {features.map((feature, index) => (
-        <div
-          key={index}
-          className={`flex flex-col md:flex-row items-center md:justify-between mb-16 ${
-            index % 2 === 1 ? "md:flex-row-reverse" : ""
-          }`}
-        >
-          {/* Text Content */}
-          <div className="md:w-1/2 mb-8 md:mb-0">
-            <div className="flex items-center mb-4">
-              <div className="mr-4">
-                <img 
-                  src={feature.icon} 
-                  alt="" 
-                  className={`${feature.title.includes('SEO') ? 'w-16 h-16' : 'w-12 h-12'}`}
+
+      {/* Features Grid */}
+      <div className="w-full max-w-[100vw] overflow-hidden">
+        {features.map((feature, index) => (
+          <div
+            key={index}
+            className={`relative flex flex-col md:flex-row items-center justify-between ${
+              index % 2 === 1 ? "md:flex-row-reverse" : ""
+            } ${index === 0 ? 'pt-6 pb-4' : 'py-6'} md:py-10 px-4 md:px-12 lg:px-24 xl:px-32 overflow-hidden ${
+              index === features.length - 1 ? 'rounded-b-3xl' : ''
+            } bg-cover bg-center bg-no-repeat m-0 max-w-full min-h-[300px] md:min-h-[350px]`}
+            style={{
+              backgroundImage: `url(${index % 2 === 0 ? Fcard1 : Fcard2})`
+            }}
+          >
+            {/* Semi-transparent overlay for better text readability */}
+            <div className="absolute inset-0 bg-black/30 -z-10"></div>
+
+            {/* Text Content */}
+            <div className="w-full md:w-5/12 mb-4 md:mb-0 z-10 px-2 md:px-6">
+              <div className="flex flex-col items-start mb-4">
+                <div className="flex items-center mb-3">
+                  <div className="mr-3">
+                    <div className={`flex items-center justify-center ${
+                      feature.title.includes("SEO") ? "w-10 h-10" : "w-12 h-12"
+                    }`}>
+                      <img
+                        src={feature.icon}
+                        alt=""
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  </div>
+                  <h2
+                    className="text-2xl md:text-3xl font-normal text-left
+                             bg-gradient-to-r from-white to-[#B4B2B2]
+                             bg-clip-text text-transparent"
+                  >
+                    {feature.title}
+                  </h2>
+                </div>
+                <p className="text-[#C1C1C1] text-base md:text-xl leading-relaxed text-justify mt-2">
+                  {feature.description}
+                </p>
+              </div>
+            </div>
+
+            {/* Feature Image */}
+            <div className={`w-full md:w-7/12 flex items-center ${index % 2 === 0 ? 'md:justify-end pr-0' : 'md:justify-start pl-0'}`}>
+              <div className="w-full max-w-md">
+                <img
+                  src={feature.image}
+                  alt={feature.title}
+                  className={`w-full h-auto transition-transform duration-300 hover:scale-105 ${
+                    index === 0 ? 'scale-90' : 'scale-100'
+                  } mt-auto max-w-full ${index % 2 === 0 ? 'ml-auto mr-0' : 'ml-0 mr-auto'}`}
                 />
               </div>
-              <h2 
-                className="text-2xl font-outfit font-medium text-center"
-                style={{
-                  background: 'linear-gradient(88.72deg, #FFFFFF 0.7%, #B4B2B2 95.77%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}
-              >
-                {feature.title}
-              </h2>
             </div>
-            <p className="text-[#C1C1C1] font-outfit text-lg md:text-xl leading-normal text-justify">
-              {feature.description}
-            </p>
           </div>
+        ))}
+      </div>
 
-          {/* Image */}
-          <div className="w-full md:w-1/2 flex justify-center px-4 md:px-0">
-            <img
-              src={feature.image}
-              alt={feature.title}
-              className="w-3/4 md:w-full max-w-md h-auto transition-transform duration-300 hover:scale-105"
-            />
+      {/* Available on All Devices Section */}
+      <div className="relative pt-16 pb-28 pl-12 pr-4 md:pl-15 md:pr-12 bg-gradient-to-b from-[#000000] via-[#000000] via-80% to-[#042E7D] text-white overflow-hidden rounded-b-[120px]">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 opacity-10 bg-cover bg-center bg-no-repeat -z-10 rounded-b-[250px]"
+          style={{ backgroundImage: 'url(../src/assets/install.svg)' }}
+          aria-hidden="true"
+        />
+
+        <div className="container mx-auto relative z-10">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-10">
+            {/* Logos */}
+            <div className="flex gap-6 md:gap-12 justify-center md:justify-start w-full md:w-auto md:pl-20">
+              <img src={Android} alt="Android" className="w-20 h-20 md:w-32 md:h-32 object-contain" />
+              <img src={Apple} alt="Apple" className="w-20 h-20 md:w-32 md:h-32 object-contain" />
+              <img src={Cloud} alt="Cloud" className="w-20 h-20 md:w-32 md:h-32 object-contain" />
+            </div>
+
+            {/* Text Content */}
+            <div className="w-full md:w-2/5 text-center md:text-left">
+              <h2 
+                className="text-3xl md:text-5xl font-normal mb-6 leading-tight
+                         bg-gradient-to-r from-white to-[#B4B2B2]
+                         bg-clip-text text-transparent"
+              >
+                Available on <em className="not-italic">All your Devices</em>
+              </h2>
+              <p className="text-[#C1C1C1] text-base md:text-xl leading-relaxed max-w-2xl mx-auto md:mx-0 text-justify">
+                The question lies upon your mind that the way we provide application at low cost. 
+                We developed using Google&apos;s <strong>Flutter</strong> Framework, which converts 
+                single code into two platforms of different applications. So that we can provide both 
+                Android APK and iOS App. We developed Website on Facebook&apos;s Framework{' '}
+                <strong>ReactJS</strong>.
+              </p>
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
-    <div className="relative py-24 px-4 md:px-8 bg-gradient-to-b from-black to-[#0a0f1f] text-white">
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
-        {/* Logos */}
-        <div className="flex gap-8 mb-12 md:mb-0">
-          <img src={Android} alt="Android" className="w-30 h-30 object-contain" />
-          <img src={Apple} alt="Apple" className="w-30 h-30 object-contain" />
-          <img src={Cloud} alt="Cloud" className="w-30 h-30 object-contain" />
-        </div>
-
-        {/* Text Content */}
-        <div className="text-center md:text-left">
-          <h2 
-            className="font-outfit text-4xl md:text-5xl font-normal mb-6 leading-tight md:leading-normal"
-            style={{
-              background: 'linear-gradient(88.72deg, #FFFFFF 0.7%, #B4B2B2 95.77%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              lineHeight: '1.2',
-              ...(window.innerWidth >= 768 && { lineHeight: '75px' })
-            }}
-          >
-            Available on <em className="not-italic">All your Devices</em>
-          </h2>
-          <p 
-            className="text-[#C1C1C1] font-outfit text-lg md:text-2xl  leading-normal md:leading-relaxed max-w-2xl mx-auto md:mx-0 px-4 md:px-0 text-justify"
-            style={{
-              fontFamily: 'Outfit',
-              fontStyle: 'normal',
-              fontWeight: 400
-            }}
-          >
-            The question lies upon your mind that the way we provide application at low cost. 
-            We developed using Google&apos;s <strong>Flutter</strong> Framework, which converts 
-            single code into two platforms of different applications. So that we can provide both 
-            Android APK and iOS App. We developed Website on Facebook&apos;s Framework{' '}
-            <strong>ReactJS</strong>.
-          </p>
         </div>
       </div>
-    </div>
     </div>
   );
 };
