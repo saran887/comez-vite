@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from './components/Navbar.jsx';
+import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Pricing from './components/Pricing';
 import FAQs from './components/FAQs';
@@ -13,7 +13,7 @@ function App() {
     <div className="relative min-h-screen w-screen bg-[#020C14] overflow-x-hidden font-outfit">
       <div className="w-full">
         <div className=" w-full">
-          <Navbar />
+          <Navbar/>
           <main className="w-full">
             <div className="w-full ">
               <Hero />

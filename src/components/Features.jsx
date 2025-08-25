@@ -1,4 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
+
+// Add Google Fonts
+const fontStyles = `
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+`;
 import Achievement1 from "../assets/Achievement-1.svg";
 import Conversation1 from "../assets/Conversation-1.svg";
 import Doc from "../assets/Doc.svg";
@@ -139,15 +144,23 @@ const features = [
 ];
 
 const FeatureSection = () => {
+  useEffect(() => {
+    const styleElement = document.createElement('style');
+    styleElement.textContent = fontStyles;
+    document.head.appendChild(styleElement);
+    return () => {
+      document.head.removeChild(styleElement);
+    };
+  }, []);
   return (
     <div className="w-full">
       {/* Header Section */}
       <div className="w-full pt-20 pb-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 
-            className="text-4xl md:text-5xl font-normal text-center 
+            className="text-6xl md:text-7xl font-normal text-center 
                      bg-gradient-to-r from-white via-[#B4B2B2] to-[#B4B2B2] 
-                     bg-clip-text text-transparent leading-tight mx-auto max-w-full break-words font-outfit"
+                     bg-clip-text text-transparent leading-tight mx-auto max-w-full break-words font-outfit pb-2"
           >
             Comez Feature Highlights
           </h2>

@@ -1,25 +1,38 @@
-import React, { useState } from 'react';
-import { FiCheck, FiArrowRight } from 'react-icons/fi';
+import React, { useState, useEffect } from 'react';
+import { FiCheck } from 'react-icons/fi';
 
-const ToggleSwitch = ({ isOn, handleToggle }) => {
-  return (
-    <div
-      onClick={handleToggle}
-      className={`w-16 h-8 flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300 ${
-        isOn ? 'bg-blue-600' : 'bg-gray-600'
+// Add Google Fonts
+const fontStyles = `
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+`;
+
+const ToggleSwitch = ({ isOn, handleToggle }) => (
+  <button
+    type="button"
+    onClick={handleToggle}
+    className={`relative inline-flex h-8 w-16 items-center rounded-full p-1 transition-colors duration-300 ${
+      isOn ? 'bg-blue-600' : 'bg-gray-600'
+    }`}
+  >
+    <span
+      className={`inline-block h-6 w-6 transform rounded-full bg-white shadow-md transition-transform duration-300 ${
+        isOn ? 'translate-x-8' : 'translate-x-0'
       }`}
-    >
-      <div
-        className={`bg-white w-6 h-6 rounded-full shadow-md transform transition-transform duration-300 ${
-          isOn ? 'translate-x-8' : 'translate-x-0'
-        }`}
-      ></div>
-    </div>
-  );
-};
+    />
+  </button>
+);
 
 const Pricing = () => {
   const [isYearly, setIsYearly] = useState(false);
+
+  useEffect(() => {
+    const styleElement = document.createElement('style');
+    styleElement.textContent = fontStyles;
+    document.head.appendChild(styleElement);
+    return () => {
+      document.head.removeChild(styleElement);
+    };
+  }, []);
 
   const plans = [
     {
@@ -77,7 +90,7 @@ const Pricing = () => {
     <div className="relative bg-black min-h-screen py-20 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-medium font-['Outfit'] bg-gradient-to-r from-white to-[#B4B2B2] bg-clip-text text-transparent mb-6">Pricing</h2>
+          <h2 className="text-7xl font-medium font-['Outfit'] bg-gradient-to-r from-white to-[#B4B2B2] bg-clip-text text-transparent mb-8 pb-8">Pricing</h2>
           <div className="flex items-center justify-center gap-4 font-medium">
             <span className={!isYearly ? 'text-white text-lg' : 'text-gray-500 text-lg'}>
               Monthly
@@ -96,51 +109,26 @@ const Pricing = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative rounded-3xl overflow-hidden bg-gray-900 ${
+              className={`relative rounded-3xl overflow-hidden bg-black border ${
                 index === 1 
-                  ? 'border-2 border-blue-500 scale-105 z-10' 
-                  : 'border border-gray-700'
-              }`}
-              style={{
-                width: '500px',
-                minWidth: '394px',
-                height: '570px',
-                background: '#000000',
-                borderRadius: '25px',
-                boxSizing: 'border-box',
-                boxShadow: index === 1 ? '0 10px 30px -10px rgba(0, 112, 244, 0.3)' : 'none',
-                flex: '1 1 380px',
-                maxWidth: '420px'
-              }}
+                  ? 'border-2 border-blue-500 scale-105 z-10 shadow-[0_10px_30px_-10px_rgba(0,112,244,0.3)]' 
+                  : 'border-gray-700'
+              } w-full min-w-[394px] h-[570px] flex-1 max-w-[420px]`}
             >
-              <div
-                style={{
-                  position: 'absolute',
-                  width: '400px',
-                  height: '150px',
-                  right: '-100px',
-                  bottom: '-50px',
-                  background: 'linear-gradient(180deg, #0754E3 6.45%, #042E7D 84.25%)',
-                  filter: 'blur(150px)',
-                  transform: 'rotate(-15deg)',
-                  zIndex: 0,
-                  opacity: index === 1 ? 0.8 : 0.6
-                }}
+              <div 
+                className={`absolute w-[400px] h-[150px] -right-24 -bottom-12 bg-gradient-to-b from-[#0754E3] to-[#042E7D] blur-[150px] -rotate-15 z-0 ${
+                  index === 1 ? 'opacity-80' : 'opacity-60'
+                }`}
               />
               
 
               <div className="w-full">
                 <div 
-                  className={`${index === 1 ? 'py-8' : index === 2 ? 'py-6' : 'py-8'} px-6 w-full`}
-                  style={index === 1 ? {
-                    background: 'linear-gradient(86.21deg, #000000 2.32%, #0D54DB 48.21%, #000000 130.76%)',
-                    boxShadow: '0px 21px 88.7px -43px rgba(0, 88, 255, 0.5)',
-                    borderRadius: '25px',
-                    margin: '0 -8px',
-                    width: 'calc(100% + 16px)'
-                  } : {}}
+                  className={`${index === 1 ? 'py-8' : index === 2 ? 'py-6' : 'py-8'} px-6 w-full ${
+                    index === 1 ? 'bg-gradient-to-r from-black via-[#0D54DB] to-black mx-[-8px] w-[calc(100%+16px)] rounded-3xl shadow-[0px_21px_88.7px_-43px_rgba(0,88,255,0.5)]' : ''
+                  }`}
                 >
-                  <h3 className={`${index === 2 ? 'text-2xl' : 'text-2xl'} font-bold text-white text-center whitespace-nowrap`}>
+                  <h3 className="text-2xl font-bold text-white text-center whitespace-nowrap">
                     {plan.title}
                   </h3>
                 </div>
@@ -173,6 +161,7 @@ const Pricing = () => {
                 ))}
               </ul>
 
+              
             
             </div>
           ))}

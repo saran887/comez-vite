@@ -84,7 +84,7 @@ const Hero = () => {
             />
 
             {/* Gradient overlay */}
-            <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/90 via-black/50 to-transparent rounded-b-xl z-10"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/90 via-black/50 to-transparent rounded-b-xl  z-10"></div>
           </div>
 
           {/* Cards Section */}
@@ -94,15 +94,15 @@ const Hero = () => {
                 {cards.map((card, index) => (
                   <div
                     key={index}
-                    className="w-[380px] h-[300px] bg-gradient-to-br from-gray-900/80 to-black/80 border border-gray-800/50 shadow-2xl rounded-[30px] backdrop-blur-sm p-8 text-center hover:border-blue-500/30 hover:shadow-blue-500/10 transition-all duration-300 hover:-translate-y-2"
+                    className="w-[380px] h-[300px] bg-gradient-to-br from-gray-900 to-black border border-gray-700/50 shadow-2xl rounded-[30px] backdrop-blur-sm p-8 text-center hover:border-blue-500/50 hover:shadow-blue-500/20 transition-all duration-300 hover:-translate-y-2"
                   >
                     <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                       <img src={card.emoji} alt="" className="w-10 h-10 object-contain" />
                     </div>
-                    <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-blue-400 to-blue-600 text-transparent bg-clip-text">
+                    <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-white to-[#B4B2B2] text-transparent bg-clip-text">
                       {card.title}
                     </h3>
-                    <p className="text-gray-300 leading-relaxed text-sm">
+                    <p className="text-gray-300 leading-relaxed text-lg font-outfit text-justify">
                       {card.description}
                     </p>
                   </div>
