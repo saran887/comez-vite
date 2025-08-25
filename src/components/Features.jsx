@@ -177,7 +177,7 @@ const FeatureSection = () => {
                 <div className="flex items-center mb-3">
                   <div className="mr-3">
                     <div className={`flex items-center justify-center ${
-                      feature.title.includes("SEO") ? "w-10 h-10" : "w-12 h-12"
+                      feature.title.includes("SEO") ? "w-15 h-15" : "w-17 h-17"
                     }`}>
                       <img
                         src={feature.icon}
@@ -187,28 +187,28 @@ const FeatureSection = () => {
                     </div>
                   </div>
                   <h2
-                    className="text-2xl md:text-3xl font-normal text-left
+                    className="text-2xl md:text-4xl font-outfit text-left
                              bg-gradient-to-r from-white to-[#B4B2B2]
-                             bg-clip-text text-transparent"
+                             bg-clip-text text-transparent font-[100px]"
                   >
                     {feature.title}
                   </h2>
                 </div>
-                <p className="text-[#C1C1C1] text-base md:text-xl leading-relaxed text-justify mt-2">
+                <p className="text-[#C1C1C1] text-2xl md:text-3xl leading-relaxed text-justify mt-2">
                   {feature.description}
                 </p>
               </div>
             </div>
 
             {/* Feature Image */}
-            <div className={`w-full md:w-7/12 flex items-center ${index % 2 === 0 ? 'md:justify-end pr-0' : 'md:justify-start pl-0'}`}>
+            <div className={`w-full md:w-7/12 flex items-center ${index % 2 === 0 ? 'md:justify-end pr-0 ' : 'md:justify-start pl-0'}`}>
               <div className="w-full max-w-md">
                 <img
                   src={feature.image}
                   alt={feature.title}
-                  className={`w-full h-auto transition-transform duration-300 hover:scale-105 ${
+                  className={`w-[500px] h-[900px] transition-transform duration-300 hover:scale-110 ${
                     index === 0 ? 'scale-90' : 'scale-100'
-                  } mt-auto max-w-full ${index % 2 === 0 ? 'ml-auto mr-0' : 'ml-0 mr-auto'}`}
+                  } mt-auto max-w-full ${index % 2 === 0 ? 'ml-auto mr-0' : 'ml-0 mr-auto'} max-h-[500px]`}
                 />
               </div>
             </div>
@@ -229,9 +229,9 @@ const FeatureSection = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-10">
             {/* Logos */}
             <div className="flex gap-6 md:gap-12 justify-center md:justify-start w-full md:w-auto md:pl-20">
-              <img src={Android} alt="Android" className="w-20 h-20 md:w-32 md:h-32 object-contain" />
+              <img src={Android} alt="Android" className="w-24 h-24 md:w-36 md:h-36 object-contain" />
               <img src={Apple} alt="Apple" className="w-20 h-20 md:w-32 md:h-32 object-contain" />
-              <img src={Cloud} alt="Cloud" className="w-20 h-20 md:w-32 md:h-32 object-contain" />
+              <img src={Cloud} alt="Cloud" className="w-24 h-24 md:w-36 md:h-36 object-contain" />
             </div>
 
             {/* Text Content */}
@@ -243,7 +243,7 @@ const FeatureSection = () => {
               >
                 Available on <em className="not-italic">All your Devices</em>
               </h2>
-              <p className="text-[#C1C1C1] text-base md:text-xl leading-relaxed max-w-2xl mx-auto md:mx-0 text-justify">
+              <p className="text-[#C1C1C1] text-base md:text-3xl leading-relaxed max-w-2xl mx-auto md:mx-0 text-justify">
                 The question lies upon your mind that the way we provide application at low cost. 
                 We developed using Google&apos;s <strong>Flutter</strong> Framework, which converts 
                 single code into two platforms of different applications. So that we can provide both 

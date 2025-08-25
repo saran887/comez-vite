@@ -39,15 +39,15 @@ const FAQs = () => {
               FAQ's
             </h2>
             
-            <div className="space-y-6 sm:space-y-8 w-full pl-8 sm:pl-12 pr-8 sm:pr-10">
+            <div className="space-y-4 sm:space-y-6 w-full max-w-7xl mx-auto px-6 sm:px-6">
               {faqs.map((faq, index) => (
                 <div 
                   key={index} 
-                  className={`bg-black/90 overflow-hidden border-2 border-gray-700/50 hover:border-gray-600/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 w-full relative px-8 sm:px-10 py-3 rounded-3xl`}
+                  className={`bg-black/90 overflow-hidden border-2 border-gray-700/50 hover:border-gray-600/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 w-full relative px-5 sm:px-6 py-3 rounded-2xl`}
                 >
                   {/* Gradient Effect for all FAQ cards */}
                   <div 
-                    className="absolute right-0 bottom-0 pointer-events-none w-[367.76px] h-[102.84px] bg-gradient-to-b from-[#0754E3]/100 via-[#0754E3]/10 to-[#042E7D]/100 blur-[150px] -rotate-[18.11deg] origin-right-bottom opacity-70 z-0 -mr-[100px] -mb-[50px]"
+                    className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none w-[200px] h-[300px] bg-gradient-to-r from-[#0754E3]/60 via-[#0754E3]/10 to-transparent blur-[80px] z-0"
                   />
                   
                   <div className="relative z-10">
@@ -55,7 +55,7 @@ const FAQs = () => {
                       onClick={() => toggleFAQ(index)}
                       className="w-full py-2 text-left flex items-center justify-between focus:outline-none transition-colors duration-200"
                     >
-                      <span className="text-white text-lg sm:text-xl font-semibold pr-4">{faq.question}</span>
+                      <span className="text-white text-base sm:text-lg font-medium pr-4">{faq.question}</span>
                       <div className="flex-shrink-0 w-8 h-8 rounded-full border-2 border-white/40 flex items-center justify-center hover:bg-white/10 transition-colors">
                         <FiPlus className={`w-4 h-4 text-white transition-transform duration-300 ${activeIndex === index ? 'transform rotate-45' : ''}`} />
                       </div>
@@ -64,7 +64,7 @@ const FAQs = () => {
                     <div 
                       className={`overflow-hidden transition-all duration-300 ${activeIndex === index ? 'max-h-96 pb-2' : 'max-h-0'}`}
                     >
-                      <div className="pt-2 text-gray-300 text-base sm:text-lg leading-relaxed">
+                      <div className="pt-2 text-gray-300 text-sm sm:text-base leading-relaxed">
                         <p>{faq.answer}</p>
                       </div>
                     </div>
