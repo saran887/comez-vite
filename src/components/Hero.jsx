@@ -55,7 +55,7 @@ const Hero = () => {
           <div className="max-w-5xl mx-auto">
             <h1 className="text-5xl md:text-7xl lg:text-[82px] font-normal leading-[1.1] text-transparent bg-clip-text bg-gradient-to-r from-white via-[#B4B2B2] to-[#B4B2B2]/80">
               New way to manage your
-              <span className="block mt-6 md:mt-8 font-light italic opacity-400">
+              <span className="block mt-6 md:mt-8 font-light italic opacity-400 font-metal text-5xl md:text-8xl lg:text-[102px]">
                 Ecommerce Business!
               </span>
             </h1>
