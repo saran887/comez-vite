@@ -6,7 +6,26 @@ const FAQs = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleFAQ = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
+    const wasOpen = activeIndex === index;
+    setActiveIndex(wasOpen ? null : index);
+    
+    if (!wasOpen) {
+      // Use setTimeout to ensure the DOM has updated with the new content
+      setTimeout(() => {
+        const faqElement = document.getElementById(`faq-${index}`);
+        if (faqElement) {
+          // Calculate the position to scroll to (current position + 100px offset from top)
+          const offset = 100;
+          const elementPosition = faqElement.getBoundingClientRect().top + window.pageYOffset - offset;
+          
+          // Smooth scroll to the FAQ item with offset
+          window.scrollTo({
+            top: elementPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 50); // Small delay to allow the content to expand
+    }
   };
 
   const faqs = [
@@ -42,6 +61,7 @@ const FAQs = () => {
             <div className="space-y-4 sm:space-y-6 w-full max-w-7xl mx-auto px-6 sm:px-6">
               {faqs.map((faq, index) => (
                 <div 
+                  id={`faq-${index}`}
                   key={index} 
                   className={`bg-black/90 overflow-hidden border-2 border-gray-700/50 hover:border-gray-600/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 w-full relative px-5 sm:px-6 py-3 rounded-2xl`}
                 >
@@ -64,7 +84,7 @@ const FAQs = () => {
                     <div 
                       className={`overflow-hidden transition-all duration-300 ${activeIndex === index ? 'max-h-96 pb-2' : 'max-h-0'}`}
                     >
-                      <div className="pt-2 text-gray-300 text-sm sm:text-base leading-relaxed">
+                      <div className="pt-2 text-gray-300 text-xl md:text-2xl font-outfit sm:text-base leading-relaxed">
                         <p>{faq.answer}</p>
                       </div>
                     </div>

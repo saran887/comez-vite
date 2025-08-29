@@ -219,7 +219,7 @@ const FeatureSection = () => {
                 <img
                   src={feature.image}
                   alt={feature.title}
-                  className={`w-[500px] h-[900px] transition-transform duration-300 hover:scale-110 ${
+                  className={`w-[500px] h-[350px] md:h-[900px] transition-transform duration-300 hover:scale-110 ${
                     index === 0 ? 'scale-90' : 'scale-100'
                   } mt-auto max-w-full ${index % 2 === 0 ? 'ml-auto mr-0' : 'ml-0 mr-auto'} max-h-[500px]`}
                 />
