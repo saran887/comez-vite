@@ -15,7 +15,7 @@ const FAQs = () => {
         const faqElement = document.getElementById(`faq-${index}`);
         if (faqElement) {
           // Calculate the position to scroll to (current position + 100px offset from top)
-          const offset = 100;
+          const offset = 240;
           const elementPosition = faqElement.getBoundingClientRect().top + window.pageYOffset - offset;
           
           // Smooth scroll to the FAQ item with offset
@@ -84,7 +84,7 @@ const FAQs = () => {
                     <div 
                       className={`overflow-hidden transition-all duration-300 ${activeIndex === index ? 'max-h-96 pb-2' : 'max-h-0'}`}
                     >
-                      <div className="pt-2 text-gray-300 text-xl md:text-2xl font-outfit sm:text-base leading-relaxed">
+                      <div className="pt-2 text-gray-300 text-xl md:text-2xl font-outfit text-justify sm:text-base leading-relaxed">
                         <p>{faq.answer}</p>
                       </div>
                     </div>
