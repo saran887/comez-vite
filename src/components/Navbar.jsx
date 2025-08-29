@@ -6,7 +6,6 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState('Home');
-  const isHeroPage = window.location.pathname === '/';
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -24,7 +23,7 @@ const Navbar = () => {
     handleScroll();
     document.addEventListener('scroll', handleScroll, { passive: true });
     return () => document.removeEventListener('scroll', handleScroll);
-  }, [scrolled, isHeroPage]);
+  }, [scrolled]);
 
   const navLinks = [
     { name: 'Home', action: () => window.scrollTo({ top: 0, behavior: 'smooth' }) },
@@ -35,15 +34,15 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed w-full h-16 md:h-16 left-0 md:left-10 z-50 px-4 sm:px-6 md:px-10 backdrop-blur-md md:bg-transparent md:backdrop-blur-none ${scrolled ? 'top-0' : isHeroPage ? 'md:top-12' : 'top-0'}`} style={{ width: '100vw' }}>
-      <div className="h-full w-full max-w-[90rem] mx-auto flex items-center justify-center " style={{ maxWidth: '90rem' }}>
+    <nav className="fixed w-full h-20 left-0 top-0 z-50 px-4 sm:px-6 md:px-10 backdrop-blur-md md:bg-transparent md:backdrop-blur-none md:top-16 md:h-16">
+      <div className="h-full w-full max-w-[1440px] mx-auto flex items-center md:bg-transparent ">
         {/* Logo - Left aligned */}
         <div className="flex-shrink-0 h-[46px] flex items-center absolute left-4 md:left-6 top-1/2 -translate-y-1/2">
           <img src={Logo} alt="Comez Logo" className="h-6 w-auto" />
         </div>
         
        {/* Navigation Links */}
-<div className="hidden md:flex items-center justify-center mx-auto w-full max-w-[75rem] h-[4.375rem] 
+<div className="hidden md:flex items-center justify-center mx-auto w-[1200px] h-[70px] 
   bg-[rgba(1,34,50,0.2)] backdrop-blur-[15px] 
   shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] 
   border border-[rgba(255,255,255,0.18)] 
@@ -59,7 +58,7 @@ const Navbar = () => {
           setActiveLink(link.name);
         }}
         className={`relative flex items-center justify-center 
-          min-w-[8.5rem] h-12 px-6 py-3 gap-2 rounded-[3.5rem] transition-all duration-300
+          w-[143px] h-[48px] px-[50px] py-[14px] gap-2 rounded-[55px] transition-all duration-300
           ${
             activeLink === link.name
               ? "bg-[#0754E3] shadow-[inset_-4px_7px_20px_rgba(255,255,255,0.3)]"
