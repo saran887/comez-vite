@@ -83,8 +83,8 @@ const Hero = () => {
               className="w-full h-auto rounded-xl shadow-2xl relative z-10 border border-gray-800/50"
             />
 
-            {/* Gradient overlay */}
-            <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black via-black/70 to-transparent rounded-b-xl  z-20"></div>
+            {/* Gradient overlay - Hidden on mobile */}
+            <div className="hidden md:block absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black via-black/70 to-transparent rounded-b-xl z-20"></div>
           </div>
 
           {/* Cards Section */}

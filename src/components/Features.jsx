@@ -176,7 +176,7 @@ const FeatureSection = () => {
               index % 2 === 1 ? "md:flex-row-reverse" : ""
             } ${index === 0 ? 'pt-6 pb-4' : 'py-6'} md:py-10 px-4 md:px-12 lg:px-24 xl:px-32 overflow-hidden ${
               index === features.length - 1 ? 'rounded-b-3xl' : ''
-            } bg-cover bg-center bg-no-repeat m-0 max-w-full min-h-[300px] md:min-h-[350px]`}
+            } bg-cover bg-center bg-no-repeat m-0 max-w-full min-h-[300px] md:min-h-[350px] md:h-[500px]`}
             style={{
               backgroundImage: `url(${index % 2 === 0 ? Fcard1 : Fcard2})`
             }}
@@ -241,7 +241,7 @@ const FeatureSection = () => {
         <div className="container mx-auto relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-10">
             {/* Logos */}
-            <div className="flex gap-6 md:gap-12 justify-center md:justify-start w-full md:w-auto md:pl-20">
+            <div className="flex gap-6 md:gap-12 justify-center align-center md:justify-start w-full md:w-auto md:pl-20">
               <img src={Android} alt="Android" className="w-24 h-24 md:w-36 md:h-36 object-contain" />
               <img src={Apple} alt="Apple" className="w-20 h-20 md:w-32 md:h-32 object-contain" />
               <img src={Cloud} alt="Cloud" className="w-24 h-24 md:w-36 md:h-36 object-contain" />
@@ -252,7 +252,7 @@ const FeatureSection = () => {
               <h2 
                 className="text-3xl md:text-5xl font-normal mb-6 leading-tight
                          bg-gradient-to-r from-white to-[#B4B2B2]
-                         bg-clip-text text-transparent"
+                         bg-clip-text text-transparent justify-center" 
               >
                 Available on <em className="not-italic">All your Devices</em>
               </h2>
