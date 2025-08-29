@@ -38,7 +38,7 @@ const Navbar = () => {
     <nav className={`fixed w-full h-16 md:h-16 left-0 md:left-10 z-50 px-4 sm:px-6 md:px-10 backdrop-blur-md md:bg-transparent md:backdrop-blur-none ${scrolled ? 'top-0' : isHeroPage ? 'md:top-12' : 'top-0'}`} style={{ width: '100vw' }}>
       <div className="h-full w-full max-w-[90rem] mx-auto flex items-center justify-center " style={{ maxWidth: '90rem' }}>
         {/* Logo - Left aligned */}
-        <div className="flex-shrink-0 h-[46px] flex items-center absolute left-4 sm:left-6 md:left-10 top-1/2 -translate-y-1/2">
+        <div className="flex-shrink-0 h-[46px] flex items-center absolute left-4 md:left-6 top-1/2 -translate-y-1/2">
           <img src={Logo} alt="Comez Logo" className="h-6 w-auto" />
         </div>
         

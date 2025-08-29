@@ -84,11 +84,11 @@ const Hero = () => {
             />
 
             {/* Gradient overlay */}
-            <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/90 via-black/50 to-transparent rounded-b-xl  z-10"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black via-black/70 to-transparent rounded-b-xl  z-20"></div>
           </div>
 
           {/* Cards Section */}
-          <div className="relative -mt-16 z-30">
+          <div className="relative -mt-28 z-30">
             <div className="w-full max-w-6xl mx-auto px-4">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-36 justify-items-center">
                 {cards.map((card, index) => (
