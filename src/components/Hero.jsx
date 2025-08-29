@@ -71,7 +71,7 @@ const Hero = () => {
         </div>
 
         {/* Dashboard with Overlay and Cards */}
-        <div className="relative w-full max-w-6xl mx-auto -mt-10 md:-mt-16 mb-20 md:mb-40 px-4">
+        <div className="relative w-full max-w-6xl mx-auto mt-10 md:-mt-16 mb-20 md:mb-40 px-4">
           <div className="relative">
             {/* Gradient behind dashboard */}
             <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur-2xl -z-10"></div>
@@ -88,13 +88,13 @@ const Hero = () => {
           </div>
 
           {/* Cards Section */}
-          <div className="relative -mt-28 z-30">
+          <div className="relative mt-8 md:-mt-28 z-30">
             <div className="w-full max-w-6xl mx-auto px-4">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-36 justify-items-center">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-36 justify-items-center">
                 {cards.map((card, index) => (
                   <div
                     key={index}
-                    className="w-[380px] h-[300px] bg-gradient-to-br from-gray-900 to-black border border-gray-700/50 shadow-2xl rounded-[30px] backdrop-blur-sm p-8 text-center hover:border-blue-500/50 hover:shadow-blue-500/20 transition-all duration-300 hover:-translate-y-2"
+                    className="w-[380px] max-w-[380px] h-[300px] bg-gradient-to-br from-gray-900 to-black border border-gray-700/50 shadow-2xl rounded-[30px] backdrop-blur-sm p-6 md:p-8 text-center hover:border-blue-500/50 hover:shadow-blue-500/20 transition-all duration-300 hover:-translate-y-2"
                   >
                     <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                       <img src={card.emoji} alt="" className="w-10 h-10 object-contain" />
