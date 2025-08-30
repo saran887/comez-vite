@@ -25,6 +25,7 @@ import Apple from "../assets/Apple.svg"
 import Cloud from "../assets/Cloud.svg"
 import Fcard1 from "../assets/fcard1.svg"
 import Fcard2 from "../assets/fcard2.svg"
+import logo from "../assets/logo.svg"
 
 // List of features
 const features = [
@@ -157,6 +158,7 @@ const FeatureSection = () => {
       {/* Header Section */}
       <div className="w-full pt-20 pb-20 px-4">
         <div className="max-w-4xl mx-auto">
+          
           <h2 
             className="text-6xl md:text-7xl font-normal text-center 
                      bg-gradient-to-r from-white via-[#B4B2B2] to-[#B4B2B2] 
@@ -168,6 +170,7 @@ const FeatureSection = () => {
       </div>
 
       {/* Features Grid */}
+      
       <div className="w-full max-w-[100vw] overflow-hidden">
         {features.map((feature, index) => (
           <div
@@ -176,7 +179,7 @@ const FeatureSection = () => {
               index % 2 === 1 ? "md:flex-row-reverse" : ""
             } ${index === 0 ? 'pt-6 pb-4' : 'py-6'} md:py-10 px-4 md:px-12 lg:px-24 xl:px-32 overflow-hidden ${
               index === features.length - 1 ? 'rounded-b-3xl' : ''
-            } bg-cover bg-center bg-no-repeat m-0 max-w-full min-h-[300px] md:min-h-[350px] md:h-[500px]`}
+            } bg-cover bg-center bg-no-repeat m-0 max-w-full min-h-[300px] md:min-h-[350px] md:h-[600px]`}
             style={{
               backgroundImage: `url(${index % 2 === 0 ? Fcard1 : Fcard2})`
             }}
@@ -190,7 +193,7 @@ const FeatureSection = () => {
                 <div className="flex items-center mb-3">
                   <div className="mr-3">
                     <div className={`flex items-center justify-center ${
-                      feature.title.includes("SEO") ? "w-15 h-15" : "w-17 h-17"
+                      feature.title.includes("SEO") ? "w-18 h-18 pb-10" : "w-14 h-14"
                     }`}>
                       <img
                         src={feature.icon}
@@ -202,7 +205,7 @@ const FeatureSection = () => {
                   <h2
                     className="text-2xl md:text-4xl font-outfit text-left
                              bg-gradient-to-r from-white to-[#B4B2B2]
-                             bg-clip-text text-transparent font-[100px]"
+                             bg-clip-text text-transparent font-[100px] "
                   >
                     {feature.title}
                   </h2>
@@ -219,7 +222,7 @@ const FeatureSection = () => {
                 <img
                   src={feature.image}
                   alt={feature.title}
-                  className={`w-[500px] h-[350px] md:h-[900px] transition-transform duration-300 hover:scale-110 ${
+                  className={`w-[500px] h-[350px] md:h-[900px] transition-transform duration-300 pt-8 hover:scale-110 ${
                     index === 0 ? 'scale-90' : 'scale-100'
                   } mt-auto max-w-full ${index % 2 === 0 ? 'ml-auto mr-0' : 'ml-0 mr-auto'} max-h-[500px]`}
                 />

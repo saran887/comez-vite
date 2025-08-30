@@ -34,7 +34,7 @@ const Navbar = ({ isHome = false }) => {
   ];
 
   return (
-    <nav className={`fixed w-full h-20 left-0 md:left-10 top-0 z-50 px-4 sm:px-6 md:px-10 backdrop-blur-md md:bg-transparent md:backdrop-blur-none ${isHome ? 'md:top-16' : 'md:top-0'} md:h-16`}>
+    <nav className={`fixed w-full h-20 left-0 md:left-10 top-0 z-50 px-4 sm:px-6 md:px-10 backdrop-blur-[10px] md:bg-transparent md:backdrop-blur-none ${isHome ? 'md:top-16' : 'md:top-0'} md:h-16`}>
       <div className="h-full w-full max-w-[1440px] mx-auto flex items-center md:bg-transparent ">
         {/* Logo - Left aligned */}
         <div className="flex-shrink-0 h-[46px] flex items-center absolute left-4 md:left-6 top-1/2 -translate-y-1/2">

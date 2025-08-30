@@ -53,18 +53,16 @@ const Hero = () => {
         {/* Text Content */}
         <div className="text-center mx-auto px-4 sm:px-0 pt-40 pb-32 font-outfit">
           <div className="max-w-5xl mx-auto">
-            <h1 className="text-5xl md:text-7xl lg:text-[82px] font-normal leading-[1.1] text-transparent bg-clip-text bg-gradient-to-r from-white via-[#B4B2B2] to-[#B4B2B2]/80">
+            <h1 className="text-6xl md:text-7xl lg:text-[82px] font-normal leading-[1.1] text-transparent bg-clip-text bg-gradient-to-r from-white via-[#B4B2B2] to-[#B4B2B2]/80">
               New way to manage your
-              <span className="block mt-6 md:mt-8 font-light italic opacity-400 font-metal text-5xl md:text-8xl lg:text-[102px]">
+              <span className="block mt-4 md:mt-8 font-light italic opacity-400 font-metal text-6xl sm:text-6xl md:text-8xl lg:text-[102px] leading-tight">
                 Ecommerce Business!
               </span>
             </h1>
           </div>
-          <p className="text-gray-200 text-lg md:text-x2 mt-12 mb-12 max-w-2xl mx-auto leading-relaxed text-shadow-md">
-            A whole E-Commerce as a piece of cake. Easily Personalize the layout of your store
-          </p>
+          <p className="text-gray-200 font-outfit text-xl md:text-2x font-light tracking-wide mt-8 mb-12 max-w-2xl ml-0 mr-auto leading-relaxed text-shadow-md whitespace-nowrap pl-[30rem]">A whole E-Commerce as a piece of cake. Easily Personalize the layout of your store.</p>
           <div className="w-full flex justify-center mb-4">
-            <button className="px-6 py-3 w-[171px] h-[50px] text-xl font-medium bg-[#0754E3] shadow-[inset_-12px_4px_17.1px_rgba(255,255,255,0.25),inset_-3px_4px_20px_rgba(255,255,255,0.75)] rounded-[85px] hover:bg-[#0648c2] transition-colors duration-200">
+            <button className="px-6 py-3 w-[171px] h-[60px] text-x font-medium bg-[#0754E3] shadow-[inset_-12px_4px_17.1px_rgba(255,255,255,0.25),inset_-3px_4px_20px_rgba(255,255,255,0.75)] rounded-[85px] hover:bg-[#0648c2] transition-colors duration-200">
               Get Started
             </button>
           </div>
@@ -94,7 +92,7 @@ const Hero = () => {
                 {cards.map((card, index) => (
                   <div
                     key={index}
-                    className="w-[380px] max-w-[380px] h-[300px] bg-gradient-to-br from-gray-900 to-black border border-gray-700/50 shadow-2xl rounded-[30px] backdrop-blur-sm p-6 md:p-8 text-center hover:border-blue-500/50 hover:shadow-blue-500/20 transition-all duration-300 hover:-translate-y-2"
+                    className="w-[380px] md:w-[440px] max-w-[440px] h-[350px] bg-gradient-to-br from-gray-900 to-black border border-gray-700/50 shadow-2xl rounded-[30px] backdrop-blur-sm p-6 md:p-8 text-center hover:border-blue-500/50 hover:shadow-blue-500/20 transition-all duration-300 hover:-translate-y-2"
                   >
                     <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                       <img src={card.emoji} alt="" className="w-10 h-10 object-contain" />
