@@ -9,47 +9,42 @@ import NewFooter from './components/NewFooter';
 import FeatureSection from './components/Features';
 
 function App() {
-  const [isHome, setIsHome] = React.useState(true);
-
-  React.useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const heroSection = document.getElementById('hero');
-      if (heroSection) {
-        const heroHeight = heroSection.offsetHeight;
-        setIsHome(scrollPosition < heroHeight / 2);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <div className="relative min-h-screen w-screen bg-[#020C14] overflow-x-hidden font-outfit">
       <div className="w-full">
         <div className=" w-full">
-          <Navbar isHome={isHome}/>
+          <Navbar />
           <main className="w-full">
-            <div className="w-full ">
-              <div id="hero">
+            <div className="w-full">
+              <div id="hero" className="w-full">
                 <Hero />
               </div>
             </div>
-            <div id="about" className="w-full">
+
+            <div id="about" className="w-full ">
               <div className="w-full">
                 <Download />
                 <About />
               </div>
-              <div id="features" className="w-full">
+            </div>
+
+            <div id="features" className="w-full">
+              <div className="w-full">
                 <FeatureSection />
               </div>
             </div>
-            <div id="pricing" className="w-full">
-              <Pricing />
+
+            <div id="pricing" className="w-full ">
+              <div className="w-full">
+                <Pricing />
+              </div>
             </div>
-            <div id="faqs" className="w-full">
-              <FAQs />
+
+            <div id="faqs" className="w-full ">
+              <div className="w-full">
+                <FAQs />
+              </div>
             </div>
             <div className="w-full">
               <NewFooter />

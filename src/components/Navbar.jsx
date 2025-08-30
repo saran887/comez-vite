@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
 import Logo from '../assets/logo.svg';
 
-const Navbar = ({ isHome = false }) => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState('Home');
@@ -34,21 +34,21 @@ const Navbar = ({ isHome = false }) => {
   ];
 
   return (
-    <nav className={`fixed w-full h-20 left-0 md:left-10 top-0 z-50 px-4 sm:px-6 md:px-10 backdrop-blur-[10px] md:bg-transparent md:backdrop-blur-none ${isHome ? 'md:top-16' : 'md:top-0'} md:h-16`}>
+    <nav className="fixed w-full h-20 left-0 md:left-10 top-0 z-50 px-4 sm:px-6 md:px-10 backdrop-blur-[10px] md:bg-transparent md:backdrop-blur-none md:top-12 md:h-16">
       <div className="h-full w-full max-w-[1440px] mx-auto flex items-center md:bg-transparent ">
         {/* Logo - Left aligned */}
-        <div className="flex-shrink-0 h-[46px] flex items-center absolute left-4 md:left-6 top-1/2 -translate-y-1/2">
+        <div className="flex-shrink-0 h-[46px] flex items-center absolute left-4 md:left-32 top-1/2 -translate-y-1/2">
           <img src={Logo} alt="Comez Logo" className="h-6 w-auto" />
         </div>
         
        {/* Navigation Links */}
-<div className="hidden md:flex items-center justify-center mx-auto w-[1200px] h-[70px] 
+<div className="hidden md:flex items-center justify-center mx-auto w-[1100px] h-[80px] 
   bg-[rgba(1,34,50,0.2)] backdrop-blur-[15px] 
   shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] 
   border border-[rgba(255,255,255,0.18)] 
   rounded-[50px] px-2 box-border">
   
-  <div className="flex items-center justify-between w-full">
+  <div className="flex items-center justify-between w-full px-2">
     {navLinks.map((link, index) => (
       <button
         key={index}
@@ -58,12 +58,12 @@ const Navbar = ({ isHome = false }) => {
           setActiveLink(link.name);
         }}
         className={`relative flex items-center justify-center 
-          w-[143px] h-[48px] px-[50px] py-[14px] gap-2 rounded-[55px] transition-all duration-300
+          w-[140px] h-[60px]  py-[10px] rounded-[55px] transition-all duration-300
           ${
             activeLink === link.name
               ? "bg-[#0754E3] shadow-[inset_-4px_7px_20px_rgba(255,255,255,0.3)]"
               : "bg-transparent hover:bg-[#0754E3]/20"
-          }`}
+          }`} 
       >
         <span
           className={`text-base leading-5 text-white text-center font-light

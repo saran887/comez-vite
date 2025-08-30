@@ -154,7 +154,7 @@ const FeatureSection = () => {
     };
   }, []);
   return (
-    <div className="w-full">
+    <div className="w-full md:pt-24">
       {/* Header Section */}
       <div className="w-full pt-20 pb-20 px-4">
         <div className="max-w-4xl mx-auto">
@@ -253,7 +253,7 @@ const FeatureSection = () => {
             {/* Text Content */}
             <div className="w-full md:w-2/5 text-center md:text-left">
               <h2 
-                className="text-3xl md:text-5xl font-normal mb-6 leading-tight
+                className="text-2xl md:text-4xl font-normal mb-6 leading-tight
                          bg-gradient-to-r from-white to-[#B4B2B2]
                          bg-clip-text text-transparent justify-center" 
               >

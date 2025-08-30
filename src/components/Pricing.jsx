@@ -23,7 +23,7 @@ const ToggleSwitch = ({ isOn, handleToggle }) => (
 );
 
 const Pricing = () => {
-  const [isYearly, setIsYearly] = useState(false);
+  const isYearly = true; // Always show annual plan
 
   useEffect(() => {
     const styleElement = document.createElement('style');
@@ -39,7 +39,7 @@ const Pricing = () => {
       title: 'Android & IOS',
       monthlyPrice: '₹ 1000',
       yearlyPrice: '₹ 10,000',
-      description: 'Per month',
+      description: 'Per year',
       features: [
         'Customize Theme',
         'Re-Arrange Layout',
@@ -54,7 +54,7 @@ const Pricing = () => {
       title: 'Android,IOS & Web',
       monthlyPrice: '₹ 2000',
       yearlyPrice: '₹ 20,000',
-      description: 'Per month',
+      description: 'Per year',
       features: [
         'Customize Theme',
         'Re-Arrange Layout',
@@ -87,25 +87,16 @@ const Pricing = () => {
   };
 
   return (
-    <div className="relative bg-black min-h-screen py-20 px-4">
+    <div className="relative bg-black min-h-screen py-20 px-4 md:pt-36">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-7xl font-medium font-['Outfit'] bg-gradient-to-r from-white to-[#B4B2B2] bg-clip-text text-transparent mb-8 pb-8">Pricing</h2>
-          <div className="flex items-center justify-center gap-4 font-medium">
-            <span className={!isYearly ? 'text-white text-lg' : 'text-gray-500 text-lg'}>
-              Monthly
-            </span>
-            <ToggleSwitch
-              isOn={isYearly}
-              handleToggle={() => setIsYearly(!isYearly)}
-            />
-            <span className={isYearly ? 'text-white text-lg' : 'text-gray-500 text-lg'}>
-              Annually
-            </span>
+          <div className="text-white text-lg font-medium">
+            Annually
           </div>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-8 px-4">
+        <div className="flex flex-wrap justify-center gap-10 px-4">
           {plans.map((plan, index) => (
             <div
               key={index}
@@ -113,7 +104,7 @@ const Pricing = () => {
                 index === 1 
                   ? 'border-2 border-blue-500 scale-105 z-10 shadow-[0_10px_30px_-10px_rgba(0,112,244,0.3)]' 
                   : 'border-gray-700'
-              } w-full min-w-[394px] h-[570px] flex-1 max-w-[420px]`}
+              } w-[420px] min-w-[394px] h-[670px] flex-1 max-w-[420px]`}
             >
               <div 
                 className={`absolute w-[400px] h-[150px] -right-24 -bottom-12 bg-gradient-to-b from-[#0754E3] to-[#042E7D] blur-[150px] -rotate-15 z-0 ${
@@ -152,11 +143,11 @@ const Pricing = () => {
                 </div>
               </div>
 
-              <ul className="space-y-4 mb-10 flex-grow text-left w-full pl-8 mt-8">
+              <ul className="space-y-6 mb-10 flex-grow text-left w-full pl-8 mt-8">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-start">
                     <FiCheck className="text-white mt-1 mr-3 flex-shrink-0" />
-                    <span className="text-gray-300 text-base">{feature}</span>
+                    <span className="text-gray-300 text-xl">{feature}</span>
                   </li>
                 ))}
               </ul>
