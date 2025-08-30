@@ -50,19 +50,19 @@ const About = () => {
               <div className="flex flex-col items-start">
                 <div className="flex items-center w-full mb-4">
                   <div className="w-22 h-22 rounded-full flex-shrink-0 flex items-center justify-center mr-4">
-                    <img src={feature.icon} alt={feature.title} className="w-20 h-20"  />
+                    <img src={feature.icon} alt={feature.title} className="w-20 h-20 pt-4"  />
                   </div>
-                  <h3 className="text-[24px] text-white font-normal mb-2">
+                  <h3 className="text-2xl  text-white font-normal mb-2">
                     {feature.title}
                   </h3>
                 </div>
-                <p className="text-[#C1C1C6] pl-4 text-base md:text-lg leading-relaxed text-center md:text-left text-justify">{feature.description}</p>
+                <p className="text-[#C1C1C6] pl-4 text-base md:text-2xl leading-relaxed text-center md:text-left text-justify">{feature.description}</p>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+        <div className="mt-8 pt-12 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
           <div className="relative">
             <img 
               src={GroupImage} 
@@ -74,7 +74,7 @@ const About = () => {
             <h2 className="text-[36px] md:text-[48px] leading-[1.1] font-normal bg-[linear-gradient(88.72deg,#FFFFFF_0.7%,#B4B2B2_95.77%)] bg-clip-text text-transparent text-center md:text-left">
               User Friendly Interface
             </h2>
-            <p className="text-[#C1C1C6] text-lg leading-relaxed text-center md:text-left text-justify">
+            <p className="text-[#C1C1C6] font-outfit font-light text-2xl leading-[25px] text-justify text-center md:text-left">
               A strong user experience offers a significant competitive advantage in attracting and retaining customers. 
               You are most likely to build trust with people most easily, attract users and turn them into customers, 
               and encourage their contacts to do the same.

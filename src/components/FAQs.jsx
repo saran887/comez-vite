@@ -44,7 +44,7 @@ const FAQs = () => {
   ];
 
   return (
-    <div className="bg-black relative overflow-hidden">
+    <div className="bg-black relative overflow-hidden md:pt-24">
       {/* <Navbar/> */}
       <div className="relative z-10">
         {/* Gradient Effect */}
@@ -75,7 +75,7 @@ const FAQs = () => {
                       onClick={() => toggleFAQ(index)}
                       className="w-full py-2 text-left flex items-center justify-between focus:outline-none transition-colors duration-200"
                     >
-                      <span className="text-white text-base sm:text-lg font-medium pr-4">{faq.question}</span>
+                      <span className="text-white text-base md:text-2xl sm:text-lg font-medium pr-4">{faq.question}</span>
                       <div className="flex-shrink-0 w-8 h-8 rounded-full border-2 border-white/40 flex items-center justify-center hover:bg-white/10 transition-colors">
                         <FiPlus className={`w-4 h-4 text-white transition-transform duration-300 ${activeIndex === index ? 'transform rotate-45' : ''}`} />
                       </div>
@@ -84,7 +84,7 @@ const FAQs = () => {
                     <div 
                       className={`overflow-hidden transition-all duration-300 ${activeIndex === index ? 'max-h-96 pb-2' : 'max-h-0'}`}
                     >
-                      <div className="pt-2 text-gray-300 text-xl md:text-2xl font-outfit text-justify sm:text-base leading-relaxed">
+                      <div className="pt-2 text-gray-300 text-xl md:text-3xl font-outfit text-justify sm:text-base leading-relaxed">
                         <p>{faq.answer}</p>
                       </div>
                     </div>
