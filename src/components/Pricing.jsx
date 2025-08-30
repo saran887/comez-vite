@@ -128,7 +128,7 @@ const Pricing = () => {
                     index === 1 ? 'bg-gradient-to-r from-black via-[#0D54DB] to-black mx-[-8px] w-[calc(100%+16px)] rounded-3xl shadow-[0px_21px_88.7px_-43px_rgba(0,88,255,0.5)]' : ''
                   }`}
                 >
-                  <h3 className="text-2xl font-bold text-white text-center whitespace-nowrap">
+                  <h3 className="text-3xl font-bold text-white text-center whitespace-nowrap">
                     {plan.title}
                   </h3>
                 </div>
@@ -136,11 +136,11 @@ const Pricing = () => {
 
               <div className="flex flex-col items-center justify-center mb-8 px-10 mt-6">
                 <div className="relative text-center">
-                  <span className={`font-bold text-white ${index === 2 ? 'text-6xl' : 'text-5xl'}`}>
+                  <span className={`font-bold text-white ${index === 2 ? 'text-7xl' : 'text-6xl'}`}>
                     {isYearly ? plan.yearlyPrice : plan.monthlyPrice}
                   </span>
                   {plan.description && (
-                    <span className={`block whitespace-nowrap ${index === 2 ? 'text-2xl text-white' : 'text-sm text-gray-400'} mt-2`}>
+                    <span className={`block whitespace-nowrap ${index === 2 ? 'text-2xl text-white' : 'text-lg text-gray-400'} mt-2`}>
                       {plan.description}
                     </span>
                   )}
@@ -156,7 +156,7 @@ const Pricing = () => {
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-start">
                     <FiCheck className="text-white mt-1 mr-3 flex-shrink-0" />
-                    <span className="text-gray-300 text-base">{feature}</span>
+                    <span className="text-gray-300 text-lg">{feature}</span>
                   </li>
                 ))}
               </ul>
