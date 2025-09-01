@@ -171,7 +171,7 @@ const FeatureSection = () => {
 
       {/* Features Grid */}
       
-      <div className="w-full max-w-[120vw] overflow-hidden">
+      <div className="w-full max-w-[120vw] overflow-hidden mx-auto">
         {features.map((feature, index) => (
           <div
             key={index}
@@ -189,7 +189,7 @@ const FeatureSection = () => {
 
 
             {/* Text Content */}
-            <div className="w-full md:w-7/12 z-10 px-2 md:px-4">
+            <div className="w-full md:w-7/12 z-10 px-2 md:px-3">
               <div className="flex flex-col items-start">
                 <div className="flex items-center mb-3">
                   <div className="mr-3">

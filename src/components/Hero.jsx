@@ -60,7 +60,9 @@ const Hero = () => {
               </span>
             </h1>
           </div>
-          <p className="text-gray-200 font-outfit text-xl md:text-2x font-light tracking-wide mt-8 mb-12 max-w-2xl ml-0 mr-auto leading-relaxed text-shadow-md whitespace-nowrap pl-[30rem]">A whole E-Commerce as a piece of cake. Easily Personalize the layout of your store.</p>
+          <p className="text-gray-200 font-outfit text-xl md:text-2xl font-light tracking-wide mt-8 mb-12 w-full text-center leading-relaxed text-shadow-md px-4 whitespace-nowrap">
+            A whole E-Commerce as a piece of cake. Easily Personalize the layout of your store.
+          </p>
           <div className="w-full flex justify-center mb-4">
             <button className="px-6 py-3 w-[171px] h-[60px] text-x font-medium bg-[#0754E3] shadow-[inset_-12px_4px_17.1px_rgba(255,255,255,0.25),inset_-3px_4px_20px_rgba(255,255,255,0.75)] rounded-[85px] hover:bg-[#0648c2] transition-colors duration-200">
               Get Started
@@ -87,20 +89,20 @@ const Hero = () => {
 
           {/* Cards Section */}
           <div className="relative mt-8 md:-mt-28 z-30">
-            <div className="w-full max-w-6xl mx-auto px-4">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-36 justify-items-center">
+            <div className="w-full max-w-8xl mx-160">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-36 justify-items-center">
                 {cards.map((card, index) => (
                   <div
                     key={index}
-                    className="w-[380px] md:w-[440px] max-w-[440px] h-[350px] bg-gradient-to-br from-gray-900 to-black border border-gray-700/50 shadow-2xl rounded-[30px] backdrop-blur-sm p-6 md:p-8 text-center hover:border-blue-500/50 hover:shadow-blue-500/20 transition-all duration-300 hover:-translate-y-2"
+                    className="w-[390px] max-w-[550px] h-[300px] bg-gradient-to-br from-gray-900 to-black border border-gray-700/50 shadow-3xl rounded-3xl backdrop-blur-sm p-7 text-center hover:border-blue-500/50 hover:shadow-blue-500/20 transition-all duration-300 hover:-translate-y-1"
                   >
                     <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                      <img src={card.emoji} alt="" className="w-10 h-10 object-contain" />
+                      <img src={card.emoji} alt="" className="w-8 h-8 object-contain" />
                     </div>
-                    <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-white to-[#B4B2B2] text-transparent bg-clip-text">
+                    <h3 className="text-xl font-bold mb-2 bg-gradient-to-r from-white to-[#B4B2B2] text-transparent bg-clip-text">
                       {card.title}
                     </h3>
-                    <p className="text-gray-300 text-lg font-outfit text-center">
+                    <p className="text-gray-300 text-sm leading-relaxed line-clamp-3 font-outfit text-center">
                       {card.description}
                     </p>
                   </div>

@@ -36,32 +36,30 @@ const Pricing = () => {
 
   const plans = [
     {
-      title: 'Android & IOS',
+      title: 'Web',
       monthlyPrice: '₹ 1000',
       yearlyPrice: '₹ 10,000',
       description: 'Per year',
       features: [
-        'Customize Theme',
+        'Customize Theme (Limited)',
         'Re-Arrange Layout',
         'InBuilt Support',
         'International Payments',
-        '0% Charges For UPI Payment',
-        '0% Charges For RuPay Debit Card',
+        'No Entra Charges',
       ],
       buttonText: 'Get Started',
     },
     {
-      title: 'Android,IOS & Web',
+      title: 'Web,Android&IOS',
       monthlyPrice: '₹ 2000',
       yearlyPrice: '₹ 20,000',
       description: 'Per year',
       features: [
-        'Customize Theme',
+        'Customize Theme (Limited)',
         'Re-Arrange Layout',
         'InBuilt Support',
         'International Payments',
-        '0% Charges For UPI Payment',
-        '0% Charges For RuPay Debit Card',
+        'No Extra Charges',
       ],
       buttonText: 'Get Started',
       popular: true,
@@ -75,8 +73,7 @@ const Pricing = () => {
         'Re-Arrange Layout',
         'InBuilt Support',
         'International Payments',
-        '0% Charges For UPI Payment',
-        '0% Charges For RuPay Debit Card',
+        'No Extra Charges',
       ],
       buttonText: 'Get Started',
     },
@@ -88,7 +85,7 @@ const Pricing = () => {
 
   return (
     <div className="relative bg-black min-h-screen py-20 px-4 md:pt-36">
-      <div className="max-w-7xl mx-auto">
+      <div className="w-full max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-7xl font-medium font-['Outfit'] bg-gradient-to-r from-white to-[#B4B2B2] bg-clip-text text-transparent mb-8 pb-8">Pricing</h2>
           {/*<div className="text-white text-lg font-medium">
@@ -96,7 +93,7 @@ const Pricing = () => {
           </div> */}
         </div>
 
-        <div className="flex flex-wrap justify-center gap-10 px-4">
+        <div className="flex flex-col md:flex-row justify-between items-stretch gap-8 w-full">
           {plans.map((plan, index) => (
             <div
               key={index}
@@ -104,14 +101,14 @@ const Pricing = () => {
                 index === 1 
                   ? 'border border-blue-500 scale-105 z-10 shadow-[0_10px_30px_-10px_rgba(0,112,244,0.3)]' 
                   : 'border-gray-700'
-              } w-[500px] min-w-[420px] h-[670px] flex-1 max-w-[560px]`}
+              } w-full md:w-[32%] h-[530px] flex-shrink-0`}
             >  <div className="w-full">
                 <div 
                   className={`${index === 1 ? 'py-8' : index === 2 ? 'py-6' : 'py-8'} px-6 w-full ${
-                    index === 1 ? 'bg-gradient-to-r from-black via-[#0D54DB] to-black mx-[-8px] w-[calc(100%+16px)] rounded-3xl shadow-[0px_21px_88.7px_-43px_rgba(0,88,255,0.5)]' : ''
+                    index === 1 ? 'bg-gradient-to-r from-black via-[#0D54DB] to-black mx-0 md:mx-[-8px] w-full md:w-[calc(100%+16px)] rounded-3xl shadow-[0px_21px_88.7px_-43px_rgba(0,88,255,0.5)]' : ''
                   }`}
                 >
-                  <h3 className="text-2xl font-bold text-white text-center whitespace-nowrap">
+                  <h3 className="text-2xl font-bold text-white text-center">
                     {plan.title}
                   </h3>
                 </div>
@@ -145,7 +142,7 @@ const Pricing = () => {
               </ul>
 
               <div 
-                className={`absolute w-[520px] h-[150px] -right-24 -bottom-12 bg-gradient-to-b from-[#0754E3] to-[#042E7D] blur-[150px] -rotate-15 z-0 ${
+                className={`absolute w-full md:w-[520px] h-[150px] -right-12 md:-right-24 -bottom-12 bg-gradient-to-b from-[#0754E3] to-[#042E7D] blur-[150px] -rotate-15 z-0 ${
                   index === 1 ? 'opacity-80' : 'opacity-60'
                 }`}
               />
