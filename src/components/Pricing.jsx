@@ -101,7 +101,7 @@ const Pricing = () => {
                 index === 1 
                   ? 'border border-blue-500 scale-105 z-10 shadow-[0_10px_30px_-10px_rgba(0,112,244,0.3)]' 
                   : 'border-gray-700'
-              } w-full md:w-[32%] h-[530px] flex-shrink-0`}
+              } w-full md:w-[32%] h-[700px] flex-shrink-0`}
             >  <div className="w-full">
                 <div 
                   className={`${index === 1 ? 'py-8' : index === 2 ? 'py-6' : 'py-8'} px-6 w-full ${
@@ -120,21 +120,21 @@ const Pricing = () => {
                     {isYearly ? plan.yearlyPrice : plan.monthlyPrice}
                   </span>
                   {plan.description && (
-                    <span className={`block whitespace-nowrap ${index === 2 ? 'text-2xl text-white' : 'text-sm text-gray-400'} mt-2`}>
+                    <span className={`block whitespace-nowrap ${index === 2 ? 'text-2xl text-white' : 'text-sm text-gray-400'} mt-3`}>
                       {plan.description}
                     </span>
                   )}
                   {plan.SubTitle && (
-                    <span className={`block ${index === 2 ? 'text-xl text-white' : 'text-gray-300 text-sm'} mt-2`}>
+                    <span className={`block ${index === 2 ? 'text-xl text-white' : 'text-gray-300 text-sm'} mt-3`}>
                       {plan.SubTitle}
                     </span>
                   )}
                 </div>
               </div>
 
-              <ul className="space-y-6 mb-10 flex-grow text-left w-full pl-8 mt-8">
+              <ul className="space-y-10 mb-10 flex-grow text-left w-full pl-8 mt-8">
                 {plan.features.map((feature, i) => (
-                  <li key={i} className="flex items-start">
+                  <li key={i} className="flex items-start ">
                     <FiCheck className="text-white mt-1 mr-3 flex-shrink-0" />
                     <span className="text-gray-300 text-xl">{feature}</span>
                   </li>

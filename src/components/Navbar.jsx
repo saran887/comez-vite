@@ -35,8 +35,8 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed w-full h-28 left-0 top-4 z-50 px-2 sm:px-4 lg:px-6 bg-transparent">
-      <div className="h-full w-full max-w-7xl mx-auto flex items-center justify-between px-4">
+    <nav className="fixed w-full h-28 left-0 md:top-4 top-0 z-50 px-2 sm:px-4 lg:px-6 bg-transparent">
+      <div className="h-full w-full max-w-7xl lg:max-w-9xl mx-auto flex items-center justify-between px-4">
         {/* Logo - Left aligned */}
         <div className="flex-shrink-0">
           <img src={Logo} alt="Comez Logo" className="h-6 w-auto" />
@@ -44,7 +44,7 @@ const Navbar = () => {
         
         {/* Navigation Links - Desktop */}
         <div className="hidden md:flex items-center justify-centre flex-1 md:pl-28">
-          <div className="flex items-center h-[70px] bg-[rgba(1,34,50,0.2)] backdrop-blur-[15px] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] border border-[rgba(255,255,255,0.18)] rounded-[35px] ">
+          <div className="flex items-center h-[90px] bg-[rgba(1,34,50,0.2)] backdrop-blur-[15px] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] border border-[rgba(255,255,255,0.18)] rounded-[45px] ">
             {navLinks.map((link, index) => (
               <Link
                 key={index}
