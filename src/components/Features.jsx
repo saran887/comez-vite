@@ -235,7 +235,7 @@ const FeatureSection = () => {
       </div>
 
       {/* Available on All Devices Section */}
-      <div className="relative pt-16 pb-28 pl-12 pr-4 md:pl-15 md:pr-12 text-white overflow-hidden rounded-b-[120px] bg-[url('../src/assets/Storebg.svg')] bg-cover h-[500px] bg-center bg-no-repeat">
+      <div className="relative pt-16 pb-28 pl-12 pr-4 md:pl-15 md:pr-12 text-white overflow-hidden rounded-b-[120px] md:bg-[url('../src/assets/Storebg.svg')] md:bg-cover md:h-[500px] md:bg-center md:bg-no-repeat">
         {/* Background Image */}
         
 
@@ -255,7 +255,7 @@ const FeatureSection = () => {
                          bg-gradient-to-r from-white to-[#B4B2B2]
                          bg-clip-text text-transparent justify-center" 
               >
-                Available on <span className="font-metal ml-2"> All your Devices </span>
+                Available on <span className="font-metal ml-2 whitespace-nowrap">All your Devices</span>
               </h2>
               <p className="text-[#C1C1C1] text-base md:text-2xl  max-w-2xl mx-auto md:mx-0 text-left">
                 The question lies upon your mind that the way we provide application at low cost. 

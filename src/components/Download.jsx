@@ -15,13 +15,13 @@ const Download = () => {
           className="w-full text-center mb-8 md:mb-12 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.2] md:leading-[100px] lg:leading-[120px]
                    bg-gradient-to-r from-white to-[#B4B2B2]/90 bg-clip-text text-transparent"
         >
-          Passionate on Ecommerce <br className="hidden sm:block"/>Business? <span className="font-metal text-[100px] whitespace-nowrap">Try Comez</span>
+          Passionate on Ecommerce <br className="hidden sm:block"/>Business? <span className="font-metal text-6xl md:text-7xl lg:text-8xl xl:text-[100px] whitespace-nowrap">Try Comez</span>
         </h2>
         
         {/* Subtitle */}
         <div className="w-full max-w-[100%] mx-auto mb-8 sm:mb-12 md:mb-16 overflow-visible">
           <p 
-            className="text-[#FFFFFF] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-outfit-regular font-normal whitespace-nowrap px-4 text-center "
+            className="text-[#FFFFFF] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-outfit-regular font-normal md:whitespace-nowrap px-4 text-center "
           >
             We assist you in publishing your store app on both platforms.
           </p>

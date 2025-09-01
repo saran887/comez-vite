@@ -60,7 +60,7 @@ const Hero = () => {
               </span>
             </h1>
           </div>
-          <p className="text-gray-200 font-outfit text-xl md:text-2xl font-light tracking-wide mt-8 mb-12 w-full text-center leading-relaxed text-shadow-md px-4 whitespace-nowrap">
+          <p className="text-gray-200 font-outfit text-xl md:text-2xl font-light tracking-wide mt-8 mb-12 w-full text-center leading-relaxed text-shadow-md px-4 md:whitespace-nowrap">
             A whole E-Commerce as a piece of cake. Easily Personalize the layout of your store.
           </p>
           <div className="w-full flex justify-center mb-4">
