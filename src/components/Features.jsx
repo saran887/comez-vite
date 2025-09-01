@@ -171,7 +171,7 @@ const FeatureSection = () => {
 
       {/* Features Grid */}
       
-      <div className="w-full max-w-[100vw] overflow-hidden">
+      <div className="w-full max-w-[120vw] overflow-hidden">
         {features.map((feature, index) => (
           <div
             key={index}
@@ -187,9 +187,10 @@ const FeatureSection = () => {
             {/* Semi-transparent overlay for better text readability */}
             <div className="absolute inset-0 bg-black/30 -z-10"></div>
 
+
             {/* Text Content */}
-            <div className="w-full md:w-5/12 mb-4 md:mb-0 z-10 px-2 md:px-6">
-              <div className="flex flex-col items-start mb-4">
+            <div className="w-full md:w-7/12 z-10 px-2 md:px-4">
+              <div className="flex flex-col items-start">
                 <div className="flex items-center mb-3">
                   <div className="mr-3">
                     <div className={`flex items-center justify-center ${
@@ -210,21 +211,22 @@ const FeatureSection = () => {
                     {feature.title}
                   </h2>
                 </div>
-                <p className="text-[#C1C1C1] text-2xl md:text-3xl leading-relaxed text-justify mt-2">
+                <p className="text-[#C1C1C1] text-2xl md:text-3xl md:w-5/8 text-justify mt-2">
                   {feature.description}
                 </p>
               </div>
             </div>
 
+
             {/* Feature Image */}
-            <div className={`w-full md:w-7/12 flex items-center ${index % 2 === 0 ? 'md:justify-end pr-0 ' : 'md:justify-start pl-0'}`}>
+            <div className={`w-full md:w-7/12 flex items-center ${index % 2 === 0 ? 'md:justify-end  md:pl-32' : 'md:justify-start  md:pr-32'}`}>
               <div className="w-full max-w-md">
                 <img
                   src={feature.image}
                   alt={feature.title}
-                  className={`w-[500px] h-[350px] md:h-[900px] transition-transform duration-300 pt-8 hover:scale-110 ${
+                  className={`w-[450px] h-[300px] md:w-[600px] md:h-[800px]  transition-transform duration-300 hover:scale-110 ${
                     index === 0 ? 'scale-90' : 'scale-100'
-                  } mt-auto max-w-full ${index % 2 === 0 ? 'ml-auto mr-0' : 'ml-0 mr-auto'} max-h-[500px]`}
+                  } max-w-full max-h-[450px]`}
                 />
               </div>
             </div>
@@ -233,13 +235,9 @@ const FeatureSection = () => {
       </div>
 
       {/* Available on All Devices Section */}
-      <div className="relative pt-16 pb-28 pl-12 pr-4 md:pl-15 md:pr-12 bg-gradient-to-b from-[#000000] via-[#000000] via-80% to-[#042E7D] text-white overflow-hidden rounded-b-[120px]">
+      <div className="relative pt-16 pb-28 pl-12 pr-4 md:pl-15 md:pr-12 text-white overflow-hidden rounded-b-[120px] bg-[url('../src/assets/Storebg.svg')] bg-cover h-[500px] bg-center bg-no-repeat">
         {/* Background Image */}
-        <div 
-          className="absolute inset-0 opacity-10 bg-cover bg-center bg-no-repeat -z-10 rounded-b-[250px]"
-          style={{ backgroundImage: 'url(../src/assets/install.svg)' }}
-          aria-hidden="true"
-        />
+        
 
         <div className="container mx-auto relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-10">
@@ -251,15 +249,15 @@ const FeatureSection = () => {
             </div>
 
             {/* Text Content */}
-            <div className="w-full md:w-2/5 text-center md:text-left">
+            <div className="w-full md:w-3/6 text-center md:text-left">
               <h2 
-                className="text-2xl md:text-4xl font-normal mb-6 leading-tight
+                className="text-4xl md:text-6xl font-normal mb-6 leading-tight
                          bg-gradient-to-r from-white to-[#B4B2B2]
                          bg-clip-text text-transparent justify-center" 
               >
-                Available on <em className="not-italic">All your Devices</em>
+                Available on <span className="font-metal ml-2"> All your Devices </span>
               </h2>
-              <p className="text-[#C1C1C1] text-base md:text-3xl leading-relaxed max-w-2xl mx-auto md:mx-0 text-justify">
+              <p className="text-[#C1C1C1] text-base md:text-2xl  max-w-2xl mx-auto md:mx-0 text-left">
                 The question lies upon your mind that the way we provide application at low cost. 
                 We developed using Google&apos;s <strong>Flutter</strong> Framework, which converts 
                 single code into two platforms of different applications. So that we can provide both 

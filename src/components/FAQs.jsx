@@ -84,7 +84,7 @@ const FAQs = () => {
                     <div 
                       className={`overflow-hidden transition-all duration-300 ${activeIndex === index ? 'max-h-96 pb-2' : 'max-h-0'}`}
                     >
-                      <div className="pt-2 text-gray-300 text-xl md:text-3xl font-outfit text-justify sm:text-base leading-relaxed">
+                      <div className="pt-2 text-gray-300 text-lg md:text-xl font-outfit text-justify sm:text-base">
                         <p>{faq.answer}</p>
                       </div>
                     </div>

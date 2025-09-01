@@ -22,8 +22,8 @@ const features = [
   },
   {
     icon: Why3,
-    title: "No charges for UPI Payments",
-    description: "We don't cost for your Payments. We all hate being nickel-and-dimed. we likely to lose a customer over a small extra charge."
+    title: "No hidden charges",
+    description: "We don’t take any extra commission on your sales. Unlike platforms like other platforms that charge additional fees on each purchase, you keep what you earn - no hidden costs, no surprises."
   },
   {
     icon: Why4,
@@ -49,10 +49,10 @@ const About = () => {
             <div key={index} className="p-8 rounded-xl hover:shadow-lg transition-all hover:-translate-y-1">
               <div className="flex flex-col items-start">
                 <div className="flex items-center w-full mb-4">
-                  <div className="w-22 h-22 rounded-full flex-shrink-0 flex items-center justify-center mr-4">
-                    <img src={feature.icon} alt={feature.title} className="w-20 h-20 pt-4"  />
+                  <div className="w-28 h-28 rounded-full flex-shrink-0 flex items-center justify-center">
+                    <img src={feature.icon} alt={feature.title} className="w-28 h-28 pt-4"  />
                   </div>
-                  <h3 className="text-2xl  text-white font-normal mb-2">
+                  <h3 className="text-3xl font-medium text-white mb-4">
                     {feature.title}
                   </h3>
                 </div>
@@ -71,10 +71,10 @@ const About = () => {
             />
           </div>
           <div className="space-y-6 pl-0 md:pl-0">
-            <h2 className="text-[36px] md:text-[48px] leading-[1.1] font-normal bg-[linear-gradient(88.72deg,#FFFFFF_0.7%,#B4B2B2_95.77%)] bg-clip-text text-transparent text-center md:text-left">
+            <h2 className="text-4xl md:text-5xl font-medium bg-[linear-gradient(88.72deg,#FFFFFF_0.7%,#B4B2B2_95.77%)] bg-clip-text text-transparent text-center md:text-left">
               User Friendly Interface
             </h2>
-            <p className="text-[#C1C1C6] font-outfit font-light text-2xl leading-[25px] text-justify text-center md:text-left">
+            <p className="text-[#C1C1C6] font-outfit font-light text-2xl text-justify text-center md:text-left">
               A strong user experience offers a significant competitive advantage in attracting and retaining customers. 
               You are most likely to build trust with people most easily, attract users and turn them into customers, 
               and encourage their contacts to do the same.

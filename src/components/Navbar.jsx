@@ -48,7 +48,7 @@ const Navbar = () => {
   border border-[rgba(255,255,255,0.18)] 
   rounded-[50px] px-2 box-border">
   
-  <div className="flex items-center justify-between w-full px-2">
+  <div className="flex items-center justify-between w-full">
     {navLinks.map((link, index) => (
       <button
         key={index}

@@ -91,9 +91,9 @@ const Pricing = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-7xl font-medium font-['Outfit'] bg-gradient-to-r from-white to-[#B4B2B2] bg-clip-text text-transparent mb-8 pb-8">Pricing</h2>
-          <div className="text-white text-lg font-medium">
+          {/*<div className="text-white text-lg font-medium">
             Annually
-          </div>
+          </div> */}
         </div>
 
         <div className="flex flex-wrap justify-center gap-10 px-4">
@@ -102,18 +102,10 @@ const Pricing = () => {
               key={index}
               className={`relative rounded-3xl overflow-hidden bg-black border ${
                 index === 1 
-                  ? 'border-2 border-blue-500 scale-105 z-10 shadow-[0_10px_30px_-10px_rgba(0,112,244,0.3)]' 
+                  ? 'border border-blue-500 scale-105 z-10 shadow-[0_10px_30px_-10px_rgba(0,112,244,0.3)]' 
                   : 'border-gray-700'
-              } w-[420px] min-w-[394px] h-[670px] flex-1 max-w-[420px]`}
-            >
-              <div 
-                className={`absolute w-[400px] h-[150px] -right-24 -bottom-12 bg-gradient-to-b from-[#0754E3] to-[#042E7D] blur-[150px] -rotate-15 z-0 ${
-                  index === 1 ? 'opacity-80' : 'opacity-60'
-                }`}
-              />
-              
-
-              <div className="w-full">
+              } w-[500px] min-w-[420px] h-[670px] flex-1 max-w-[560px]`}
+            >  <div className="w-full">
                 <div 
                   className={`${index === 1 ? 'py-8' : index === 2 ? 'py-6' : 'py-8'} px-6 w-full ${
                     index === 1 ? 'bg-gradient-to-r from-black via-[#0D54DB] to-black mx-[-8px] w-[calc(100%+16px)] rounded-3xl shadow-[0px_21px_88.7px_-43px_rgba(0,88,255,0.5)]' : ''
@@ -152,12 +144,14 @@ const Pricing = () => {
                 ))}
               </ul>
 
-              
-            
+              <div 
+                className={`absolute w-[520px] h-[150px] -right-24 -bottom-12 bg-gradient-to-b from-[#0754E3] to-[#042E7D] blur-[150px] -rotate-15 z-0 ${
+                  index === 1 ? 'opacity-80' : 'opacity-60'
+                }`}
+              />
             </div>
           ))}
         </div>
-
       </div>
     </div>
   );
