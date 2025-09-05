@@ -43,6 +43,7 @@ const Hero = () => {
 
   return (
     <div
+      id="home"
       className="w-full min-h-screen flex flex-col items-center justify-between text-white relative overflow-hidden bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${Herobg})` }}
     >

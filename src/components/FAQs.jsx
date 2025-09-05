@@ -44,7 +44,8 @@ const FAQs = () => {
   ];
 
   return (
-    <div className="bg-black relative overflow-hidden md:pt-24">
+    <section id="faqs" className="bg-black relative overflow-hidden md:pt-24">
+      <div id="faqs-wrapper">
       {/* <Navbar/> */}
       <div className="relative z-10">
         {/* Gradient Effect */}
@@ -58,7 +59,7 @@ const FAQs = () => {
               FAQ's
             </h2>
             
-            <div className="space-y-4 sm:space-y-6 w-full max-w-7xl mx-auto px-2 sm:px-4">
+            <div className="space-y-4 sm:space-y-6 w-full max-w-[81rem] mx-auto px-2 sm:px-4 lg:px-4">
               {faqs.map((faq, index) => (
                 <div 
                   id={`faq-${index}`}
@@ -95,7 +96,8 @@ const FAQs = () => {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </section>
   );
 };
 

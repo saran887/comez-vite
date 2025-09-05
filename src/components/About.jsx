@@ -52,11 +52,11 @@ const About = () => {
                   <div className="w-28 h-28 rounded-full flex-shrink-0 flex items-center justify-center">
                     <img src={feature.icon} alt={feature.title} className="w-28 h-28 pt-4"  />
                   </div>
-                  <h3 className="text-3xl font-medium text-white mb-4">
+                  <h3 className="md:text-3xl text-xl font-medium text-white mb-4">
                     {feature.title}
                   </h3>
                 </div>
-                <p className="text-[#C1C1C6] pl-4 text-base md:text-2xl leading-relaxed text-center md:text-left text-justify">{feature.description}</p>
+                <p className="text-[#C1C1C6] pl-4 text-xl md:text-2xl leading-relaxed text-center md:text-left text-justify">{feature.description}</p>
               </div>
             </div>
           ))}

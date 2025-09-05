@@ -15,7 +15,7 @@ const Download = () => {
           className="w-full text-center mb-8 md:mb-12 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.2] md:leading-[100px] lg:leading-[120px]
                    bg-gradient-to-r from-white to-[#B4B2B2]/90 bg-clip-text text-transparent"
         >
-          Passionate on Ecommerce <br className="hidden sm:block"/>Business? <span className="font-metal text-6xl md:text-7xl lg:text-8xl xl:text-[100px] whitespace-nowrap">Try Comez</span>
+          Passionate on Ecommerce <br className="hidden sm:block"/>Business? <span className="font-metal text-[70px] md:text-[100px] whitespace-nowrap">Try Comez</span>
         </h2>
         
         {/* Subtitle */}
