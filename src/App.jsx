@@ -5,7 +5,8 @@ import Pricing from './components/Pricing';
 import FAQs from './components/FAQs';
 import Download from './components/Download';
 import About from './components/About';
-import NewFooter from './components/NewFooter';
+import Footer from './components/NewFooter';
+
 import FeatureSection from './components/Features';
 
 function App() {
@@ -46,9 +47,11 @@ function App() {
                 <FAQs />
               </div>
             </div>
+
             <div className="w-full">
-              <NewFooter />
+              <Footer />
             </div>
+            
           </main>
         </div>
       </div>

@@ -39,7 +39,7 @@ const Pricing = () => {
       title: 'Web',
       monthlyPrice: '₹ 1000',
       yearlyPrice: '₹ 10,000',
-      description: 'Per year',
+      description: 'Per User/Year',
       features: [
         'Customize Theme (Limited)',
         'Re-Arrange Layout',
@@ -53,7 +53,7 @@ const Pricing = () => {
       title: 'Web,Android&IOS',
       monthlyPrice: '₹ 2000',
       yearlyPrice: '₹ 20,000',
-      description: 'Per year',
+      description: 'Per User/Year',
       features: [
         'Customize Theme (Limited)',
         'Re-Arrange Layout',
@@ -84,9 +84,9 @@ const Pricing = () => {
   };
 
   return (
-    <div className="relative bg-black min-h-screen py-20 px-4 md:pt-36">
-      <div className="w-full max-w-7xl mx-auto px-4">
-        <div className="text-center mb-16">
+    <div className="relative bg-black min-h-[calc(100vh-6rem)] py-4 md:pt-8 lg:pt-14 xl:pt-20">
+      <div className="w-full max-w-7xl mx-auto px-2">
+        <div className="text-center  mb-16">
           <h2 className="text-7xl font-medium font-['Outfit'] bg-gradient-to-r from-white to-[#B4B2B2] bg-clip-text text-transparent mb-8 pb-8">Pricing</h2>
           {/*<div className="text-white text-lg font-medium">
             Annually
@@ -119,13 +119,14 @@ const Pricing = () => {
                   <span className={`font-bold text-white ${index === 2 ? 'text-6xl' : 'text-5xl'}`}>
                     {isYearly ? plan.yearlyPrice : plan.monthlyPrice}
                   </span>
+                 ${index !== 2 && <br></br>} 
                   {plan.description && (
-                    <span className={`block whitespace-nowrap ${index === 2 ? 'text-2xl text-white' : 'text-sm text-gray-400'} mt-3`}>
+                    <span className={`block whitespace-nowrap ${index === 2 ? 'text-2xl text-white' : 'text-sm text-gray-400'} mt-2`}>
                       {plan.description}
                     </span>
                   )}
                   {plan.SubTitle && (
-                    <span className={`block ${index === 2 ? 'text-xl text-white' : 'text-gray-300 text-sm'} mt-3`}>
+                    <span className={`block ${index === 2 ? 'text-xl text-white' : 'text-gray-300 text-sm'} mt-2`}>
                       {plan.SubTitle}
                     </span>
                   )}
@@ -136,7 +137,7 @@ const Pricing = () => {
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-start ">
                     <FiCheck className="text-white mt-1 mr-3 flex-shrink-0" />
-                    <span className="text-gray-300 text-xl">{feature}</span>
+                    <span className="text-gray-300 text-base md:text-xl">{feature}</span>
                   </li>
                 ))}
               </ul>

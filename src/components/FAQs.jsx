@@ -44,7 +44,8 @@ const FAQs = () => {
   ];
 
   return (
-    <div className="bg-black relative overflow-hidden md:pt-24">
+    <section id="faqs" className="bg-black relative overflow-hidden md:pt-24">
+      <div id="faqs-wrapper">
       {/* <Navbar/> */}
       <div className="relative z-10">
         {/* Gradient Effect */}
@@ -58,16 +59,16 @@ const FAQs = () => {
               FAQ's
             </h2>
             
-            <div className="space-y-4 sm:space-y-6 w-full max-w-7xl mx-auto px-6 sm:px-6">
+            <div className="space-y-4 sm:space-y-6 w-full max-w-[81rem] mx-auto px-2 sm:px-4 lg:px-4">
               {faqs.map((faq, index) => (
                 <div 
                   id={`faq-${index}`}
                   key={index} 
-                  className={`bg-black/90 overflow-hidden border-2 border-gray-700/50 hover:border-gray-600/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 w-full relative px-5 sm:px-6 py-3 rounded-2xl`}
+                  className={`bg-black/90 overflow-hidden border-2 border-gray-700/50 hover:border-gray-600/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 w-full max-w-7xl py-4 mx-auto relative px-6 sm:px-8 rounded-2xl`}
                 >
                   {/* Gradient Effect for all FAQ cards */}
                   <div 
-                    className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none w-[200px] h-[300px] bg-gradient-to-r from-[#0754E3]/60 via-[#0754E3]/10 to-transparent blur-[80px] z-0"
+                    className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none w-[120px] h-[200px] bg-gradient-to-r from-[#0754E3]/60 via-[#0754E3]/10 to-transparent blur-[80px] z-0"
                   />
                   
                   <div className="relative z-10">
@@ -95,7 +96,8 @@ const FAQs = () => {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </section>
   );
 };
 

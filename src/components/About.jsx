@@ -23,7 +23,7 @@ const features = [
   {
     icon: Why3,
     title: "No hidden charges",
-    description: "We don’t take any extra commission on your sales. Unlike platforms like other platforms that charge additional fees on each purchase, you keep what you earn - no hidden costs, no surprises."
+    description: "We don't take any extra commission on your sales. Unlike platforms like other platforms that charge additional fees on each purchase, you keep what you earn - no hidden costs, no surprises."
   },
   {
     icon: Why4,
@@ -39,7 +39,7 @@ const About = () => {
     }}>
       <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center mb-12 md:mb-16">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-outfit mb-4 md:mb-6 text-white">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-outfit mb-4 md:mb-6 text-white text-center w-full">
             Why Comez?
           </h1>
         </div>
@@ -71,7 +71,7 @@ const About = () => {
             />
           </div>
           <div className="space-y-6 pl-0 md:pl-0">
-            <h2 className="text-4xl md:text-5xl font-medium bg-[linear-gradient(88.72deg,#FFFFFF_0.7%,#B4B2B2_95.77%)] bg-clip-text text-transparent text-center md:text-left">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-medium bg-[linear-gradient(88.72deg,#FFFFFF_0.7%,#B4B2B2_95.77%)] bg-clip-text text-transparent text-center w-full">
               User Friendly Interface
             </h2>
             <p className="text-[#C1C1C6] font-outfit font-light text-2xl text-justify text-center md:text-left">

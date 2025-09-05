@@ -20,19 +20,64 @@ const Navbar = () => {
         const isScrolled = window.scrollY > 10;
         if (isScrolled !== scrolled) setScrolled(isScrolled);
       }
+
+      const scrollPosition = window.scrollY + 100;
+      const sections = ['home', 'about', 'features', 'pricing', 'faqs'];
+      let newActiveLink = 'Home';
+      
+      // Check if we're at the bottom of the page or in FAQ section
+      const faqSection = document.getElementById('faqs');
+      if (faqSection) {
+        const faqRect = faqSection.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        
+        // If FAQ section is in view or we're at the bottom of the page
+        if (faqRect.top <= windowHeight * 0.5 || 
+            (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
+          newActiveLink = 'FAQs';
+        } else {
+          // Check other sections if not in FAQ section
+          for (const section of sections) {
+            if (section === 'faqs') continue;
+            
+            const element = document.getElementById(section);
+            if (element) {
+              const sectionTop = element.offsetTop;
+              const sectionHeight = element.offsetHeight;
+              
+              if (scrollPosition >= sectionTop - 100 && scrollPosition < sectionTop + sectionHeight - 100) {
+                newActiveLink = section === 'home' ? 'Home' : section.charAt(0).toUpperCase() + section.slice(1);
+                break;
+              }
+            }
+          }
+        }
+      }
+      
+      // Always update active link to ensure it's current
+      setActiveLink(prevLink => newActiveLink !== prevLink ? newActiveLink : prevLink);
     };
+    
     handleScroll();
-    document.addEventListener('scroll', handleScroll, { passive: true });
-    return () => document.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [scrolled]);
 
   const navLinks = [
-    { name: 'Home', action: () => window.scrollTo({ top: 0, behavior: 'smooth' }) },
+    { name: 'Home', section: 'home', action: () => window.scrollTo({ top: 0, behavior: 'smooth' }) },
     { name: 'About', section: 'about' },
     { name: 'Features', section: 'features' },
     { name: 'Pricing', section: 'pricing' },
     { name: 'FAQs', section: 'faqs' },
   ];
+
+  // Add id to the hero section for home detection
+  useEffect(() => {
+    const heroSection = document.querySelector('section');
+    if (heroSection && !heroSection.id) {
+      heroSection.id = 'home';
+    }
+  }, []);
 
   return (
     <nav className="fixed w-full h-28 left-0 md:top-4 top-0 z-50 px-2 sm:px-4 lg:px-6 bg-transparent">
@@ -44,20 +89,21 @@ const Navbar = () => {
         
         {/* Navigation Links - Desktop */}
         <div className="hidden md:flex items-center justify-centre flex-1 md:pl-28">
-          <div className="flex items-center h-[80px] bg-[rgba(1,34,50,0.2)] backdrop-blur-[15px] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] border border-[rgba(255,255,255,0.18)] rounded-[45px] ">
+          <div className="flex items-center h-[90px] bg-[rgba(1,34,50,0.2)] backdrop-blur-[15px] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] border border-[rgba(255,255,255,0.18)] rounded-[45px] ">
             {navLinks.map((link, index) => (
               <Link
                 key={index}
-                to={link.section || ''}
+                to={link.section === 'home' ? '' : link.section}
                 spy={true}
                 smooth={true}
                 duration={500}
                 offset={-100}
+                onSetActive={() => setActiveLink(link.name)}
                 onClick={() => {
                   setActiveLink(link.name);
-                  if (!link.section) link.action();
+                  if (link.section === 'home') link.action();
                 }}
-                className={`relative flex items-center justify-center w-40 h-14 mx-2 rounded-[30px] cursor-pointer transition-all duration-300 ${
+                className={`relative flex items-center justify-center w-36 h-14 mx-1.5 rounded-[28px] cursor-pointer transition-all duration-300 ${
                   activeLink === link.name
                     ? "bg-[#0754E3] shadow-[inset_-4px_7px_20px_rgba(255,255,255,0.3)]"
                     : "bg-transparent hover:bg-[#0754E3]/20"
