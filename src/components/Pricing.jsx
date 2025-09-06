@@ -85,7 +85,7 @@ const Pricing = () => {
 
   return (
     <div className="relative bg-black min-h-[calc(100vh-6rem)] py-4 md:pt-8 lg:pt-14 xl:pt-20">
-      <div className="w-full max-w-7xl mx-auto px-2">
+      <div className="w-full lg:max-w-[82em] mx-auto px-2">
         <div className="text-center  mb-16">
           <h2 className="text-7xl font-medium font-['Outfit'] bg-gradient-to-r from-white to-[#B4B2B2] bg-clip-text text-transparent mb-8 pb-8">Pricing</h2>
           {/*<div className="text-white text-lg font-medium">
@@ -93,7 +93,7 @@ const Pricing = () => {
           </div> */}
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-stretch gap-8 w-full">
+        <div className="flex flex-col md:flex-row justify-between items-stretch gap-8   w-full">
           {plans.map((plan, index) => (
             <div
               key={index}
@@ -101,7 +101,7 @@ const Pricing = () => {
                 index === 1 
                   ? 'border border-blue-500 scale-105 z-10 shadow-[0_10px_30px_-10px_rgba(0,112,244,0.3)]' 
                   : 'border-gray-700'
-              } w-full md:w-[32%] h-[700px] flex-shrink-0`}
+              } w-full md:w-[32%] h-[700px] lg:w-[34%] flex-shrink-0`}
             >  <div className="w-full">
                 <div 
                   className={`${index === 1 ? 'py-8' : index === 2 ? 'py-6' : 'py-8'} px-6 w-full ${

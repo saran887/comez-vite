@@ -8,7 +8,7 @@ import Achievement1 from "../assets/Achievement-1.svg";
 import Conversation1 from "../assets/Conversation-1.svg";
 import Doc from "../assets/Doc.svg";
 import Money1 from "../assets/Money.svg"
-import Mail from "../assets/Mail.svg"
+import Mail from "../assets/Mailchimp 1.svg"
 import Survey from "../assets/Survey 2 1.svg"
 import Transaction from "../assets/Transaction 1.svg"
 import Rocket from "../assets/Rocket.svg"
@@ -177,7 +177,7 @@ const FeatureSection = () => {
             key={index}
             className={`relative flex flex-col md:flex-row items-center justify-between ${
               index % 2 === 1 ? "md:flex-row-reverse" : ""
-            } ${index === 0 ? 'pt-6 pb-4' : 'py-6'} md:py-10 px-4 md:px-12 lg:px-24 xl:px-32 overflow-hidden ${
+            } ${index === 0 ? 'pt-6 pb-4' : 'py-6'} md:py-10 px-4 md:px-12 lg:px-24 xl:px-32 {/* w-full md:max-w-8xl*/} overflow-hidden ${
               index === features.length - 1 ? 'rounded-b-3xl' : ''
             } bg-cover bg-center bg-no-repeat m-0 max-w-full min-h-[300px] md:min-h-[350px] md:h-[600px]`}
             style={{
