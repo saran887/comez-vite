@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FiCheck } from 'react-icons/fi';
+import { FiCheck, FiArrowUpRight  } from 'react-icons/fi';
 
 // Add Google Fonts
 const fontStyles = `
@@ -38,21 +38,9 @@ const Pricing = () => {
     {
       title: 'Web',
       monthlyPrice: '₹ 1000',
+      monthlyOriginalPrice: '₹ 1500',
       yearlyPrice: '₹ 10,000',
-      description: 'Per User/Year',
-      features: [
-        'Customize Theme (Limited)',
-        'Re-Arrange Layout',
-        'InBuilt Support',
-        'International Payments',
-        'No Entra Charges',
-      ],
-      buttonText: 'Get Started',
-    },
-    {
-      title: 'Web,Android&IOS',
-      monthlyPrice: '₹ 2000',
-      yearlyPrice: '₹ 20,000',
+      yearlyOriginalPrice: '₹ 15,000',
       description: 'Per User/Year',
       features: [
         'Customize Theme (Limited)',
@@ -60,6 +48,22 @@ const Pricing = () => {
         'InBuilt Support',
         'International Payments',
         'No Extra Charges',
+      ],
+      buttonText: 'Get Started',
+    },
+    {
+      title: 'Web,  Android  &  iOS',
+      monthlyPrice: '₹ 2000',
+      monthlyOriginalPrice: '₹ 3000',
+      yearlyPrice: '₹ 20,000',
+      yearlyOriginalPrice: '₹ 30,000',
+      description: 'Per User/Year',
+      features: [
+        'Customize Theme (Limited)',
+        'Re-Arrange Layout',
+        'InBuilt Support',
+        'International Payments',
+        'Excluding Play Store and App Store',
       ],
       buttonText: 'Get Started',
       popular: true,
@@ -73,7 +77,7 @@ const Pricing = () => {
         'Re-Arrange Layout',
         'InBuilt Support',
         'International Payments',
-        'No Extra Charges',
+        'Excluding Play Store and App Store',
       ],
       buttonText: 'Get Started',
     },
@@ -84,7 +88,7 @@ const Pricing = () => {
   };
 
   return (
-    <div className="relative bg-black min-h-[calc(100vh-6rem)] py-4 md:pt-8 lg:pt-14 xl:pt-20">
+    <div className="relative bg-black min-h-[calc(100vh-6rem)] py-8  md:pt-8 lg:pt-12 xl:pt-24">
       <div className="w-full max-w-7xl mx-auto px-2">
         <div className="text-center  mb-16">
           <h2 className="text-7xl font-medium font-['Outfit'] bg-gradient-to-r from-white to-[#B4B2B2] bg-clip-text text-transparent mb-8 pb-8">Pricing</h2>
@@ -108,7 +112,7 @@ const Pricing = () => {
                     index === 1 ? 'bg-gradient-to-r from-black via-[#0D54DB] to-black mx-0 md:mx-[-8px] w-full md:w-[calc(100%+16px)] rounded-3xl shadow-[0px_21px_88.7px_-43px_rgba(0,88,255,0.5)]' : ''
                   }`}
                 >
-                  <h3 className="text-2xl font-bold text-white text-center">
+                  <h3 className="text-2xl font-bold text-white  text-center">
                     {plan.title}
                   </h3>
                 </div>
@@ -116,21 +120,31 @@ const Pricing = () => {
 
               <div className="flex flex-col items-center justify-center mb-8 px-10 mt-6">
                 <div className="relative text-center">
-                  <span className={`font-bold text-white ${index === 2 ? 'text-6xl' : 'text-5xl'}`}>
-                    {isYearly ? plan.yearlyPrice : plan.monthlyPrice}
-                  </span>
-                 ${index !== 2 && <br></br>} 
+                  <div className="flex items-baseline justify-center space-x-2">
+                 
+                    <span className={`font-bold ${index === 2 ? 'opacity-70 text-3xl pt-2' : 'text-3xl text-white' }`}>
+                      {isYearly ? plan.yearlyPrice : plan.monthlyPrice}
+                    </span>
+                    {plan.yearlyOriginalPrice && (
+                      <span className="text-gray-400 line-through text-2xl font-bold">
+                        {isYearly ? plan.yearlyOriginalPrice : plan.monthlyOriginalPrice}
+                      </span>
+                    )}
+
+                  </div>
+                 {index !== 2 && <br></br>} 
                   {plan.description && (
-                    <span className={`block whitespace-nowrap ${index === 2 ? 'text-2xl text-white' : 'text-sm text-gray-400'} mt-2`}>
+                    <span className={`block whitespace-nowrap ${index === 2 ? 'text-4xl text-white' : 'text-2xl text-gray-400'} `}>
                       {plan.description}
                     </span>
                   )}
                   {plan.SubTitle && (
-                    <span className={`block ${index === 2 ? 'text-xl text-white' : 'text-gray-300 text-sm'} mt-2`}>
+                    <span className={`block ${index === 2 ? 'text-3xl text-white' : 'text-gray-300 text-sm'} mt-2`}>
                       {plan.SubTitle}
                     </span>
                   )}
                 </div>
+                
               </div>
 
               <ul className="space-y-10 mb-10 flex-grow text-left w-full pl-8 mt-8">
@@ -147,7 +161,29 @@ const Pricing = () => {
                   index === 1 ? 'opacity-80' : 'opacity-60'
                 }`}
               />
+               <div className="w-full flex justify-center pt-8">
+            <button className={`group relative px-6 py-3 w-[200px] h-[60px] text-x font-medium ${index === 1 ? 'bg-[#0754E3] text-white' : 'bg-white text-black'} shadow-[inset_-12px_4px_17.1px_rgba(255,255,255,0.25),inset_-3px_4px_20px_rgba(255,255,255,0.75)] rounded-[85px] transition-all duration-300 flex items-center justify-center hover:translate-y-[-2px] hover:shadow-[inset_-12px_4px_17.1px_rgba(255,255,255,0.25),inset_-3px_5px_20px_rgba(255,255,255,0.75)]`}
+            onMouseEnter={(e) => {
+              const rect = e.target.getBoundingClientRect();
+              const isHoveringFromBottom = e.clientY >= rect.bottom;
+              if (isHoveringFromBottom) {
+                e.target.style.transform = 'translateY(-2px)';
+              }
+            }}
+            onMouseLeave={(e) => {
+              const rect = e.target.getBoundingClientRect();
+              const isHoveringFromBottom = e.clientY >= rect.bottom;
+              if (isHoveringFromBottom) {
+                e.target.style.transform = 'none';
+              }
+            }}
+            >
+              <span className="transition-transform duration-300 group-hover:translate-x-[-5px]">Choose Plan</span>
+              < FiArrowUpRight  className={`${index === 1 ? 'text-white' : 'text-black'} ml-3 transition-transform duration-300 group-hover:translate-x-2`} />
+            </button>
+          </div>
             </div>
+            
           ))}
         </div>
       </div>

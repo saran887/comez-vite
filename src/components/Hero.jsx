@@ -44,9 +44,10 @@ const Hero = () => {
   return (
     <div
       id="home"
-      className="w-full min-h-screen flex flex-col items-center justify-between text-white relative overflow-hidden bg-cover bg-center bg-no-repeat"
+      className="w-full min-h-screen flex flex-col items-center justify-between text-white relative overflow-hidden bg-cover bg-center bg-no-repeat "
       style={{ backgroundImage: `url(${Herobg})` }}
     >
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-black/90 z-0"></div>
 
@@ -65,7 +66,7 @@ const Hero = () => {
             A whole E-Commerce as a piece of cake. Easily Personalize the layout of your store.
           </p>
           <div className="w-full flex justify-center mb-4">
-            <button className="px-6 py-3 w-[171px] h-[60px] text-x font-medium bg-[#0754E3] shadow-[inset_-12px_4px_17.1px_rgba(255,255,255,0.25),inset_-3px_4px_20px_rgba(255,255,255,0.75)] rounded-[85px] hover:bg-[#0648c2] transition-colors duration-200">
+            <button onClick={() => window.location.href = '#pricing'} className="px-6 py-3 w-[171px] h-[60px] text-x font-medium bg-[#0754E3] shadow-[inset_-12px_4px_17.1px_rgba(255,255,255,0.25),inset_-3px_4px_20px_rgba(255,255,255,0.75)] rounded-[85px] hover:bg-[#0648c2] transition-colors duration-200">
               Get Started
             </button>
           </div>
@@ -112,6 +113,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

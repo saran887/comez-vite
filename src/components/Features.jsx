@@ -154,7 +154,7 @@ const FeatureSection = () => {
     };
   }, []);
   return (
-    <div className="w-full md:pt-24">
+    <div className="w-full md:pt-2">
       {/* Header Section */}
       <div className="w-full pt-20 pb-20 px-4">
         <div className="max-w-4xl mx-auto">
@@ -164,7 +164,7 @@ const FeatureSection = () => {
                      bg-gradient-to-r from-white via-[#B4B2B2] to-[#B4B2B2] 
                      bg-clip-text text-transparent leading-tight mx-auto max-w-full break-words font-outfit pb-2"
           >
-            Comez Feature Highlights
+            Comez <span className="text-regular font-metal">Feature Highlights</span>
           </h2>
         </div>
       </div>
@@ -189,7 +189,7 @@ const FeatureSection = () => {
 
 
             {/* Text Content */}
-            <div className="w-full md:w-7/12 z-10 px-2 md:px-3">
+            <div className="w-full md:w-7/12 z-10 px-4">
               <div className="flex flex-col items-start">
                 <div className="flex items-center mb-3">
                   <div className="mr-3">
@@ -219,7 +219,7 @@ const FeatureSection = () => {
 
 
             {/* Feature Image */}
-            <div className={`w-full md:w-7/12 flex items-center ${index % 2 === 0 ? 'md:justify-end  md:pl-32' : 'md:justify-start  md:pr-32'}`}>
+            <div className={`w-full md:w-7/12 flex items-center ${index % 2 === 0 ? 'md:justify-end  md:pl-34' : 'md:justify-start  md:pr-3'}`}>
               <div className="w-full max-w-md">
                 <img
                   src={feature.image}
