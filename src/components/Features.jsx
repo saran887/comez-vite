@@ -154,7 +154,7 @@ const FeatureSection = () => {
     };
   }, []);
   return (
-    <div className="w-full md:pt-2 px-4">
+    <div className="w-full md:pt-2 px-4 md:px-0">
       {/* Header Section */}
       <div className="w-full pt-20 pb-10 md:pb-20 px-4">
         <div className="max-w-4xl mx-auto">

@@ -66,7 +66,19 @@ const Hero = () => {
             A whole E-Commerce as a piece of cake. Easily Personalize the layout of your store.
           </p>
           <div className="w-full flex justify-center mb-4">
-            <button onClick={() => window.location.href = '#pricing'  } className="px-6 py-3 w-[171px] h-[60px] text-x font-medium bg-[#0754E3] shadow-[inset_-12px_4px_17.1px_rgba(255,255,255,0.25),inset_-3px_4px_20px_rgba(255,255,255,0.75)] rounded-[85px] hover:bg-[#0648c2] transition-colors duration-200">
+            <button 
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.getElementById('pricing');
+                if (element) {
+                  window.scrollTo({
+                    top: element.offsetTop - 80, // 80px offset for header
+                    behavior: 'smooth'
+                  });
+                }
+              }} 
+              className="px-6 py-3 w-[171px] h-[60px] text-x font-medium bg-[#0754E3] shadow-[inset_-12px_4px_17.1px_rgba(255,255,255,0.25),inset_-3px_4px_20px_rgba(255,255,255,0.75)] rounded-[85px] hover:bg-[#0648c2] transition-colors duration-200"
+            >
               Get Started
             </button>
           </div>
