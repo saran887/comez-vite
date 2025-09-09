@@ -81,15 +81,15 @@ const Navbar = () => {
 
   return (
     <nav className="fixed w-full h-28 left-0 md:top-4 top-0 z-50 bg-transparent mx-auto">
-      <div className="h-full w-full max-w-7xl md:max-w-9xl mx-auto flex items-center justify-between">
+      <div className="h-full w-full max-w-7xl md:max-w-9xl mx-auto flex items-center justify-between px-2">
         {/* Logo - Left aligned */}
         <div className="flex-shrink-0 pl-4 md:pl-0 lg:pl-0 ">
           <img src={Logo} alt="Comez Logo" className="h-6 w-auto" />
         </div>
         
         {/* Navigation Links - Desktop */}
-        <div className="hidden md:flex items-center justify-centre flex-1 md:pl-28 lg:pl-28">
-          <div className="flex items-center h-[75px] bg-[rgba(1,34,50,0.2)] backdrop-blur-[15px] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] border border-[rgba(255,255,255,0.18)] rounded-full ">
+        <div className="hidden md:flex items-center justify-centre flex-1 md:pl-28">
+          <div className="flex items-center h-[70px] bg-[rgba(1,34,50,0.2)] backdrop-blur-[15px] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] border border-[rgba(255,255,255,0.18)] rounded-[35px] ">
             {navLinks.map((link, index) => (
               <Link
                 key={index}
@@ -103,7 +103,7 @@ const Navbar = () => {
                   setActiveLink(link.name);
                   if (link.section === 'home') link.action();
                 }}
-                className={`relative flex items-center justify-center w-36 h-14 mx-1.5 rounded-full cursor-pointer transition-all duration-300 ${
+                className={`relative flex items-center justify-center w-36 h-12 mx-2 rounded-[30px] cursor-pointer transition-all duration-300 ${
                   activeLink === link.name
                     ? "bg-[#0754E3] shadow-[inset_-4px_7px_20px_rgba(255,255,255,0.3)]"
                     : "bg-transparent hover:bg-[#0754E3]/20"

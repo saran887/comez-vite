@@ -44,13 +44,13 @@ const FAQs = () => {
   ];
 
   return (
-    <section id="faqs" className="bg-black relative overflow-hidden md:pt-24 lg:pt-8 md:max-w-[120em]">
+    <section id="faqs" className="bg-black relative overflow-hidden md:pt-24">
       <div id="faqs-wrapper">
       {/* <Navbar/> */}
       <div className="relative z-10">
         {/* Gradient Effect */}
         <div 
-          className="absolute -right-40 -bottom-40 w-[367.76px] h-[102.84px] bg-gradient-to-b from-[#0754E3]/100 via-[#0754E3]/10 to-[#042E7D]/100 blur-[150px] -rotate-[18.11deg] z-0 opacity-70"
+          className="absolute -right-40 -bottom-40 w-[367.76px] h-[102.84px] bg-gradient-to-b from-[#0754E3]/1500 via-[#0754E3]/1500 to-[#042E7D]/1500 blur-[10000px] -rotate-[18.11deg] z-0 opacity-70"
         />
         
         <div className="bg-black pt-8 pb-20 sm:pt-16 sm:pb-32 md:pt-20 md:pb-40 relative z-10">
@@ -59,7 +59,7 @@ const FAQs = () => {
               FAQ's
             </h2>
             
-            <div className="space-y-4 sm:space-y-6 w-full max-w-[81rem] mx-auto px-2 sm:px-4 lg:px-4">
+            <div className="space-y-4 sm:space-y-6 w-full max-w-[81rem] mx-auto">
               {faqs.map((faq, index) => (
                 <div 
                   id={`faq-${index}`}
@@ -68,7 +68,7 @@ const FAQs = () => {
                 >
                   {/* Gradient Effect for all FAQ cards */}
                   <div 
-                    className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none w-[120px] h-[200px] bg-gradient-to-r from-[#0754E3]/60 via-[#0754E3]/10 to-transparent blur-[80px] z-0"
+                    className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none w-[120px] h-[200px] bg-gradient-to-r from-[#0754E3]/100 via-[#0754E3]/100 to-transparent blur-[130px] z-0"
                   />
                   
                   <div className="relative z-10">

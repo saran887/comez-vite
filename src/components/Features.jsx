@@ -15,7 +15,7 @@ import Rocket from "../assets/Rocket.svg"
 import Social from "../assets/Social.svg"
 import Notification from "../assets/Scrolling on Phone 1 1.svg"
 import Order from "../assets/Order.svg"
-import Message from "../assets/Message.svg" 
+import Message from "../assets/Message.svg"
 import Online from "../assets/Online.svg"
 import Spark from "../assets/Spark.svg"
 import Logistics from "../assets/Logistics.svg"
@@ -141,7 +141,7 @@ const features = [
     image: Transaction,
     icon: Spark
   },
-  
+
 ];
 
 const FeatureSection = () => {
@@ -154,32 +154,30 @@ const FeatureSection = () => {
     };
   }, []);
   return (
-    <div className="w-full md:pt-24">
+    <div className="w-full md:pt-2">
       {/* Header Section */}
       <div className="w-full pt-20 pb-20 px-4">
         <div className="max-w-4xl mx-auto">
-          
-          <h2 
+
+          <h2
             className="text-6xl md:text-7xl font-normal text-center 
                      bg-gradient-to-r from-white via-[#B4B2B2] to-[#B4B2B2] 
                      bg-clip-text text-transparent leading-tight mx-auto max-w-full break-words font-outfit pb-2"
           >
-            Comez Feature Highlights
+            Comez <span className="text-regular font-metal">Feature Highlights</span>
           </h2>
         </div>
       </div>
 
       {/* Features Grid */}
-      
-      <div className="w-full max-w-[120vw] overflow-hidden mx-auto">
+
+      <div className="w-full overflow-hidden mx-auto">
         {features.map((feature, index) => (
           <div
             key={index}
-            className={`relative flex flex-col md:flex-row items-center justify-between ${
-              index % 2 === 1 ? "md:flex-row-reverse" : ""
-            } ${index === 0 ? 'pt-6 pb-4' : 'py-6'} md:py-10 px-4 md:px-12 lg:px-24 xl:px-32 {/* w-full md:max-w-8xl*/} overflow-hidden ${
-              index === features.length - 1 ? 'rounded-b-3xl' : ''
-            } bg-cover bg-center bg-no-repeat m-0 max-w-full min-h-[300px] md:min-h-[350px] md:h-[600px]`}
+            className={`relative flex flex-col md:flex-row items-center justify-between ${index % 2 === 1 ? "md:flex-row-reverse" : ""
+              } ${index === 0 ? 'pt-6 pb-4' : 'py-6'} md:py-10  w-full  overflow-hidden ${index === features.length - 1 ? 'rounded-b-3xl' : ''
+              } bg-cover bg-center bg-no-repeat m-0 max-w-full min-h-[300px] md:min-h-[350px] md:h-[600px]`}
             style={{
               backgroundImage: `url(${index % 2 === 0 ? Fcard1 : Fcard2})`
             }}
@@ -187,49 +185,56 @@ const FeatureSection = () => {
             {/* Semi-transparent overlay for better text readability */}
             <div className="absolute inset-0 bg-black/30 -z-10"></div>
 
-
-            {/* Text Content */}
-            <div className="w-full md:w-7/12 z-10 px-2 md:px-3">
-              <div className="flex flex-col items-start">
-                <div className="flex items-center mb-3">
-                  <div className="mr-3">
-                    <div className={`flex items-center justify-center ${
-                      feature.title.includes("SEO") ? "w-18 h-18 pb-10" : "w-14 h-14"
-                    }`}>
-                      <img
-                        src={feature.icon}
-                        alt=""
-                        className="w-full h-full object-contain"
-                      />
+            <div
+              className={`w-full flex flex-col md:flex-row items-center justify-between max-w-7xl md:max-w-9xl mx-auto
+    ${index % 2 !== 0 ? "md:flex-row-reverse" : ""}`}
+            >
+              {/* Text Content */}
+              <div className="w-full md:w-7/12 z-10">
+                <div className="flex flex-col items-start">
+                  <div className="flex items-center mb-3">
+                    <div className="mr-3">
+                      <div
+                        className={`flex items-center justify-center ${feature.title.includes("SEO") ? "w-18 h-18 pb-10" : "w-14 h-14"
+                          }`}
+                      >
+                        <img
+                          src={feature.icon}
+                          alt=""
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
                     </div>
+                    <h2
+                      className="text-2xl md:text-4xl font-outfit text-left
+                     bg-gradient-to-r from-white to-[#B4B2B2]
+                     bg-clip-text text-transparent font-[100px]"
+                    >
+                      {feature.title}
+                    </h2>
                   </div>
-                  <h2
-                    className="text-2xl md:text-4xl font-outfit text-left
-                             bg-gradient-to-r from-white to-[#B4B2B2]
-                             bg-clip-text text-transparent font-[100px] "
-                  >
-                    {feature.title}
-                  </h2>
+                  <p className="text-[#C1C1C1] text-2xl md:text-3xl md:w-5/8 text-justify mt-2">
+                    {feature.description}
+                  </p>
                 </div>
-                <p className="text-[#C1C1C1] text-2xl md:text-3xl md:w-5/8 text-justify mt-2">
-                  {feature.description}
-                </p>
+              </div>
+
+              {/* Feature Image */}
+              <div
+                className={`w-full md:w-7/12 flex items-center ${index % 2 === 0 ? "md:justify-end md:pl-34" : "md:justify-start md:pr-3"
+                  }`}
+              >
+                <div className="w-full max-w-md">
+                  <img
+                    src={feature.image}
+                    alt={feature.title}
+                    className={`w-[450px] h-[300px] md:w-[600px] md:h-[800px] transition-transform duration-300 hover:scale-110 ${index === 0 ? "scale-90" : "scale-100"
+                      } max-w-full max-h-[450px]`}
+                  />
+                </div>
               </div>
             </div>
 
-
-            {/* Feature Image */}
-            <div className={`w-full md:w-7/12 flex items-center ${index % 2 === 0 ? 'md:justify-end  md:pl-32' : 'md:justify-start  md:pr-32'}`}>
-              <div className="w-full max-w-md">
-                <img
-                  src={feature.image}
-                  alt={feature.title}
-                  className={`w-[450px] h-[300px] md:w-[600px] md:h-[800px]  transition-transform duration-300 hover:scale-110 ${
-                    index === 0 ? 'scale-90' : 'scale-100'
-                  } max-w-full max-h-[450px]`}
-                />
-              </div>
-            </div>
           </div>
         ))}
       </div>
@@ -237,7 +242,7 @@ const FeatureSection = () => {
       {/* Available on All Devices Section */}
       <div className="relative pt-16 pb-28 pl-12 pr-4 md:pl-15 md:pr-12 text-white overflow-hidden rounded-b-[120px] md:bg-[url('../src/assets/Storebg.svg')] md:bg-cover md:h-[500px] md:bg-center md:bg-no-repeat">
         {/* Background Image */}
-        
+
 
         <div className="container mx-auto relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-10">
@@ -250,17 +255,17 @@ const FeatureSection = () => {
 
             {/* Text Content */}
             <div className="w-full md:w-3/6 text-center md:text-left">
-              <h2 
+              <h2
                 className="text-4xl md:text-6xl font-normal mb-6 leading-tight
                          bg-gradient-to-r from-white to-[#B4B2B2]
-                         bg-clip-text text-transparent justify-center" 
+                         bg-clip-text text-transparent justify-center"
               >
                 Available on <span className="font-metal ml-2 whitespace-nowrap">All your Devices</span>
               </h2>
               <p className="text-[#C1C1C1] text-base md:text-2xl  max-w-2xl mx-auto md:mx-0 text-left">
-                The question lies upon your mind that the way we provide application at low cost. 
-                We developed using Google&apos;s <strong>Flutter</strong> Framework, which converts 
-                single code into two platforms of different applications. So that we can provide both 
+                The question lies upon your mind that the way we provide application at low cost.
+                We developed using Google&apos;s <strong>Flutter</strong> Framework, which converts
+                single code into two platforms of different applications. So that we can provide both
                 Android APK and iOS App. We developed Website on Facebook&apos;s Framework{' '}
                 <strong>ReactJS</strong>.
               </p>

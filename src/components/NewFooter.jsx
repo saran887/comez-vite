@@ -1,14 +1,28 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import logo from "../assets/logo.svg";
+import final from "../assets/final.svg";
 
 const NewFooter = () => {
   return (
-    <footer className="bg-gradient-to-r from-[#0b1b33] via-black to-[#0b1b33] text-white py-12 px-4 sm:px-6 lg:px-8 font-outfit">
-      <div className="container mx-auto">
+    <footer className="relative bg-black text-white pt-10 font-outfit overflow-hidden">
+      {/* Top Left Gradient */}
+      <div 
+        className="absolute left-0 top-0 w-[120px] h-[200px] bg-gradient-to-l from-[#0754E3] via-[#0754E3] to-transparent blur-[150px] z-0"
+        
+      />
+      
+      {/* Top Right Gradient */}
+      <div 
+        className="absolute right-0 top-0 w-[200px] h-[200px] bg-gradient-to-r from-[#0754E3] via-[#0754E3] to-transparent blur-[180px] z-0"
+        
+      />
+      
+      <div className="w-full max-w-7xl md:max-w-9xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row md:justify-between md:items-start">
           {/* Left Side - Logo and Social */}
           <div className="w-full md:w-1/3 mb-8 md:mb-0">
-            <h3 className="text-4xl sm:text-5xl font-bold mb-6">Comez</h3>
+            <img src={logo} alt="" className="w-24 sm:w-36 mb-6" />
             <div className="flex flex-wrap gap-4 sm:gap-6">
               {[
                 { icon: <FaInstagram className="w-6 h-6 sm:w-8 sm:h-8" />, url: "#", label: "Instagram" },
@@ -32,40 +46,59 @@ const NewFooter = () => {
           <div className="w-full md:w-1/2 grid grid-cols-2 sm:grid-cols-3 gap-8 mt-8 md:mt-0">
             {/* Company */}
             <div>
-              <h4 className="text-xl font-semibold mb-4 sm:mb-6">Company</h4>
-              <ul className="space-y-3">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-sm sm:text-base">About</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-sm sm:text-base">Careers</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-sm sm:text-base">Training</a></li>
+              <h4 className="text-2xl font-semibold mb-4 sm:mb-6">Company</h4>
+              <ul className="space-y-3 text-xl">
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-base md:text-base">About</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-base md:text-base">Careers</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-base md:text-base">Training</a></li>
               </ul>
             </div>
+            
 
             {/* Our Service */}
             <div>
-              <h4 className="text-xl font-semibold mb-4 sm:mb-6">Our Service</h4>
-              <ul className="space-y-3">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-sm sm:text-base">Designing</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-sm sm:text-base">Development</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-sm sm:text-base">Security</a></li>
+              <h4 className="text-2xl font-semibold mb-4 sm:mb-6">Our Service</h4>
+              <ul className="space-y-3 text-xl">
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-base md:text-base">Designing</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-base md:text-base">Development</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-base md:text-base">Security</a></li>
               </ul>
             </div>
 
             {/* Quick Links */}
             <div className="col-span-2 sm:col-span-1">
-              <h4 className="text-xl font-semibold mb-4 sm:mb-6">Quick Links</h4>
-              <ul className="space-y-3">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-sm sm:text-base">Privacy Policy</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-sm sm:text-base">Terms of Service</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-sm sm:text-base">Contact Us</a></li>
+              <h4 className="text-2xl font-semibold mb-4 sm:mb-6">Quick Links</h4>
+              <ul className="space-y-3 text-xl">
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-base md:text-base">Designing</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-base md:text-base">Development</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors text-base md:text-base">Security</a></li>
               </ul>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400 text-sm">
-          <p className="text-xs sm:text-sm"> 2025 Comez. All rights reserved.</p>
+        <div className="flex justify-between items-center w-full mt-16 mb-4">
+          {/* Left side - Copyright */}
+          <div className="text-xs sm:text-base md:text-base text-gray-400">
+            <p>Copyright © 2025 Comez Nutz Technovation Pvt.Ltd</p>
+          </div>
+          
+          {/* Right side - All rights reserved */}
+          <div className="text-xs sm:text-base md:text-base text-gray-400">
+            <p>All rights reserved</p>
+          </div>
         </div>
+
+        {/* Divider */}
+        <div className="border-t border-gray-800 my-4"></div>
+      </div>
+      <div className="w-full overflow-hidden">
+        <img 
+          src={final} 
+          alt="" 
+          className="w-full max-w-[1500px] h-auto max-h-[260px] object-contain mx-auto px-4 sm:px-6 md:px-8 opacity-150"
+        />
       </div>
     </footer>
   );

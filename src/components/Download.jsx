@@ -4,10 +4,13 @@ import AppStoreImage from '../assets/Apple.png';
 
 const Download = () => {
   return (
-    <section className="relative w-full overflow-hidden" style={{ 
-      padding: '120px 0',
-      background: 'linear-gradient(180deg, #000000 0%, #030E22 50%, #000000 100%)'
-    }}>
+    <section
+    className="relative w-full overflow-hidden 
+               py-12 md:py-20 lg:py-36
+               -mt-px
+               bg-gradient-to-b from-black from-0% via-[#030E22] via-50% to-black to-100%"
+  >
+  
       <div className="w-full flex flex-col items-center px-4 sm:px-6">
         <div className="w-full max-w-[1200px] mx-auto">
         {/* Main heading */}

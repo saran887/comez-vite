@@ -34,7 +34,7 @@ const features = [
 
 const About = () => {
   return (
-    <section className="py-12 md:py-20 font-outfit" style={{
+    <section className="py-12 md:py-24 font-outfit" style={{
       background: 'linear-gradient(180deg, #000000 0%, #030E22 50%, #000000 100%)'
     }}>
       <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,7 +71,7 @@ const About = () => {
             />
           </div>
           <div className="space-y-6 pl-0 md:pl-0">
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-medium bg-[linear-gradient(88.72deg,#FFFFFF_0.7%,#B4B2B2_95.77%)] bg-clip-text text-transparent text-center w-full">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-medium bg-[linear-gradient(88.72deg,#FFFFFF_0.7%,#B4B2B2_95.77%)] bg-clip-text text-transparent text-left w-full">
               User Friendly Interface
             </h2>
             <p className="text-[#C1C1C6] font-outfit font-light text-2xl text-justify text-center md:text-left">
