@@ -53,11 +53,11 @@ const Hero = () => {
 
       <div className="relative z-10 pt-16 w-full">
         {/* Text Content */}
-        <div className="text-center mx-auto px-4 sm:px-0 pt-40 pb-32 font-outfit">
+        <div className="text-center mx-auto px-4 pt-20 md:pt-40 md:pb-32 font-outfit">
           <div className="max-w-5xl mx-auto">
             <h1 className="text-6xl md:text-7xl lg:text-[82px] font-normal leading-[1.1] text-transparent bg-clip-text bg-gradient-to-r from-white via-[#B4B2B2] to-[#B4B2B2]/80">
               New way to manage your
-              <span className="block mt-4 md:mt-8 font-light italic opacity-400 font-metal text-6xl sm:text-6xl md:text-8xl lg:text-[102px] leading-tight">
+              <span className="block mt-4 md:mt-8 font-light italic opacity-400 font-metal text-6xl md:text-8xl lg:text-[102px] leading-tight">
                 Ecommerce Business!
               </span>
             </h1>
@@ -74,7 +74,7 @@ const Hero = () => {
 
         {/* Dashboard with Overlay and Cards */}
         <div className="relative w-full mx-auto mt-10 md:-mt-16 mb-20 md:mb-40">
-          <div className="relative px-16">
+          <div className="hidden md:block md:relative md:px-16">
             {/* Gradient behind dashboard */}
             <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur-2xl -z-10 px-16"></div>
 
@@ -82,7 +82,7 @@ const Hero = () => {
             <img
               src={DashBoard}
               alt="Dashboard"
-              className="w-full md:h-auto rounded-xl shadow-2xl relative z-10 border border-gray-800/50 "
+              className="w-full md:h-auto rounded-3xl shadow-2xl relative z-10 border border-gray-800/50 "
             />
 
             {/* Gradient overlay - Hidden on mobile */}

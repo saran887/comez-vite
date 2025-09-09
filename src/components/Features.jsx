@@ -65,7 +65,7 @@ const features = [
     icon: Spark
   },
   {
-    title: "SEO Tags, Sitemaps, Google Analyics & WebConsole",
+    title: "SEO Tags & Google Analytics",
     description:
       "We also support your Google ranking. SEO is carried out through good  website traffic to your store. Keywords, Description, altTags,  schemas,and sitemaps supports Indexing on Google.",
     image: Rocket,
@@ -154,24 +154,24 @@ const FeatureSection = () => {
     };
   }, []);
   return (
-    <div className="w-full md:pt-2 px-4">
+    <div className="w-full md:pt-2 px-4 md:px-0 ">
       {/* Header Section */}
-      <div className="w-full pt-20 pb-20 px-4">
+      <div className="w-full pt-20 pb-10 md:pb-20 px-4">
         <div className="max-w-4xl mx-auto">
 
           <h2
-            className="text-6xl md:text-7xl font-normal text-center 
+            className="text-5xl md:text-7xl font-regular text-center 
                      bg-gradient-to-r from-white via-[#B4B2B2] to-[#B4B2B2] 
-                     bg-clip-text text-transparent leading-tight mx-auto max-w-full break-words font-outfit pb-2"
+                     bg-clip-text text-transparent leading-tight mx-auto max-w-full break-words font-metal pb-2"
           >
-            Comez <span className="text-regular font-metal">Feature Highlights</span>
+            Feature Highlights
           </h2>
         </div>
       </div>
 
       {/* Features Grid */}
 
-      <div className="w-full overflow-hidden mx-auto">
+      <div className="w-full overflow-hidden mx-auto ">
         {features.map((feature, index) => (
           <div
             key={index}
@@ -195,7 +195,7 @@ const FeatureSection = () => {
                   <div className="flex items-center mb-3">
                     <div className="mr-3">
                       <div
-                        className={`flex items-center justify-center ${feature.title.includes("SEO") ? "w-18 h-18 pb-10" : "w-14 h-14"
+                        className={`flex items-center justify-center ${feature.title.includes("SEO") ? "w-18 h-18 " : "w-14 h-14"
                           }`}
                       >
                         <img
@@ -213,7 +213,7 @@ const FeatureSection = () => {
                       {feature.title}
                     </h2>
                   </div>
-                  <p className="text-[#C1C1C1] text-2xl md:text-3xl md:w-5/8 text-justify mt-2">
+                  <p className="text-[#C1C1C1] text-center md:text-left text-2xl md:text-3xl md:w-5/8 mt-2">
                     {feature.description}
                   </p>
                 </div>
@@ -240,11 +240,11 @@ const FeatureSection = () => {
       </div>
 
       {/* Available on All Devices Section */}
-      <div className="relative pt-16 pb-28 pl-12 pr-4 md:pl-15 md:pr-12 text-white overflow-hidden rounded-b-[120px] md:bg-[url('../src/assets/Storebg.svg')] md:bg-cover md:h-[500px] md:bg-center md:bg-no-repeat">
+      <div className="relative pt-16 pb-28 pl-4 pr-4 md:pl-15 md:pr-12 text-white overflow-hidden rounded-b-[120px] md:bg-[url('../src/assets/Storebg.svg')] md:bg-cover md:h-[500px] md:bg-center md:bg-no-repeat">
         {/* Background Image */}
 
 
-        <div className="container mx-auto relative z-10">
+        <div className="md:container mx-auto relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-10">
             {/* Logos */}
             <div className="flex gap-6 md:gap-12 justify-center align-center md:justify-start w-full md:w-auto md:pl-20">
@@ -256,13 +256,13 @@ const FeatureSection = () => {
             {/* Text Content */}
             <div className="w-full md:w-3/6 text-center md:text-left">
               <h2
-                className="text-4xl md:text-6xl font-normal mb-6 leading-tight
+                className="text-4xl md:text-5xl font-normal mb-6 leading-tight
                          bg-gradient-to-r from-white to-[#B4B2B2]
-                         bg-clip-text text-transparent justify-center"
+                         bg-clip-text text-transparent justify-center "
               >
                 Available on <span className="font-metal ml-2 whitespace-nowrap">All your Devices</span>
               </h2>
-              <p className="text-[#C1C1C1] text-base md:text-2xl  max-w-2xl mx-auto md:mx-0 text-left">
+              <p className="text-[#C1C1C1] text-xl md:text-2xl max-w-2xl mx-auto md:mx-0 text-center md:text-left">
                 The question lies upon your mind that the way we provide application at low cost.
                 We developed using Google&apos;s <strong>Flutter</strong> Framework, which converts
                 single code into two platforms of different applications. So that we can provide both
