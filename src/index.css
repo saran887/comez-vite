@@ -17,6 +17,8 @@
 html {
   width: 100%;
   overflow-x: hidden;
+  /* Disable default smooth scrolling since we're using Lenis */
+  scroll-behavior: auto;
 }
 
 body {

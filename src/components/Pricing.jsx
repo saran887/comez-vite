@@ -102,7 +102,7 @@ const Pricing = () => {
               className={`relative rounded-3xl overflow-hidden bg-black border ${index === 1
                 ? 'border border-blue-500 scale-105 z-10 shadow-[0_10px_30px_-10px_rgba(0,112,244,0.3)]'
                 : 'border-gray-700'
-                } w-full md:w-[32%] h-[700px]  md:h-[750px] lg:h-[800px] lg:w-[34%] flex-shrink-0`}
+                } w-full md:w-[32%] h-[750px]  md:h-[750px] lg:h-[800px] lg:w-[34%] flex-shrink-0`}
             >  <div className="w-full">
                 <div
                   className={`${index === 1
@@ -122,16 +122,16 @@ const Pricing = () => {
               <div className="flex flex-col items-center justify-center px-10 my-10">
                 <div className="relative text-center">
                   <div
-                    className={`flex items-baseline justify-center space-x-3 ${index === 2 ? 'mb-0' : 'mb-2'
+                    className={`flex  items-baseline justify-center space-x-3 ${index === 2 ? 'mb-0' : 'mb-2'
                       }`}
                   >
 
 
-                    <span className={`font-semibold ${index === 2 ? 'opacity-70 text-4xl pt-2' : 'text-4xl text-white'}`}>
+                    <span className={`font-semibold ${index === 2 ? 'opacity-70 text-2xl md:text-4xl pt-2' : 'text-2xl md:text-4xl text-white'}`}>
                       {isYearly ? plan.yearlyPrice : plan.monthlyPrice}
                     </span>
                     {plan.yearlyOriginalPrice && (
-                      <span className="text-gray-400 line-through text-2xl">
+                      <span className="text-gray-400 line-through text-lg md:text-2xl">
                         {isYearly ? plan.yearlyOriginalPrice : plan.monthlyOriginalPrice}
                       </span>
                     )}
@@ -139,12 +139,12 @@ const Pricing = () => {
                   </div>
                   {index !== 2}
                   {plan.description && (
-                    <span className={`block whitespace-nowrap ${index === 2 ? 'text-2xl text-white' : 'text-2xl text-gray-400'} `}>
+                    <span className={`block whitespace-nowrap ${index === 2 ? 'text-lg md:text-2xl text-white' : 'text-lg md:text-2xl text-gray-400'} `}>
                       {plan.description}
                     </span>
                   )}
                   {plan.SubTitle && (
-                    <span className={`block ${index === 2 ? 'text-2xl text-white' : 'text-gray-300 text-sm'} my-2`}>
+                    <span className={`block ${index === 2 ? 'text-lg md:text-2xl text-white' : 'text-gray-300 text-sm'} my-2`}>
                       {plan.SubTitle}
                     </span>
                   )}
@@ -156,7 +156,7 @@ const Pricing = () => {
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-start ">
                     <FiCheck className="text-white mt-1 mr-3 flex-shrink-0" />
-                    <span className="text-gray-300 text-base md:text-xl">{feature}</span>
+                    <span className="text-gray-300 text-lg md:text-xl">{feature}</span>
                   </li>
                 ))}
               </ul>

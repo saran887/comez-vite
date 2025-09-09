@@ -1,28 +1,27 @@
 import { useState } from 'react';
 import Navbar from './Navbar.jsx';
 import { FiPlus } from 'react-icons/fi';
+import { useLenisContext } from '../context/LenisContext';
 
 const FAQs = () => {
   const [activeIndex, setActiveIndex] = useState(null);
+  const lenis = useLenisContext();
 
   const toggleFAQ = (index) => {
     const wasOpen = activeIndex === index;
     setActiveIndex(wasOpen ? null : index);
     
-    if (!wasOpen) {
+    if (!wasOpen && lenis) {
       // Use setTimeout to ensure the DOM has updated with the new content
       setTimeout(() => {
         const faqElement = document.getElementById(`faq-${index}`);
         if (faqElement) {
-          // Calculate the position to scroll to (current position + 100px offset from top)
+          // Calculate the position to scroll to with offset
           const offset = 240;
           const elementPosition = faqElement.getBoundingClientRect().top + window.pageYOffset - offset;
           
-          // Smooth scroll to the FAQ item with offset
-          window.scrollTo({
-            top: elementPosition,
-            behavior: 'smooth'
-          });
+          // Smooth scroll to the FAQ item with offset using Lenis
+          lenis.scrollTo(elementPosition);
         }
       }, 50); // Small delay to allow the content to expand
     }
@@ -53,18 +52,18 @@ const FAQs = () => {
           className="absolute -right-40 -bottom-40 w-[367.76px] h-[102.84px] bg-gradient-to-b from-[#0754E3]/1500 via-[#0754E3]/1500 to-[#042E7D]/1500 blur-[10000px] -rotate-[18.11deg] z-0 opacity-70"
         />
         
-        <div className="bg-black pt-8 pb-20 sm:pt-16 sm:pb-32 md:pt-20 md:pb-40 relative z-10">
-          <div className="w-full px-4 sm:px-6 lg:px-8">
+        <div className="bg-black pt-8 pb-20 md:pt-20 md:pb-40 relative z-10">
+          <div className="w-full px-0 lg:px-8">
             <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16">
               FAQ's
             </h2>
             
-            <div className="space-y-4 sm:space-y-6 w-full max-w-[81rem] mx-auto">
+            <div className="space-y-4 w-full max-w-[81rem] mx-auto">
               {faqs.map((faq, index) => (
                 <div 
                   id={`faq-${index}`}
                   key={index} 
-                  className={`bg-black/90 overflow-hidden border-2 border-gray-700/50 hover:border-gray-600/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 w-full max-w-7xl py-4 mx-auto relative px-6 sm:px-8 rounded-2xl`}
+                  className={`bg-black/90 overflow-hidden border-2 border-gray-700/50 hover:border-gray-600/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 w-full max-w-7xl py-4 mx-auto relative px-6 rounded-2xl`}
                 >
                   {/* Gradient Effect for all FAQ cards */}
                   <div 
@@ -76,7 +75,7 @@ const FAQs = () => {
                       onClick={() => toggleFAQ(index)}
                       className="w-full py-2 text-left flex items-center justify-between focus:outline-none transition-colors duration-200"
                     >
-                      <span className="text-white text-base md:text-2xl sm:text-lg font-medium pr-4">{faq.question}</span>
+                      <span className="text-white text-base md:text-2xl font-medium pr-4">{faq.question}</span>
                       <div className="flex-shrink-0 w-8 h-8 rounded-full border-2 border-white/40 flex items-center justify-center hover:bg-white/10 transition-colors">
                         <FiPlus className={`w-4 h-4 text-white transition-transform duration-300 ${activeIndex === index ? 'transform rotate-45' : ''}`} />
                       </div>
@@ -85,7 +84,7 @@ const FAQs = () => {
                     <div 
                       className={`overflow-hidden transition-all duration-300 ${activeIndex === index ? 'max-h-96 pb-2' : 'max-h-0'}`}
                     >
-                      <div className="pt-2 text-gray-300 text-lg md:text-xl font-outfit text-justify sm:text-base">
+                      <div className="pt-2 text-gray-300 text-lg md:text-xl font-outfit">
                         <p>{faq.answer}</p>
                       </div>
                     </div>

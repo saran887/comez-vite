@@ -37,26 +37,26 @@ const About = () => {
     <section className="py-12 md:py-24 font-outfit" style={{
       background: 'linear-gradient(180deg, #000000 0%, #030E22 50%, #000000 100%)'
     }}>
-      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-[1440px] mx-auto px-4 md:px-8">
         <div className="max-w-4xl mx-auto text-center mb-12 md:mb-16">
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-outfit mb-4 md:mb-6 text-white text-center w-full">
+          <h1 className="text-3xl md:text-6xl font-outfit mb-4 md:mb-6 text-white text-center w-full">
             Why Comez?
           </h1>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
           {features.map((feature, index) => (
-            <div key={index} className="p-8 rounded-xl hover:shadow-lg transition-all hover:-translate-y-1">
+            <div key={index} className="md:p-8 rounded-xl hover:shadow-lg transition-all hover:-translate-y-1">
               <div className="flex flex-col items-start">
-                <div className="flex items-center w-full mb-4">
-                  <div className="w-28 h-28 rounded-full flex-shrink-0 flex items-center justify-center">
+                <div className="flex items-center w-full mb-4 pr-2 md:pr-0">
+                  <div className="w-20 h-20 md:w-28 md:h-28 rounded-full flex-shrink-0 flex items-center justify-center">
                     <img src={feature.icon} alt={feature.title} className="w-28 h-28 pt-4"  />
                   </div>
                   <h3 className="md:text-3xl text-xl font-medium text-white mb-4">
                     {feature.title}
                   </h3>
                 </div>
-                <p className="text-[#C1C1C6] pl-4 text-xl md:text-2xl leading-relaxed text-center md:text-left text-justify">{feature.description}</p>
+                <p className="text-[#C1C1C6] md:pl-4 text-xl md:text-2xl leading-relaxed text-center md:text-left">{feature.description}</p>
               </div>
             </div>
           ))}
@@ -71,22 +71,22 @@ const About = () => {
             />
           </div>
           <div className="space-y-6 pl-0 md:pl-0">
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-medium bg-[linear-gradient(88.72deg,#FFFFFF_0.7%,#B4B2B2_95.77%)] bg-clip-text text-transparent text-left w-full">
+            <h2 className="text-4xl md:text-5xl font-medium bg-[linear-gradient(88.72deg,#FFFFFF_0.7%,#B4B2B2_95.77%)] bg-clip-text text-transparent text-center md:text-left w-full">
               User Friendly Interface
             </h2>
-            <p className="text-[#C1C1C6] font-outfit font-light text-2xl text-justify text-center md:text-left">
+            <p className="text-[#C1C1C6] font-outfit font-light text-2xl text-center md:text-left">
               A strong user experience offers a significant competitive advantage in attracting and retaining customers. 
               You are most likely to build trust with people most easily, attract users and turn them into customers, 
               and encourage their contacts to do the same.
             </p>
             <div className="relative pt-2">
-              <div className="flex flex-col sm:flex-row items-center gap-6">
+              <div className="flex flex-col items-center gap-6">
                 <img 
                   src={QrCode} 
                   alt="QR Code" 
-                  className="w-32 h-32 sm:w-36 sm:h-36 flex-shrink-0"
+                  className="w-32 h-32 flex-shrink-0"
                 />
-                <p className="text-white font-outfit font-light text-[20px] leading-[25px] text-center sm:text-left w-[318px] mt-2 sm:mt-0">
+                <p className="text-white font-outfit font-light text-[20px] leading-[25px] text-center w-[318px] mt-2">
                   Scan QR code to test a sample<br />Application on your device
                 </p>
               </div>
