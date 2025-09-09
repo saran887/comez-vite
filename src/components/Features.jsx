@@ -154,7 +154,7 @@ const FeatureSection = () => {
     };
   }, []);
   return (
-    <div className="w-full md:pt-2 px-4">
+    <div className="w-full md:pt-2 ">
       {/* Header Section */}
       <div className="w-full pt-20 pb-20 px-4">
         <div className="max-w-4xl mx-auto">
@@ -171,11 +171,11 @@ const FeatureSection = () => {
 
       {/* Features Grid */}
 
-      <div className="w-full overflow-hidden mx-auto">
+      <div className="w-full overflow-hidden mx-auto ">
         {features.map((feature, index) => (
           <div
             key={index}
-            className={`relative flex flex-col md:flex-row items-center justify-between ${index % 2 === 1 ? "md:flex-row-reverse" : ""
+            className={`relative flex flex-col md:flex-row items-center px-4 justify-between ${index % 2 === 1 ? "md:flex-row-reverse" : ""
               } ${index === 0 ? 'pt-6 pb-4' : 'py-6'} md:py-10  w-full  overflow-hidden ${index === features.length - 1 ? 'rounded-b-3xl' : ''
               } bg-cover bg-center bg-no-repeat m-0 max-w-full min-h-[300px] md:min-h-[350px] md:h-[600px]`}
             style={{
