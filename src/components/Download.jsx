@@ -6,9 +6,9 @@ const Download = () => {
   return (
     <section
     className="relative w-full overflow-hidden 
-               py-12 md:py-20 lg:py-36
+               py-12 md:py-16 lg:py-32
                -mt-px
-               bg-gradient-to-b from-black from-0% via-[#030E22] via-50% to-black to-100%"
+               bg-gradient-to-b from-black from-0% via-[#030E22] via-50% to-black to-100% px-4"
   >
   
       <div className="w-full flex flex-col items-center px-4 sm:px-6">

@@ -44,7 +44,7 @@ const FAQs = () => {
   ];
 
   return (
-    <section id="faqs" className="bg-black relative overflow-hidden md:pt-24">
+    <section id="faqs" className="bg-black relative overflow-hidden md:pt-24 px-4">
       <div id="faqs-wrapper">
       {/* <Navbar/> */}
       <div className="relative z-10">

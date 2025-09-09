@@ -44,7 +44,7 @@ const Hero = () => {
   return (
     <div
       id="home"
-      className="w-full min-h-screen flex flex-col items-center justify-between text-white relative overflow-hidden bg-cover bg-center bg-no-repeat "
+      className="w-full min-h-screen flex flex-col items-center justify-between text-white relative overflow-hidden bg-cover bg-center bg-no-repeat px-4"
       style={{ backgroundImage: `url(${Herobg})` }}
     >
       <div className="w-full max-w-7xl md:max-w-9xl mx-auto">
@@ -82,7 +82,7 @@ const Hero = () => {
             <img
               src={DashBoard}
               alt="Dashboard"
-              className="w-full h-auto rounded-xl shadow-2xl relative z-10 border border-gray-800/50"
+              className="w-full md:h-auto rounded-xl shadow-2xl relative z-10 border border-gray-800/50 "
             />
 
             {/* Gradient overlay - Hidden on mobile */}

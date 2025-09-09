@@ -12,7 +12,7 @@ import FeatureSection from './components/Features';
 function App() {
 
   return (
-    <div className="relative min-h-screen w-screen bg-[#020C14] overflow-x-hidden font-outfit mx-auto">
+    <div className="relative min-h-screen w-screen bg-[#020C14] overflow-x-hidden font-outfit mx-auto ">
       <div className="w-full">
         <div className=" w-full">
           <Navbar />

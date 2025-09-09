@@ -5,7 +5,7 @@ import final from "../assets/final.svg";
 
 const NewFooter = () => {
   return (
-    <footer className="relative bg-black text-white pt-10 font-outfit overflow-hidden">
+    <footer className="relative bg-black text-white pt-10 font-outfit overflow-hidden px-4">
       {/* Top Left Gradient */}
       <div 
         className="absolute left-0 top-0 w-[120px] h-[200px] bg-gradient-to-l from-[#0754E3] via-[#0754E3] to-transparent blur-[150px] z-0"

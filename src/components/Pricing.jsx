@@ -86,7 +86,7 @@ const Pricing = () => {
   };
 
   return (
-    <div id="pricing" className="relative bg-black min-h-[calc(100vh-6rem)] py-4 md:pt-12 lg:pt-18 xl:pt-24">
+    <div id="pricing" className="relative bg-black min-h-[calc(100vh-6rem)] py-4 md:pt-12 lg:pt-18 xl:pt-24 px-4">
       <div className="w-full max-w-7xl  mx-auto">
         <div className="text-center  mb-16">
           <h2 className="text-7xl font-medium font-['Outfit'] bg-gradient-to-r from-white to-[#B4B2B2] bg-clip-text text-transparent mb-8 pb-8">Pricing</h2>
