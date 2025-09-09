@@ -125,7 +125,7 @@ const Pricing = () => {
                     className={`flex items-baseline justify-center space-x-3 ${index === 2 ? 'mb-0' : 'mb-2'
                       }`}
                   >
-h-full w-full max-w-7xl md:max-w-9xl mx-auto flex items-center justify-between
+
 
                     <span className={`font-semibold ${index === 2 ? 'opacity-70 text-4xl pt-2' : 'text-4xl text-white'}`}>
                       {isYearly ? plan.yearlyPrice : plan.monthlyPrice}
