@@ -166,7 +166,15 @@ const Pricing = () => {
                   }`}
               />
               <div className="w-full flex justify-center pt-8">
-                <button className={`group relative px-6 py-3 w-[200px] h-[60px] text-x font-medium ${index === 1 ? 'bg-[#0754E3] text-white' : 'bg-white text-black'} shadow-[inset_-12px_4px_17.1px_rgba(255,255,255,0.25),inset_-3px_4px_20px_rgba(255,255,255,0.75)] rounded-[85px] transition-all duration-300 flex items-center justify-center hover:translate-y-[-2px] hover:shadow-[inset_-12px_4px_17.1px_rgba(255,255,255,0.25),inset_-3px_5px_20px_rgba(255,255,255,0.75)]`}
+                <button 
+                  onClick={() => {
+                    const planTitle = plans[index].title;
+                    const price = isYearly ? plans[index].yearlyPrice : plans[index].monthlyPrice;
+                    const message = `Hello! I'm interested in the ${planTitle} plan for ${price}. Could you please provide more details?`;
+                    const whatsappUrl = `https://wa.me/6380800467?text=${encodeURIComponent(message)}`;
+                    window.open(whatsappUrl, '_blank');
+                  }}
+                  className={`group relative px-6 py-3 w-[200px] h-[60px] text-x font-medium ${index === 1 ? 'bg-[#0754E3] text-white' : 'bg-white text-black'} shadow-[inset_-12px_4px_17.1px_rgba(255,255,255,0.25),inset_-3px_4px_20px_rgba(255,255,255,0.75)] rounded-[85px] transition-all duration-300 flex items-center justify-center hover:translate-y-[-2px] hover:shadow-[inset_-12px_4px_17.1px_rgba(255,255,255,0.25),inset_-3px_5px_20px_rgba(255,255,255,0.75)]`}
                   onMouseEnter={(e) => {
                     const rect = e.target.getBoundingClientRect();
                     const isHoveringFromBottom = e.clientY >= rect.bottom;
@@ -183,7 +191,7 @@ const Pricing = () => {
                   }}
                 >
                   <span className="transition-transform duration-300 group-hover:translate-x-[-5px]">Choose Plan</span>
-                  < FiArrowUpRight className={`${index === 1 ? 'text-white' : 'text-black'} ml-3 transition-transform duration-300 group-hover:translate-x-2`} />
+                  <FiArrowUpRight className={`${index === 1 ? 'text-white' : 'text-black'} ml-3 transition-transform duration-300 group-hover:translate-x-2`} />
                 </button>
               </div>
             </div>

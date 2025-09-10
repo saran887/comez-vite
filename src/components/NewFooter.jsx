@@ -1,14 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   FaFacebook,
   FaInstagram,
   FaLinkedin,
   FaEnvelope,
 } from "react-icons/fa";
+import { ImSpinner8 } from "react-icons/im";
 import logo from "../assets/logo.svg";
 import final from "../assets/final.svg";
 
 const NewFooter = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time (you can replace this with your actual loading logic)
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
+        <div className="flex flex-col items-center">
+          <ImSpinner8 className="w-16 h-16 text-[#0754E3] animate-spin" />
+          <p className="text-white mt-4 text-xl font-outfit">Loading...</p>
+        </div>
+      </div>
+    );
+  }
   return (
     <footer className="relative bg-black text-white pt-10 font-outfit overflow-hidden px-4">
       {/* Top Left Gradient */}
@@ -26,22 +48,22 @@ const NewFooter = () => {
               {[
                 {
                   icon: <FaInstagram className="w-6 h-6 md:w-8 md:h-8" />,
-                  url: "#",
+                  url: "https://www.instagram.com/nutz.india/",
                   label: "Instagram",
                 },
                 {
                   icon: <FaFacebook className="w-6 h-6 md:w-8 md:h-8" />,
-                  url: "#",
+                  url: "https://www.facebook.com/NutzIndia/",
                   label: "Facebook",
                 },
                 {
                   icon: <FaLinkedin className="w-6 h-6 md:w-8 md:h-8" />,
-                  url: "#",
+                  url: "https://www.linkedin.com/company/nutz",
                   label: "LinkedIn",
                 },
                 {
                   icon: <FaEnvelope className="w-6 h-6 md:w-8 md:h-8" />,
-                  url: "#",
+                  url: "mailto:nutzindia@gmail.com",
                   label: "Email",
                 },
               ].map((social, index) => (
@@ -50,6 +72,7 @@ const NewFooter = () => {
                   href={social.url}
                   className="w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center bg-gray-800 hover:bg-gray-700 transition-colors"
                   aria-label={social.label}
+                  target="_blank"
                 >
                   {social.icon}
                 </a>
@@ -65,24 +88,27 @@ const NewFooter = () => {
               <ul className="space-y-3 text-xl">
                 <li>
                   <a
-                    href="#"
+                    href="https://nutz.in/about"
                     className="text-gray-400 hover:text-white transition-colors text-base md:text-lg"
+                    target="_blank"
                   >
                     About
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="https://nutz.in/careers"
                     className="text-gray-400 hover:text-white transition-colors text-base md:text-lg"
+                    target="_blank"
                   >
                     Careers
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="https://nutz.in/training"
                     className="text-gray-400 hover:text-white transition-colors text-base md:text-lg"
+                    target="_blank"
                   >
                     Training
                   </a>
@@ -96,24 +122,27 @@ const NewFooter = () => {
               <ul className="space-y-3 text-xl">
                 <li>
                   <a
-                    href="#"
+                    href="https://nutz.in/GraphicDesign"
                     className="text-gray-400 hover:text-white transition-colors text-base md:text-lg"
+                    target="_blank"
                   >
                     Designing
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="https://nutz.in/Development"
                     className="text-gray-400 hover:text-white transition-colors text-base md:text-lg"
+                    target="_blank"
                   >
                     Development
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="https://nutz.in/security"
                     className="text-gray-400 hover:text-white transition-colors text-base md:text-lg"
+                    target="_blank"
                   >
                     Security
                   </a>
@@ -127,26 +156,29 @@ const NewFooter = () => {
               <ul className="space-y-3 text-xl">
                 <li>
                   <a
-                    href="#"
+                    href="https://nutz.in/"
                     className="text-gray-400 hover:text-white transition-colors text-base md:text-lg"
+                    target="_blank"
                   >
-                    Designing
+                    Home
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="https://nutz.in/portfolio"
                     className="text-gray-400 hover:text-white transition-colors text-base md:text-lg"
+                    target="_blank"
                   >
-                    Development
+                    Portfolio
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="https://nutz.in/products"
                     className="text-gray-400 hover:text-white transition-colors text-base md:text-lg"
+                    target="_blank"
                   >
-                    Security
+                    Products
                   </a>
                 </li>
               </ul>
