@@ -108,7 +108,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed w-full h-28 left-0 md:top-4 top-0 z-50 bg-transparent mx-auto">
-      <div className="h-24 md:h-full w-full max-w-7xl md:max-w-9xl mx-auto flex items-center justify-between px-2">
+      <div className="h-24 md:h-full w-full max-w-7xl md:max-w-9xl mx-auto flex items-center justify-between pl-2">
         {/* Logo - Left aligned */}
         <div className="flex-shrink-0 pl-2 md:pl-0 lg:pl-0 ">
           <img src={Logo} alt="Comez Logo" className="h-6 w-auto" />
@@ -142,7 +142,18 @@ const Navbar = () => {
           </div>
         </div>
 
-        
+        {/* Contact Button - Desktop */}
+        <div className="hidden md:block">
+          <a 
+            href="https://wa.me/6380800467" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-36 h-12 bg-white text-black rounded-[30px] text-md font-medium hover:text-white hover:bg-gray-700 transition-colors duration-200"
+          >
+            Contact Us
+          </a>
+        </div>
+
         {/* Mobile Menu Button */}
         <div className="md:hidden z-50">
           <button
@@ -192,6 +203,15 @@ const Navbar = () => {
                 {link.name}
               </button>
             ))}
+            <a 
+              href="https://wa.me/6380800467" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-full px-6 py-4 text-lg font-light text-white bg-[#0754E3] hover:bg-[#0643b8] rounded-xl transition-colors duration-200 text-center mt-4"
+              onClick={() => setIsOpen(false)}
+            >
+              Contact Us
+            </a>
           </div>
         </div>
       </div>

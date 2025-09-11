@@ -26,6 +26,7 @@ import Cloud from "../assets/Cloud.svg"
 import Fcard1 from "../assets/fcard1.svg"
 import Fcard2 from "../assets/fcard2.svg"
 import logo from "../assets/logo.svg"
+import MoneyTransfer from "../assets/Money Transfer.svg"
 
 // List of features
 const features = [
@@ -40,7 +41,7 @@ const features = [
     title: "Dynamic Tax Rates",
     description:
       "A Dynamic E-commerce tax model is provided. Customers may request GST invoices for their billings.",
-    image: Conversation1,
+    image: MoneyTransfer,
     icon: Spark
   },
   {
@@ -160,7 +161,7 @@ const FeatureSection = () => {
         <div className="max-w-4xl mx-auto">
 
           <h2
-            className="text-5xl md:text-7xl font-regular text-center 
+            className="text-5xl md:text-8xl font-regular text-center 
                      bg-gradient-to-r from-white via-[#B4B2B2] to-[#B4B2B2] 
                      bg-clip-text text-transparent leading-tight mx-auto max-w-full break-words font-metal pb-2"
           >

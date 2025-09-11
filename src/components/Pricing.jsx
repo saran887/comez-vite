@@ -37,8 +37,8 @@ const Pricing = () => {
       title: 'Web',
       monthlyPrice: '₹ 1000',
       monthlyOriginalPrice: '₹ 1500',
-      yearlyPrice: '₹ 10,000',
-      yearlyOriginalPrice: '₹ 15,000',
+      yearlyPrice: '₹ 15,000',
+      yearlyOriginalPrice: '₹ 20,000',
       description: 'Per User/Year',
       features: [
         'Customize Theme (Limited)',
@@ -95,14 +95,14 @@ const Pricing = () => {
           </div> */}
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-stretch gap-8   w-full">
+        <div className="flex flex-col md:flex-row  items-stretch gap-16 w-full ">
           {plans.map((plan, index) => (
             <div
               key={index}
               className={`relative rounded-3xl overflow-hidden bg-black border ${index === 1
                 ? 'border border-blue-500 scale-105 z-10 shadow-[0_10px_30px_-10px_rgba(0,112,244,0.3)]'
                 : 'border-gray-700'
-                } w-full md:w-[32%] h-[750px]  md:h-[750px] lg:h-[800px] lg:w-[34%] flex-shrink-0`}
+                } w-full md:w-auto h-[750px]  md:h-[750px] lg:h-[800px] lg:w-auto flex-shrink-0`}
             >  <div className="w-full">
                 <div
                   className={`${index === 1
@@ -156,7 +156,7 @@ const Pricing = () => {
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-start ">
                     <FiCheck className="text-white mt-1 mr-3 flex-shrink-0" />
-                    <span className="text-gray-300 text-lg md:text-xl">{feature}</span>
+                    <span className="text-gray-300 text-lg md:text-xl pr-8">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -167,14 +167,19 @@ const Pricing = () => {
               />
               <div className="w-full flex justify-center pt-8">
                 <button 
-                  onClick={() => {
-                    const planTitle = plans[index].title;
-                    const price = isYearly ? plans[index].yearlyPrice : plans[index].monthlyPrice;
-                    const message = `Hello! I'm interested in the ${planTitle} plan for ${price}. Could you please provide more details?`;
-                    const whatsappUrl = `https://wa.me/6380800467?text=${encodeURIComponent(message)}`;
-                    window.open(whatsappUrl, '_blank');
-                  }}
-                  className={`group relative px-6 py-3 w-[200px] h-[60px] text-x font-medium ${index === 1 ? 'bg-[#0754E3] text-white' : 'bg-white text-black'} shadow-[inset_-12px_4px_17.1px_rgba(255,255,255,0.25),inset_-3px_4px_20px_rgba(255,255,255,0.75)] rounded-[85px] transition-all duration-300 flex items-center justify-center hover:translate-y-[-2px] hover:shadow-[inset_-12px_4px_17.1px_rgba(255,255,255,0.25),inset_-3px_5px_20px_rgba(255,255,255,0.75)]`}
+                 onClick={() => {
+                  const planTitle = plans[index].title;
+                  const price = isYearly ? plans[index].yearlyPrice : plans[index].monthlyPrice;
+                
+                  const message =
+                    planTitle === "Customized"
+                      ? `Hello! I'm interested in the ${planTitle} plan from Comez. Could you please share more details about the available options?`
+                      : `Hello! I'm interested in the ${planTitle} plan from Comez, priced at ${price}. Could you please provide more details about the features and next steps?`;
+                
+                  const whatsappUrl = `https://wa.me/6380800467?text=${encodeURIComponent(message)}`;
+                  window.open(whatsappUrl, "_blank");
+                }}
+                 className={`group relative px-6 py-3 w-[200px] h-[60px] text-x font-medium ${index === 1 ? 'bg-[#0754E3] text-white' : 'bg-white text-black'} shadow-[inset_-12px_4px_17.1px_rgba(255,255,255,0.25),inset_-3px_4px_20px_rgba(255,255,255,0.75)] rounded-[85px] transition-all duration-300 flex items-center justify-center hover:translate-y-[-2px] hover:shadow-[inset_-12px_4px_17.1px_rgba(255,255,255,0.25),inset_-3px_5px_20px_rgba(255,255,255,0.75)]`}
                   onMouseEnter={(e) => {
                     const rect = e.target.getBoundingClientRect();
                     const isHoveringFromBottom = e.clientY >= rect.bottom;

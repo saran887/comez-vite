@@ -13,12 +13,22 @@ const NewFooter = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    // Add Google Fonts
+    const styleElement = document.createElement('style');
+    styleElement.textContent = `
+      @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Outfit:wght@100..900&family=Playball&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+    `;
+    document.head.appendChild(styleElement);
+
     // Simulate loading time (you can replace this with your actual loading logic)
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 1000);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      document.head.removeChild(styleElement);
+    };
   }, []);
 
   if (isLoading) {
@@ -190,10 +200,10 @@ const NewFooter = () => {
         <div className="flex flex-col md:flex-row justify-between items-center w-full mt-16 mb-4 gap-4 md:gap-0">
           {/* Left side - Copyright */}
           <div className="text-xs md:text-base text-gray-400 text-center md:text-left">
-            <p>Copyright © 2025 Comez Nutz Technovation Pvt.Ltd</p>
+            <p>Copyright 2025 Comez Nutz Technovation Pvt.Ltd</p>
           </div>
               <div className="text-xs md:text-base text-gray-400 text-center ">
-            <p>A Product by <span className="text-white font-ubuntu-bold">nutz</span></p>
+            <p>A Product by <span className="text-white font-['Ubuntu'] font-normal">nutz</span></p>
           </div>
           {/* Right side - All rights reserved */}
           <div className="text-xs md:text-base text-gray-400 text-center md:text-right">

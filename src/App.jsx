@@ -13,7 +13,7 @@ import 'lenis/dist/lenis.css';
 function App() {
   return (
     <LenisProvider>
-      <div className="relative min-h-screen w-screen bg-[#020C14] overflow-x-hidden font-outfit mx-auto ">
+      <div className="relative min-h-screen w-screen bg-[#000000] overflow-x-hidden font-outfit mx-auto ">
         <div className="w-full">
           <div className=" w-full">
             <Navbar />

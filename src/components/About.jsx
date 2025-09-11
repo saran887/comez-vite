@@ -79,14 +79,15 @@ const About = () => {
               You are most likely to build trust with people most easily, attract users and turn them into customers, 
               and encourage their contacts to do the same.
             </p>
-            <div className="relative pt-2">
-              <div className="flex flex-col items-center gap-6">
+            <div className="relative pt-2 ">
+              <div className="flex flex-row items-center gap-6">
                 <img 
                   src={QrCode} 
                   alt="QR Code" 
                   className="w-32 h-32 flex-shrink-0"
                 />
-                <p className="text-white font-outfit font-light text-[20px] leading-[25px] text-center w-[318px] mt-2">
+                
+                <p className="text-white font-outfit font-light text-xl leading-[25px] text-left w-[318px] mt-2">
                   Scan QR code to test a sample<br />Application on your device
                 </p>
               </div>
