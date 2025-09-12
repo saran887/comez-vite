@@ -202,10 +202,10 @@ const Navbar = () => {
               </button>
             ))}
             <a 
-              href="https://wa.me/6380800467" 
+              href="tel:+919698739898" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="w-full px-6 py-4 text-lg font-light text-white bg-[#0754E3] hover:bg-[#0643b8] rounded-xl transition-colors duration-200 text-center mt-4"
+              className="w-full px-6 py-4 text-lg font-light text-white hover:bg-white/10 rounded-xl transition-colors duration-200 text-center mt-4"
               onClick={() => setIsOpen(false)}
             >
               Contact Us
