@@ -220,11 +220,12 @@ const NewFooter = () => {
         {/* Divider */}
         <div className="border-t border-gray-800 my-4"></div>
       </div>
-      <div className="w-full overflow-hidden mt-2">
+      <div className="w-full overflow-hidden min-h-0 bg-black p-0 m-0">
         <img
           src={final}
           alt=""
-          className="w-full max-w-[900px] sm:max-w-[1200px] md:max-w-[1500px] h-auto max-h-[180px] sm:max-h-[220px] md:max-h-[260px] object-contain mx-auto px-2 sm:px-4 md:px-8 lg:px-12 opacity-150"
+          className="w-full max-w-[900px] sm:max-w-[1200px] md:max-w-[1500px] h-auto max-h-[180px] sm:max-h-[220px] md:max-h-[260px] object-contain mx-auto p-0 m-0 bg-black"
+          style={{backgroundColor: '#000', display: 'block'}}
         />
       </div>
     </footer>
