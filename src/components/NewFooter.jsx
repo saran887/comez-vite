@@ -173,9 +173,9 @@ const NewFooter = () => {
               <ul className="space-y-2 sm:space-y-3 text-base sm:text-xl">
                 <li>
                   <a
-                    href="https://nutz.in/"
+                    href="#home"
                     className="text-gray-400 hover:text-white transition-colors text-base md:text-lg"
-                    target="_blank"
+                    
                   >
                     Home
                   </a>
