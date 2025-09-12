@@ -111,7 +111,7 @@ const Navbar = () => {
       <div className="h-24 md:h-full w-full max-w-7xl md:max-w-9xl mx-auto flex items-center justify-between pl-2">
         {/* Logo - Left aligned */}
         <div className="flex-shrink-0 pl-2 md:pl-0 lg:pl-0 ">
-          <img src={Logo} alt="Comez Logo" className="h-6 w-auto" />
+          <img src={Logo} alt="Comez Logo" className="h-10 w-auto" />
         </div>
         
         {/* Navigation Links - Desktop */}
@@ -145,9 +145,7 @@ const Navbar = () => {
         {/* Contact Button - Desktop */}
         <div className="hidden md:block">
           <a 
-            href="https://wa.me/6380800467" 
-            target="_blank" 
-            rel="noopener noreferrer"
+            href="tel:+919698739898" 
             className="flex items-center justify-center w-36 h-12 bg-white text-black rounded-[30px] text-md font-medium hover:text-white hover:bg-gray-700 transition-colors duration-200"
           >
             Contact Us

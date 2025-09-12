@@ -7,12 +7,12 @@ import Why1 from '../assets/why1.svg';
 import Why2 from '../assets/why2.svg';
 import Why3 from '../assets/why3.svg';
 import Why4 from '../assets/why4.svg';
-
+import Arrow from '../assets/ArrowQR.svg';
 
 const features = [
   {
     icon: Why1,
-    title: "No Development Charges",
+    title: "No Development Charges*",
     description: "We have worked over last two years to provide you an precise Ecommerce Application which covers all the modules with Analytic Reports."
   },
   {
@@ -80,14 +80,16 @@ const About = () => {
               and encourage their contacts to do the same.
             </p>
             <div className="relative pt-2 ">
-              <div className="flex flex-row items-center gap-6">
+              <div className="flex flex-row items-center gap-6 " >
                 <img 
                   src={QrCode} 
                   alt="QR Code" 
-                  className="w-32 h-32 flex-shrink-0"
+                  className="w-32 h-32 flex-shrink-0 mt-2"
                 />
-                
-                <p className="text-white font-outfit font-light text-xl leading-[25px] text-left w-[318px] mt-2">
+                <div>
+                  <img src={Arrow} alt="Download Arrow" className="w-40 h-6 mt-8" />
+                </div>
+                <p className="text-white font-outfit font-light text-base md:text-lg leading-[25px] text-left w-[318px] ">
                   Scan QR code to test a sample<br />Application on your device
                 </p>
               </div>

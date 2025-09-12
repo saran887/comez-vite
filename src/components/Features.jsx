@@ -264,12 +264,12 @@ const FeatureSection = () => {
                 Available on <span className="font-metal ml-2 whitespace-nowrap">All your Devices</span>
               </h2>
               <p className="text-[#C1C1C1] text-xl md:text-2xl max-w-2xl mx-auto md:mx-0 text-center md:text-left">
-                The question lies upon your mind that the way we provide application at low cost.
-                We developed using Google&apos;s <strong>Flutter</strong> Framework, which converts
-                single code into two platforms of different applications. So that we can provide both
-                Android APK and iOS App. We developed Website on Facebook&apos;s Framework{' '}
-                <strong>ReactJS</strong>.
+                We deliver applications that run seamlessly across all your devices at an affordable cost by using modern frameworks:{" "}
+                <strong>Flutter</strong> for <strong>Android and iOS</strong>, enabling a single codebase for both platforms, and{" "}
+                <strong>ReactJS with Node.js</strong> for powerful, scalable web solutions - ensuring high performance, faster updates,
+                and consistent user experiences everywhere.
               </p>
+
             </div>
           </div>
         </div>

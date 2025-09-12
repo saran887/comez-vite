@@ -37,7 +37,7 @@ const Pricing = () => {
       title: 'Web',
       monthlyPrice: '₹ 1000',
       monthlyOriginalPrice: '₹ 1500',
-      yearlyPrice: '₹ 15,000',
+      yearlyPrice: '₹15,000',
       yearlyOriginalPrice: '₹ 20,000',
       description: 'Per User/Year',
       features: [
@@ -53,7 +53,7 @@ const Pricing = () => {
       title: 'Web,  Android  &  iOS',
       monthlyPrice: '₹ 2000',
       monthlyOriginalPrice: '₹ 3000',
-      yearlyPrice: '₹ 20,000',
+      yearlyPrice: '₹20,000',
       yearlyOriginalPrice: '₹ 30,000',
       description: 'Per User/Year',
       features: [
@@ -176,7 +176,7 @@ const Pricing = () => {
                       ? `Hello! I'm interested in the ${planTitle} plan from Comez. Could you please share more details about the available options?`
                       : `Hello! I'm interested in the ${planTitle} plan from Comez, priced at ${price}. Could you please provide more details about the features and next steps?`;
                 
-                  const whatsappUrl = `https://wa.me/6380800467?text=${encodeURIComponent(message)}`;
+                  const whatsappUrl = `https://wa.me/+919698739898?text=${encodeURIComponent(message)}`;
                   window.open(whatsappUrl, "_blank");
                 }}
                  className={`group relative px-6 py-3 w-[200px] h-[60px] text-x font-medium ${index === 1 ? 'bg-[#0754E3] text-white' : 'bg-white text-black'} shadow-[inset_-12px_4px_17.1px_rgba(255,255,255,0.25),inset_-3px_4px_20px_rgba(255,255,255,0.75)] rounded-[85px] transition-all duration-300 flex items-center justify-center hover:translate-y-[-2px] hover:shadow-[inset_-12px_4px_17.1px_rgba(255,255,255,0.25),inset_-3px_5px_20px_rgba(255,255,255,0.75)]`}
