@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Pricing from './components/Pricing';
@@ -7,10 +7,21 @@ import Download from './components/Download';
 import About from './components/About';
 import Footer from './components/NewFooter';
 import FeatureSection from './components/Features';
+
 import { LenisProvider } from './context/LenisContext';
 import 'lenis/dist/lenis.css';
 
 function App() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 60);
+    };
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
     <LenisProvider>
       <div className="relative min-h-screen w-screen bg-[#000000] overflow-x-hidden font-outfit mx-auto ">
@@ -54,12 +65,12 @@ function App() {
               <div className="w-full">
                 <Footer />
               </div>
-              
             </main>
           </div>
         </div>
       </div>
     </LenisProvider>
+
   );
 }
 

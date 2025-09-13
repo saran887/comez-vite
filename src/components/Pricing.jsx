@@ -90,41 +90,38 @@ const Pricing = () => {
       <div className="w-full max-w-7xl  mx-auto">
         <div className="text-center  mb-16">
           <h2 className="text-7xl font-medium font-['Outfit'] bg-gradient-to-r from-white to-[#B4B2B2] bg-clip-text text-transparent mb-8 pb-8">Pricing</h2>
-          {/*<div className="text-white text-lg font-medium">
-            Annually
-          </div> */}
-        </div>
-
-        <div className="flex flex-col md:flex-row  items-stretch gap-16 w-full ">
-          {plans.map((plan, index) => (
-            <div
-              key={index}
-              className={`relative rounded-3xl overflow-hidden bg-black border ${index === 1
-                ? 'border border-blue-500 scale-105 z-10 shadow-[0_10px_30px_-10px_rgba(0,112,244,0.3)]'
-                : 'border-gray-700'
-                } w-full md:w-auto h-[750px]  md:h-[750px] lg:h-[800px] lg:w-auto flex-shrink-0`}
-            >  <div className="w-full">
-                <div
-                  className={`${index === 1
-                    ? 'py-8 px-6 w-full bg-gradient-to-r from-black via-[#0D54DB] to-black mx-0 md:mx-[-8px] w-full md:w-[calc(100%+16px)] rounded-3xl shadow-[0px_21px_88.7px_-43px_rgba(0,88,255,0.5)]'
-                    : (index === 0 || index === 2)
-                      ? `${index === 2 ? 'py-8' : 'py-8'} px-6 w-full bg-gray-800 rounded-t-3xl`
-                      : 'py-8 px-6 w-full'
-                    }`}
-                >
-
-                  <h3 className="text-2xl font-bold text-white  text-center">
-                    {plan.title}
-                  </h3>
-                </div>
+          /*<div className="text-white text-lg font-medium">
+                Annually
+                </div> */}
               </div>
 
-              <div className="flex flex-col items-center justify-center px-10 my-10">
-                <div className="relative text-center">
+              <div className="flex flex-col md:flex-row  items-stretch gap-16 w-full ">
+                {plans.map((plan, index) => (
+                <div
+                  key={index}
+                  className={`relative rounded-3xl overflow-hidden bg-black w-full md:w-auto h-[800px] flex-shrink-0 border-t-2 border-b-2 border-[#949090] `}
+                >  <div className="w-full">
                   <div
+                    className={`${index === 1
+                    ? 'py-8 px-6 w-full bg-gradient-to-r from-black via-[#0D54DB] to-black mx-0 md:mx-[-8px] md:w-[calc(100%+16px)] rounded-3xl shadow-[0px_21px_88.7px_-43px_rgba(0,88,255,0.5)]'
+                    : (index === 0 || index === 2)
+                      ? `${index === 2 ? 'py-8' : 'py-8'} px-6 w-full bg-black rounded-t-3xl`
+                      : 'py-8 px-6 w-full'
+                    }`}
+                  >
+
+                    <h3 className="text-2xl font-bold text-white  text-center">
+                    {plan.title}
+                    </h3>
+                  </div>
+                  </div>
+
+                  <div className="flex flex-col items-center justify-center px-10 my-10">
+                  <div className="relative text-center">
+                    <div
                     className={`flex  items-baseline justify-center space-x-3 ${index === 2 ? 'mb-0' : 'mb-2'
                       }`}
-                  >
+                    >
 
 
                     <span className={`font-semibold ${index === 2 ? 'opacity-70 text-2xl md:text-4xl pt-2' : 'text-2xl md:text-4xl text-white'}`}>
@@ -132,42 +129,42 @@ const Pricing = () => {
                     </span>
                     {plan.yearlyOriginalPrice && (
                       <span className="text-gray-400 line-through text-lg md:text-2xl">
-                        {isYearly ? plan.yearlyOriginalPrice : plan.monthlyOriginalPrice}
+                      {isYearly ? plan.yearlyOriginalPrice : plan.monthlyOriginalPrice}
                       </span>
                     )}
 
-                  </div>
-                  {index !== 2}
-                  {plan.description && (
+                    </div>
+                    {index !== 2}
+                    {plan.description && (
                     <span className={`block whitespace-nowrap ${index === 2 ? 'text-lg md:text-2xl text-white' : 'text-lg md:text-2xl text-gray-400'} `}>
                       {plan.description}
                     </span>
-                  )}
-                  {plan.SubTitle && (
+                    )}
+                    {plan.SubTitle && (
                     <span className={`block ${index === 2 ? 'text-lg md:text-2xl text-white' : 'text-gray-300 text-sm'} my-2`}>
                       {plan.SubTitle}
                     </span>
-                  )}
-                </div>
+                    )}
+                  </div>
 
-              </div>
+                  </div>
 
-              <ul className="space-y-10 mb-10 flex-grow text-left w-full pl-8 mt-8">
-                {plan.features.map((feature, i) => (
-                  <li key={i} className="flex items-start ">
+                  <ul className="space-y-10 mb-10 flex-grow text-left w-full pl-8 mt-8">
+                  {plan.features.map((feature, i) => (
+                    <li key={i} className="flex items-start ">
                     <FiCheck className="text-white mt-1 mr-3 flex-shrink-0" />
                     <span className="text-gray-300 text-lg md:text-xl pr-8">{feature}</span>
-                  </li>
-                ))}
-              </ul>
+                    </li>
+                  ))}
+                  </ul>
 
-              <div
-                className={`absolute w-full md:w-[520px] h-[150px] -right-12 md:-right-24 -bottom-12 bg-gradient-to-b from-[#0754E3] to-[#042E7D] blur-[150px] -rotate-15 z-0 ${index === 1 ? 'opacity-80' : 'opacity-60'
-                  }`}
-              />
-              <div className="w-full flex justify-center pt-8">
-                <button 
-                 onClick={() => {
+                  <div
+                  className={`absolute w-full md:w-[520px] h-[150px] -right-12 md:-right-24 -bottom-12 bg-gradient-to-b from-[#0754E3] to-[#042E7D] blur-[150px] -rotate-15 z-0 ${index === 1 ? 'opacity-80' : 'opacity-60'
+                    }`}
+                  />
+                  <div className="w-full flex justify-center pt-8">
+                  <button 
+                   onClick={() => {
                   const planTitle = plans[index].title;
                   const price = isYearly ? plans[index].yearlyPrice : plans[index].monthlyPrice;
                 
