@@ -90,7 +90,7 @@ const Pricing = () => {
       <div className="w-full max-w-7xl  mx-auto">
         <div className="text-center  mb-16">
           <h2 className="text-7xl font-medium font-['Outfit'] bg-gradient-to-r from-white to-[#B4B2B2] bg-clip-text text-transparent mb-8 pb-8">Pricing</h2>
-          /*<div className="text-white text-lg font-medium">
+         { /*<div className="text-white text-lg font-medium">
                 Annually
                 </div> */}
               </div>

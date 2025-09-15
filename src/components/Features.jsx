@@ -214,7 +214,7 @@ const FeatureSection = () => {
                       {feature.title}
                     </h2>
                   </div>
-                  <p className="text-[#C1C1C1] text-center md:text-left text-2xl md:text-3xl md:w-5/8 mt-2">
+                  <p className="text-[#C1C1C1] text-center md:text-left text-1xl md:text-2xl md:w-5/8 mt-2">
                     {feature.description}
                   </p>
                 </div>
