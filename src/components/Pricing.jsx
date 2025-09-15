@@ -99,7 +99,7 @@ const Pricing = () => {
                 {plans.map((plan, index) => (
                 <div
                   key={index}
-                  className={`relative rounded-3xl overflow-hidden bg-black w-full md:w-auto h-[800px] flex-shrink-0 border-t-2 border-b-2 border-[#949090] `}
+                  className={`relative rounded-3xl overflow-hidden bg-black w-full md:w-auto h-[800px] flex-shrink-0 border-t-2 border-b-2 border-b-t[40px] border-[#949090] `}
                 >  <div className="w-full">
                   <div
                     className={`${index === 1
