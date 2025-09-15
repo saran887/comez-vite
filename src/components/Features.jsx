@@ -196,8 +196,8 @@ const FeatureSection = () => {
                   <div className="flex items-center mb-3">
                     <div className="mr-3">
                       <div
-                        className= "flex items-center justify-center mt-6 w-14 h-14 md:w-20 md:h-20"
-                          
+                        className={`flex items-center justify-center ${feature.title.includes("SEO") ? "w-18 h-18 " : "w-14 h-14"
+                          }`}
                       >
                         <img
                           src={feature.icon}
@@ -214,7 +214,7 @@ const FeatureSection = () => {
                       {feature.title}
                     </h2>
                   </div>
-                  <p className="text-[#C1C1C1] text-center md:text-left text-1xl md:text-2xl md:w-5/8 mt-2">
+                  <p className="text-[#C1C1C1] text-center md:text-left text-2xl md:text-3xl md:w-5/8 mt-2">
                     {feature.description}
                   </p>
                 </div>
@@ -245,10 +245,10 @@ const FeatureSection = () => {
         {/* Background Image */}
 
 
-        <div className="md:container mx-auto relative z-10">
-          <div className="flex flex-col md:flex-row items-left justify-between gap-10">
+        <div className="md:container mx-auto relative z-10 justify-left">
+          <div className="flex flex-col md:flex-row items-center justify-between ">
             {/* Logos */}
-            <div className="flex gap-6 md:gap-12 justify-left align-left md:justify-left w-full md:w-auto md:pl-32">
+            <div className="flex gap-6 md:gap-12  align-center  justify-start ">
               <img src={Android} alt="Android" className="w-24 h-24 md:w-36 md:h-36 object-contain" />
               <img src={Apple} alt="Apple" className="w-20 h-20 md:w-32 md:h-32 object-contain" />
               <img src={Cloud} alt="Cloud" className="w-24 h-24 md:w-36 md:h-36 object-contain" />
