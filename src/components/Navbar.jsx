@@ -147,7 +147,7 @@ const Navbar = () => {
         </div>
 
         {/* Navigation Links - Desktop */}
-        <div className="hidden md:flex items-center justify-center flex-1 md:pl-28">
+        <div className="hidden md:flex items-center justify-center flex-1 ">
           <div className="flex items-center h-[70px] bg-[rgba(1,34,50,0.2)] backdrop-blur-[15px] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] border border-[rgba(255,255,255,0.18)] rounded-[35px]">
             {navLinks.map((link, index) => (
               <button

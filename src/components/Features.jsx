@@ -241,12 +241,12 @@ const FeatureSection = () => {
       </div>
 
       {/* Available on All Devices Section */}
-      <div className="relative pt-16 pb-28 pl-4 pr-4 md:pl-15 md:pr-12 text-white overflow-hidden rounded-b-[120px] md:bg-[url('../src/assets/Storebg.svg')] md:bg-cover md:h-[500px] md:bg-center md:bg-no-repeat">
+      <div className="relative pt-16 pb-28 pl-4 pr-4 md:pl-15 md:pr-12 text-white overflow-hidden rounded-b-[120px] md:bg-[url('../src/assets/Storebg.svg')] md:bg-cover md:h-auto md:bg-center md:bg-no-repeat">
         {/* Background Image */}
 
 
         <div className="md:container mx-auto relative z-10 justify-left">
-          <div className="flex flex-col md:flex-row items-center justify-between ">
+          <div className="flex flex-col md:flex-row items-center justify-between lg:pl-36">
             {/* Logos */}
             <div className="flex gap-6 md:gap-12  align-center  justify-start ">
               <img src={Android} alt="Android" className="w-24 h-24 md:w-36 md:h-36 object-contain" />
