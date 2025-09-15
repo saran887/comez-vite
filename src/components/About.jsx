@@ -13,7 +13,7 @@ const features = [
   {
     icon: Why1,
     title: "No Development Charges*",
-    description: "We have worked over last two years to provide you an precise Ecommerce Application which covers all the modules with Analytic Reports."
+    description: "We have worked over the last two years to provide you with a precise eCommerce application that covers all modules and includes analytic reports. <br><br><span class='text-base text-gray-400'><strong>*</strong> Customization charges may apply.</span>"
   },
   {
     icon: Why2,
@@ -56,7 +56,7 @@ const About = () => {
                     {feature.title}
                   </h3>
                 </div>
-                <p className="text-[#C1C1C6] md:pl-4 text-xl md:text-2xl leading-relaxed text-center md:text-left">{feature.description}</p>
+                <p className="text-[#C1C1C6] md:pl-4 text-xl md:text-2xl leading-relaxed text-center md:text-left" dangerouslySetInnerHTML={{ __html: feature.description }}></p>
               </div>
             </div>
           ))}

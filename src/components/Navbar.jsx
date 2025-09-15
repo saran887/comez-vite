@@ -97,11 +97,46 @@ const Navbar = () => {
     }
   }, []);
 
+  // Listen to Lenis scroll if available, else fallback to window scroll
+  useEffect(() => {
+    if (lenis && isReady) {
+      const onLenisScroll = ({ scroll }) => {
+        if (window.innerWidth >= 768) {
+          setScrolled(scroll > 10);
+        }
+      };
+      lenis.on('scroll', onLenisScroll);
+      // Set initial state
+      if (window.innerWidth >= 768) {
+        setScrolled(lenis.scroll > 10);
+      }
+      return () => {
+        lenis.off('scroll', onLenisScroll);
+      };
+    } else {
+      const handleScroll = () => {
+        if (window.innerWidth >= 768) {
+          setScrolled(window.scrollY > 10);
+        }
+      };
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      // Set initial state
+      if (window.innerWidth >= 768) {
+        setScrolled(window.scrollY > 10);
+      }
+      return () => window.removeEventListener('scroll', handleScroll);
+    }
+  }, [lenis, isReady]);
+
   return (
-    <nav className="fixed w-full h-28 left-0 md:top-4 top-0 z-50 bg-transparent mx-auto">
-      <div className="h-24 md:h-full w-full max-w-7xl md:max-w-9xl mx-auto flex items-center justify-between pl-2">
+    <nav
+      className={`fixed w-full h-28 left-0 z-50 bg-transparent mx-auto ${
+        scrolled ? 'top-0' : 'md:top-4 top-0'
+      }`}
+    >
+      <div className="h-24 md:h-full w-full max-w-7xl md:max-w-9xl mx-auto flex items-center justify-between pl-2 md:bg-transparent bg-[rgba(1,34,50,0.2)] backdrop-blur-[15px] md:backdrop-blur-[5px] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] md:shadow-none border-b border-[rgba(255,255,255,0.1)] md:border-b-0">
         {/* Logo */}
-        <div className="flex-shrink-0 pl-2 md:pl-0 lg:pl-0">
+        <div className="flex-shrink-0 pl-2 md:pl-0 lg:pl-0 ">
           <img
             src={Logo}
             alt="Comez Logo"
@@ -123,13 +158,13 @@ const Navbar = () => {
                 }}
                 className={`relative flex items-center justify-center w-36 h-12 mx-2 rounded-[30px] cursor-pointer transition-all duration-300 ${
                   activeLink === link.name
-                    ? 'bg-[#0754E3] shadow-[inset_-4px_7px_20px_rgba(255,255,255,0.3)]'
-                    : 'bg-transparent hover:bg-[#0754E3]/20'
+                  ? 'bg-[#0754E3] shadow-[inset_-4px_7px_20px_rgba(255,255,255,0.3)]'
+                  : 'bg-transparent hover:bg-[#0754E3]/20'
                 }`}
-              >
+                >
                 <span
                   className={`text-md text-white font-light ${
-                    activeLink === link.name ? 'font-medium' : ''
+                  activeLink === link.name ? 'font-medium' : ''
                   }`}
                 >
                   {link.name}
@@ -139,24 +174,24 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Contact Button - Desktop */}
+            {/* Contact Button - Desktop */}
         <div className="hidden md:block">
           <a
             href="tel:+919698739898"
             className="flex items-center justify-center w-36 h-12 bg-white text-black rounded-[30px] text-md font-medium hover:text-white hover:bg-gray-700 transition-colors duration-200"
           >
-            Contact Us
+            Contact 
           </a>
         </div>
-
+        
         {/* Mobile Menu Button */}
-        <div className="md:hidden z-50 pr-2" >
+        <div className="md:hidden z-50 pr-2 ">
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="p-2 text-white focus:outline-none"
             aria-label="Toggle menu"
             aria-expanded={isOpen}
-          >
+            >
             {isOpen ? <FiX className="h-6 w-6" /> : <FiMenu className="h-6 w-6" />}
           </button>
         </div>
@@ -182,7 +217,7 @@ const Navbar = () => {
                     : 'bg-transparent hover:bg-[#0754E3]/20'
                 }`}
                 aria-current={activeLink === link.name ? 'page' : undefined}
-              >
+                >
                 {link.name}
               </button>
             ))}
@@ -190,8 +225,8 @@ const Navbar = () => {
               href="tel:+919698739898"
               className="w-full px-6 py-5 text-2xl font-light text-white rounded-[30px] transition-all duration-300 text-center mt-4 "
               onClick={() => setIsOpen(false)}
-            >
-              Contact Us
+              >
+              Contact 
             </a>
           </div>
         </div>

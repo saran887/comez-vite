@@ -87,96 +87,81 @@ const Pricing = () => {
 
   return (
     <div id="pricing" className="relative bg-black min-h-[calc(100vh-6rem)] py-4 md:pt-12 lg:pt-18 xl:pt-24 px-4">
-      <div className="w-full max-w-7xl  mx-auto">
-        <div className="text-center  mb-16">
+      <div className="w-full max-w-7xl mx-auto">
+        <div className="text-center mb-16">
           <h2 className="text-7xl font-medium font-['Outfit'] bg-gradient-to-r from-white to-[#B4B2B2] bg-clip-text text-transparent mb-8 pb-8">Pricing</h2>
-         { /*<div className="text-white text-lg font-medium">
-                Annually
-                </div> */}
+        </div>
+
+        <div className="flex flex-col md:flex-row items-stretch gap-16 w-full">
+          {plans.map((plan, index) => (
+            <div
+              key={index}
+              className="relative rounded-3xl overflow-hidden bg-black w-auto md:w-auto flex-shrink-0 border-t-2 border-b-2 border-[#949090]/40 before:content-[''] before:absolute before:left-0 before:bottom-0 before:h-[30%] before:w-[1px] before:bg-[#949090]/40 before:z-10"
+            >
+              <div className="w-full">
+                <div className={`${index === 1
+                  ? 'py-8 px-6 w-full bg-gradient-to-r from-black via-[#0D54DB] to-black mx-0 md:mx-[-8px] md:w-[calc(100%+16px)] rounded-3xl shadow-[0px_21px_88.7px_-43px_rgba(0,88,255,0.5)]'
+
+                  : 'py-8 px-6 w-full bg-black rounded-t-3xl'}`}
+                >
+                  <h3 className="text-2xl font-bold text-white text-center">
+                    {plan.title}
+                  </h3>
+                </div>
               </div>
 
-              <div className="flex flex-col md:flex-row  items-stretch gap-16 w-full ">
-                {plans.map((plan, index) => (
-                <div
-                  key={index}
-                  className={`relative rounded-3xl overflow-hidden bg-black w-full md:w-auto h-[800px] flex-shrink-0 border-t-2 border-b-2 border-b-t[40px] border-[#949090] `}
-                >  <div className="w-full">
-                  <div
-                    className={`${index === 1
-                    ? 'py-8 px-6 w-full bg-gradient-to-r from-black via-[#0D54DB] to-black mx-0 md:mx-[-8px] md:w-[calc(100%+16px)] rounded-3xl shadow-[0px_21px_88.7px_-43px_rgba(0,88,255,0.5)]'
-                    : (index === 0 || index === 2)
-                      ? `${index === 2 ? 'py-8' : 'py-8'} px-6 w-full bg-black rounded-t-3xl`
-                      : 'py-8 px-6 w-full'
-                    }`}
-                  >
-
-                    <h3 className="text-2xl font-bold text-white  text-center">
-                    {plan.title}
-                    </h3>
-                  </div>
-                  </div>
-
-                  <div className="flex flex-col items-center justify-center px-10 my-10">
-                  <div className="relative text-center">
-                    <div
-                    className={`flex  items-baseline justify-center space-x-3 ${index === 2 ? 'mb-0' : 'mb-2'
-                      }`}
-                    >
-
-
+              <div className="flex flex-col items-center justify-center px-10 my-10">
+                <div className="relative text-center">
+                  <div className={`flex items-baseline justify-center space-x-3 ${index === 2 ? 'mb-0' : 'mb-2'}`}>
                     <span className={`font-semibold ${index === 2 ? 'opacity-70 text-2xl md:text-4xl pt-2' : 'text-2xl md:text-4xl text-white'}`}>
-                      {isYearly ? plan.yearlyPrice : plan.monthlyPrice}
+                      {isYearly ? (plan.yearlyPrice || '') : (plan.monthlyPrice || '')}
                     </span>
                     {plan.yearlyOriginalPrice && (
                       <span className="text-gray-400 line-through text-lg md:text-2xl">
-                      {isYearly ? plan.yearlyOriginalPrice : plan.monthlyOriginalPrice}
+                        {isYearly ? plan.yearlyOriginalPrice : plan.monthlyOriginalPrice}
                       </span>
                     )}
-
-                    </div>
-                    {index !== 2}
-                    {plan.description && (
-                    <span className={`block whitespace-nowrap ${index === 2 ? 'text-lg md:text-2xl text-white' : 'text-lg md:text-2xl text-gray-400'} `}>
+                  </div>
+                  
+                  {plan.description && (
+                    <span className={`block whitespace-nowrap ${index === 2 ? 'text-lg md:text-2xl text-white' : 'text-lg md:text-2xl text-gray-400'}`}>
                       {plan.description}
                     </span>
-                    )}
-                    {plan.SubTitle && (
+                  )}
+                  
+                  {plan.SubTitle && (
                     <span className={`block ${index === 2 ? 'text-lg md:text-2xl text-white' : 'text-gray-300 text-sm'} my-2`}>
                       {plan.SubTitle}
                     </span>
-                    )}
-                  </div>
+                  )}
+                </div>
+              </div>
 
-                  </div>
-
-                  <ul className="space-y-10 mb-10 flex-grow text-left w-full pl-8 mt-8">
-                  {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-start ">
+              <ul className="space-y-4 mb-10 flex-grow text-left w-full pl-8 mt-8">
+                {plan.features.map((feature, i) => (
+                  <li key={i} className="flex items-start">
                     <FiCheck className="text-white mt-1 mr-3 flex-shrink-0" />
                     <span className="text-gray-300 text-lg md:text-xl pr-8">{feature}</span>
-                    </li>
-                  ))}
-                  </ul>
+                  </li>
+                ))}
+              </ul>
 
-                  <div
-                  className={`absolute w-full md:w-[520px] h-[150px] -right-12 md:-right-24 -bottom-12 bg-gradient-to-b from-[#0754E3] to-[#042E7D] blur-[150px] -rotate-15 z-0 ${index === 1 ? 'opacity-80' : 'opacity-60'
-                    }`}
-                  />
-                  <div className="w-full flex justify-center pt-8">
-                  <button 
-                   onClick={() => {
-                  const planTitle = plans[index].title;
-                  const price = isYearly ? plans[index].yearlyPrice : plans[index].monthlyPrice;
-                
-                  const message =
-                    planTitle === "Customized"
+              <div className={`absolute w-full md:w-[520px] h-[150px] -right-12 md:-right-24 -bottom-12 bg-gradient-to-b from-[#0754E3] to-[#042E7D] blur-[150px] -rotate-15 z-0 ${index === 1 ? 'opacity-80' : 'opacity-60'}`} />
+              
+              <div className="w-full flex justify-center pt-8 pb-12 relative z-10">
+                <button 
+                  onClick={() => {
+                    const planTitle = plans[index].title;
+                    const price = isYearly ? plans[index].yearlyPrice : plans[index].monthlyPrice;
+                  
+                    const message = planTitle === "Customized"
                       ? `Hello! I'm interested in the ${planTitle} plan from Comez. Could you please share more details about the available options?`
                       : `Hello! I'm interested in the ${planTitle} plan from Comez, priced at ${price}. Could you please provide more details about the features and next steps?`;
-                
-                  const whatsappUrl = `https://wa.me/+919698739898?text=${encodeURIComponent(message)}`;
-                  window.open(whatsappUrl, "_blank");
-                }}
-                 className={`group relative px-6 py-3 w-[200px] h-[60px] text-x font-medium ${index === 1 ? 'bg-[#0754E3] text-white' : 'bg-white text-black'} shadow-[inset_-12px_4px_17.1px_rgba(255,255,255,0.25),inset_-3px_4px_20px_rgba(255,255,255,0.75)] rounded-[85px] transition-all duration-300 flex items-center justify-center hover:translate-y-[-2px] hover:shadow-[inset_-12px_4px_17.1px_rgba(255,255,255,0.25),inset_-3px_5px_20px_rgba(255,255,255,0.75)]`}
+                  
+                    const whatsappUrl = `https://wa.me/+919698739898?text=${encodeURIComponent(message)}`;
+                    window.open(whatsappUrl, "_blank");
+                  }}
+                  className={`group relative px-6 py-3 w-[200px] h-[60px] text-x font-medium ${index === 1 ? 'bg-[#0754E3] text-white' : 'bg-white text-black'} shadow-[inset_-12px_4px_17.1px_rgba(255,255,255,0.25),inset_-3px_4px_20px_rgba(255,255,255,0.75)] rounded-[85px] transition-all duration-300 flex items-center justify-center hover:translate-y-[-2px] hover:shadow-[inset_-12px_4px_17.1px_rgba(255,255,255,0.25),inset_-3px_5px_20px_rgba(255,255,255,0.75)]`}
                   onMouseEnter={(e) => {
                     const rect = e.target.getBoundingClientRect();
                     const isHoveringFromBottom = e.clientY >= rect.bottom;
@@ -197,7 +182,6 @@ const Pricing = () => {
                 </button>
               </div>
             </div>
-
           ))}
         </div>
       </div>
